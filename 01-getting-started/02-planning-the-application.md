@@ -9,7 +9,7 @@ TodoMVC has the following main features:
 
 TodoMVCは次のような主な特徴を持っています。
 
-<img src="/guides/getting-started/images/todo-mvc.png" width="680">
+<img src="http://emberjs.com/guides/getting-started/images/todo-mvc.png" width="680">
 
   1. It displays a list of todos for a user to see. This list will grow and shrink as the user adds and removes todos.
   ユーザーが確認できるようにTodoのリストを表示します。このリストはユーザーがTodoを追加したり削除するのに伴い、大きくなったり小さくなったりします。
