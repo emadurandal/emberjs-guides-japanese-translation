@@ -3,7 +3,7 @@ Japanese Translation for Official Ember.js Guides
 
 **Credit**  
 These documents are Ember.js guides which have been translated into Japanese with permission of Tom Dale([@tomdale](https://twitter.com/tomdale)).
-Original documents is written at emberjs.com.
+Original documents are written at emberjs.com.
 [Ember.js Guides](http://emberjs.com/guides/)
 
 Original markdown documents are available on [emberjs/website](https://github.com/emberjs/website/), inside the `source/guides` directory. 
