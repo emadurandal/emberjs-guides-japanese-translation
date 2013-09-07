@@ -68,7 +68,7 @@ In Ember.js applications, you will always specify your controllers
 as **classes**, and the framework is responsible for instantiating
 them and providing them to your templates.
 
-Ember.jsアプリケーションでは、あなたは常にコントローラーを**クラス**として指定します。そしてEmber.jsフレームワークはそれらをインスタンス化し、テンプレートにそれらを供給する役割を担います。
+Ember.jsアプリケーションでは、あなたは常にコントローラーを **クラス** として指定します。そしてEmber.jsフレームワークはそれらをインスタンス化し、テンプレートにそれらを供給する役割を担います。
 
 This makes it super-simple to test your controllers, and ensures that
 your entire application shares a single instance of each controller.
@@ -179,7 +179,7 @@ on the value of that segment provided by the user.
 
 Consider this router definition:
 
-このルーターの定義についてに考えましょう。
+このルーターの定義について考えましょう。
 
 ```javascript
 App.Router.map(function() {
