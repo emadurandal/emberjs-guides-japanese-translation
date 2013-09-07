@@ -27,7 +27,7 @@ superior shareability and collaboration. Today, most JavaScript
 frameworks treat the URL as an afterthought, instead of the primary
 reason for the web's success.
 
-むしろ、**Webは、ブックマークして、URLを共有する能力からその力を得ます。** URLは、Webアプリケーションに優れた共有性とコラボレーションを与える鍵となる特徴です。
+むしろ、 **Webは、ブックマークして、URLを共有する能力からその力を得ます。** URLは、Webアプリケーションに優れた共有性とコラボレーションを与える鍵となる特徴です。
 今日、ほとんどのJavaScriptフレームワークは、ウェブのその主要な成功要因を重視せず、あとから思いついたようにURLを扱います。
 
 Ember.js, therefore, marries the tools and concepts of native
