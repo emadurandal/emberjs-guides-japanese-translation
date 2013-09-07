@@ -84,6 +84,7 @@ the original user.
 これは、いかなる点でも、ユーザーがあなたのアプリケーションのURLを共有することができることを意味します。誰かがリンクをクリックするとき、彼らは最初のユーザーと同じ内容を確実に見ることができるのです。
 
 #### Components
+#### コンポーネント
 
 A **component** is a custom HTML tag whose behavior you implement using
 JavaScript and whose appearance you describe using Handlebars templates.
@@ -93,6 +94,7 @@ application's templates.
 コンポーネントは、あなたがJavaScriptを使ってその動作を実装でき、また、あなたがHandlebarsテンプレートを使ってその外観を表現できる、カスタムのHTMLタグです。コンポーネントを使うことで、あなたは、アプリケーションのテンプレートをシンプルにする再利用可能なコントロールを作成できます。
 
 #### Models
+#### モデル
 
 A **model** is an object that stores _persistent state_. Templates are
 responsible for displaying the model to the user by turning it into
@@ -102,6 +104,7 @@ although Ember is agnostic to the backend that you choose.
 モデルは永続的な状態を保存するオブジェクトです。テンプレートは、モデルをHTMLに変換することによって、そのモデルをユーザーに表示する役割を果たします。多くのアプリケーションでは、モデルはHTTP JSON APIを通じて読み込まれます。しかし、Emberはあなたが選ぶバックエンドについては関知しません。
 
 #### Route
+#### ルート
 
 A **route** is an object that tells the template which model it should
 display.
@@ -109,6 +112,7 @@ display.
 ルートは、テンプレートにどのモデルを表示すべきかを伝えるオブジェクトです。
 
 #### Controllers
+#### コントローラー
 
 A **controller** is an object that stores _application state_. A
 template can optionally have a controller in addition to a model, and
