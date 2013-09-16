@@ -9,7 +9,7 @@ change application state. For example, imagine that you have a template
 that shows a blog post, and supports expanding the post with additional
 information.
 
-あなたのアプリケーションは、アプリケーションの状態を変えるコントロールをユーザーが利用できるようにする方法を、しばしば必要とします。例えば、ブログの投稿を表示し、さらに追加の情報を表示するように投稿を展開することをサポートするテンプレートをあなたが持っていると想像してください。
+あなたのアプリケーションは、アプリケーションの状態を変えるコントロールをユーザーが利用できるようにする方法を、しばしば必要とします。例えば、ブログの投稿を表示し、さらに追加の情報を表示するように投稿を展開することができるテンプレートをあなたが持っていると想像してください。
 
 You can use the `{{action}}` helper to make an HTML element clickable.
 When a user clicks the element, the named event will be sent to your
@@ -71,7 +71,7 @@ a method directly on the controller, it is strongly recommended that you
 put your action handling methods inside an `actions` hash for forward
 compatibility.
 
-アクションを扱うルートとコントローラーは、 **`actions`ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをルートが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
+アクションを扱うルートとコントローラーは、 ** `actions`ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをルートが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
 コントローラーの場合、コントローラー上に直にあるメソッドを呼び出すことが非推奨ならがサポートされていますが、前方互換性のため、アクションハンドリングメソッドを`actions`ハッシュの中に配置することを強く勧めます。
 
 ```js
