@@ -165,7 +165,7 @@ In general, two-word event names (like `keypress`) become `keyPress`.
 [1]: http://emberjs.com/guides/understanding-ember/the-view-layer/#toc_adding-new-events
 
 あなたは[View guide][1]にリストされている正規化されたイベント名を使うべきです。一般的には、`keypress`のような２単語のイベント名は`keyPress`になります。
-（訳者補足：View guideの表の左側が、Webブラウザーがサポートしている、JavaScriptで使われるイベント名。右側がEmber.jsのonオプションで指定する際に使うイベント名）
+（訳者補足：View guideの表の左側が、Webブラウザーがサポートしている、JavaScriptで使われるイベント名。右側がEmber.jsのonオプションで指定する際に使うイベント名。）
 
 ### Specifying Whitelisted Modifier Keys
 ### ホワイトリスト式の修飾キーの指定
@@ -261,7 +261,7 @@ By default, the `{{action}}` helper will send the action to the view's
 target, which is generally the view's controller. (Note: in the case of
 an Ember.Component, the default target is the component itself.)
 
-標準では、``{{action}}`ヘルパーはビューのターゲット（一般にはビューのコントローラー）にアクションを送ります。
+標準では、`{{action}}`ヘルパーはビューのターゲット（一般にはビューのコントローラー）にアクションを送ります。
 （注意：Ember.Componentの場合は、デフォルトターゲットはコンポーネント自身です。）
 
 You can specify an alternative target by using the `target` option. This
