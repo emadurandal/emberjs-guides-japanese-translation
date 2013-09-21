@@ -61,7 +61,7 @@ If the controller does not implement a method with the same name as the
 action in its actions object, the action will be sent to the router, where
 the currently active leaf route will be given a chance to handle the action.
 
-もしコントローラーが、そのアクションオブジェクトのアクションと同じ名前のメソッドを実装していなければ、アクションはルーターに送られます。そこで、現在のアクティブな末端のルーターはそのアクションを扱う機会を与えられます。
+もしコントローラーが、そのアクションオブジェクトのアクションと同じ名前のメソッドを実装していなければ、アクションはルーターに送られます。そこで、現在のアクティブな末端のルートはそのアクションを扱う機会を与えられます。
 
 Routes and controllers that handle actions **must place action handlers
 inside an `actions` hash**. Even if a route has a method with the same name
@@ -71,7 +71,7 @@ a method directly on the controller, it is strongly recommended that you
 put your action handling methods inside an `actions` hash for forward
 compatibility.
 
-アクションを扱うルートとコントローラーは、`actions` **ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをルートが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
+アクションを扱うルートとコントローラーは、**`actions` ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをルートが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
 コントローラーの場合、コントローラー上に直にあるメソッドを呼び出すことが非推奨ながらサポートされていますが、前方互換性のため、アクションハンドリングメソッドを`actions`ハッシュの中に配置することを強く勧めます。
 
 ```js
