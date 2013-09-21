@@ -12,7 +12,7 @@ both new tools and a new vocabulary of concepts. We've spent a lot of
 time borrowing ideas pioneered by native application frameworks like
 Cocoa and Smalltalk.
 
-Ember.jsはネイティブアプリケーションに匹敵するほどの大きなWebアプリケーションを野心的に作ろうとする開発者を助けるように設計されています。そうすることは、新しいツールとコンセプトについての新しい語彙を必要とします。私たちは、CocoaとSmalltalkのようなネイティブアプリケーション・フレームワークによって創始されたアイデアを借りることに、多くの時間を費やしました。
+Ember.jsはネイティブアプリケーションに匹敵するほどの大きなWebアプリケーションを野心的に作ろうとする開発者を助けるように設計されています。そうすることは、新しいツールとコンセプトについての新しい語彙を必要とします。私たちは、CocoaとSmalltalkのようなネイティブアプリケーション・フレームワークによって開拓されたアイデアを借りることに、多くの時間を費やしました。
 
 However, it's important to remember what makes the web special. Many
 people think that something is a web application because it uses
@@ -28,13 +28,13 @@ frameworks treat the URL as an afterthought, instead of the primary
 reason for the web's success.
 
 むしろ、 **Webは、ブックマークして、URLを共有する能力からその力を得ます。** URLは、Webアプリケーションに優れた共有性とコラボレーションを与える鍵となる特徴です。
-今日、ほとんどのJavaScriptフレームワークは、ウェブのその主要な成功要因を重視せず、あとから思いついたようにURLを扱います。
+今日、ほとんどのJavaScriptフレームワークは、URLをウェブの成功の一番の要因ではなく、後付の補足的なものとして扱っています。
 
 Ember.js, therefore, marries the tools and concepts of native
 GUI frameworks with support for the feature that makes the web so
 powerful: the URL.
 
-Ember.jsは、したがって、ツールとネイティブGUIフレームワークのコンセプトを、Webを強力にする「URL」という機能のサポートに結びつけました。
+Ember.jsは、したがって、ツールとネイティブGUIフレームワークのコンセプトを、Webをこれほどまでに強力にしている機能、つまり「URL」、をサポートすることに結びつけました。
 
 ### Concepts
 ### コンセプト
@@ -46,16 +46,16 @@ A **template**, written in the Handlebars templating language, describes
 the user interface of your application. Each template is backed by a
 model, and the template automatically updates itself if the model changes.
 
-Handlebersテンプレート言語で書かれたテンプレートが、アプリケーションのユーザーインターフェースを表現します。それぞれのテンプレートはモデルに支えられており、モデルが変更されれば、テンプレートは自身を自動的に更新します。
+テンプレート（Handlebersテンプレート言語で書かれます）：アプリケーションのユーザーインターフェースを表現します。それぞれのテンプレートはモデルに支えられており、モデルが変更されれば、テンプレートは自身を自動的に更新します。
 
 In addition to plain HTML, templates can contain:
 
-普通のHTMLに加え、テンプレートは以下を含みます。
+普通のHTMLに加え、テンプレートは以下のものを含むことが出来ます。
 
 * **Expressions**, like `{{firstName}}`, which take information from
   the template's model and put it into HTML.
   
-  式（{{firstName}}のような）：テンプレートのモデルから情報を取得し、それをHTMLに出力するものです。
+  式（{{firstName}}のような）：テンプレートのモデルから情報を取得し、それをHTML内に埋め込みます。
 * **Outlets**, which are placeholders for other templates. As users
   move around your app, different templates can be plugged into the
   outlet by the router. You can put outlets into your template using the
@@ -75,7 +75,7 @@ backed by a model. As the templates or models being shown to the user
 change, Ember automatically keeps the URL in the browser's address bar
 up-to-date.
 
-ルーターはURLを、それぞれモデルによって支えられている、一連のネストされたテンプレートに変換します。ユーザーに表示されているテンプレートまたはモデルが変化すると、EmberはブラウザのアドレスバーのURLを自動的に最新に保ちます。
+ルーターはURLを一連のネストされたテンプレートに変換します。テンプレートはそれぞれモデルによって支えられています。ユーザーに表示されているテンプレートまたはモデルが変化すると、EmberはブラウザのアドレスバーのURLを自動的に最新に保ちます。
 
 This means that, at any point, users are able to share the URL of your
 app. When someone clicks the link, they reliably see the same content as
@@ -91,7 +91,7 @@ JavaScript and whose appearance you describe using Handlebars templates.
 They allow you to create reusable controls that can simplify your
 application's templates.
 
-コンポーネントは、あなたがJavaScriptを使ってその動作を実装でき、また、あなたがHandlebarsテンプレートを使ってその外観を表現できる、カスタムのHTMLタグです。コンポーネントを使うことで、あなたは、アプリケーションのテンプレートをシンプルにする再利用可能なコントロールを作成できます。
+コンポーネントは、あなたがJavaScriptを使ってその動作を実装でき、また、あなたがHandlebarsテンプレートを使ってその外観を表現できる、カスタムのHTMLタグです。コンポーネントを使うことで、あなたは再利用可能なコントロールを作成でき、それによってアプリケーションのテンプレートをシンプルにすることができます。
 
 #### Models
 #### モデル
@@ -127,7 +127,7 @@ your Ember.js app. They are designed to scale up in complexity, so that
 adding new functionality doesn't force you to go back and refactor major 
 parts of your app.
 
-これらが、あなたがEmber.jsアプリケーションを開発する際に理解しておかなければならないコア・コンセプトです。これらは複雑さが一定率で上昇するように設計されており、そのため、新しい機能を追加することによって、あなたのアプリケーションの大部分が後戻りになったり、リファクタリングしなければならなくなる、ということがありません。
+これらが、あなたがEmber.jsアプリケーションを開発する際に理解しておかなければならないコア・コンセプトです。これらは複雑さを必要に応じて増加させることができるように設計されており、そのため、新しい機能を追加することによって、あなたのアプリケーションの大部分が後戻りになったり、リファクタリングしなければならなくなる、ということがありません。
 
 Now that you understand the roles of these objects, you're equipped to
 dive deep into Ember.js and learn the details of how each of these
