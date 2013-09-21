@@ -7,7 +7,7 @@ In this step we'll update our application to allow a user to mark a todo as comp
 
 In `index.html` update your template to wrap each todo in its own controller by adding an `itemController` argument to the `{{each}}` Handlebars helper. Then convert our static `<input type="checkbox">` into a `{{input}}` helper:
 
-`index.html`で、Handlebarsの`{{each}}`ヘルパーに`itemController`属性を追加することで、各TodoをTodo自身のコントローラーの中に包むよう、テンプレートを更新してください。そして静的な`<input type="checkbox">`を`{{input}}`ヘルパーに置き換えてください。
+`index.html`でテンプレートを更新して、Handlebarsの`{{each}}`ヘルパーに`itemController`属性を追加することで、各TodoをTodoごとに個別のコントローラーの中に包むようにしてください。そして静的な`<input type="checkbox">`を`{{input}}`ヘルパーに置き換えてください。
 
 ```handlebars
 <!--- ... additional lines truncated for brevity ... -->
@@ -26,7 +26,7 @@ When this `{{input}}` is rendered it will ask for the current value of the contr
 
 Implement the controller for each todo by matching the name used as the `itemController` value to a class in your application `Todos.TodoController`. Create a new file at `js/controllers/todo_controller.js` for this code. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
 
-`itemController`の値として使われている名前とあなたのアプリケーションの`Todos.TodoController`のクラスをマッチさせることで、各Todoのためのコントローラーを実装してください（翻訳者補足：つまり、itemControllerの値が”todo”だとしたら、実装すべきコントローラーの名前も”Todo”から始まる必要がある）。このコードのために新しいファイル`js/controllers/todo_controller.js`を作成します。あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルに押し込めてもかまいません）、このガイドでは、あなたが上述した指定の名前のファイルを作成することを想定します。
+`itemController`の値として使われている名前とあなたのアプリケーションの`Todos.TodoController`のクラスをマッチさせることで、各Todoのためのコントローラーを実装してください（翻訳者補足：つまり、itemControllerの値が”todo”だとしたら、実装すべきコントローラーの名前も”Todo”から始まる必要がある）。このコードのために新しいファイル`js/controllers/todo_controller.js`を作成します。あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルの中に入れてもかまいません）、このガイドでは、あなたが上述した指定の名前のファイルを作成することを想定します。
 
 Inside `js/controllers/todo_controller.js` add code for `Todos.TodoController` and its `isCompleted` property:
 
