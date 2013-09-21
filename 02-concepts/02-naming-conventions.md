@@ -9,7 +9,7 @@ Ember.jsは、沢山の決まりきったコーディングをすることなく
 
 You can usually guess the names, but this guide outlines, in one place, all of the naming conventions.
 
-あなたはたいてい、（規約に従った）名前を推測することができるでしょう。しかし、このガイドではこの場で、命名規則の全てを概説します。
+あなたはたいてい、（規約に従った）名前を推測することができるでしょう。しかし、このガイドではここ一箇所で、命名規則の全てを概説します。
 
 ## The Application
 ## アプリケーション
@@ -138,7 +138,7 @@ the model is an Array, Ember.js will automatically supply an instance
 of `Ember.ArrayController`, which will present the backing Array as
 its model.
 
-この例では、私たちは`FavoritesController`を提供していません。このモデルは配列なので、Ember.jsは自動的にEmber.ArrayControllerのインスタンスを供給するのです。このインスタンスは返ってくる配列を対応するモデルとして提示します。
+この例では、私たちは`FavoritesController`を提供していません。このモデルは配列なので、Ember.jsは自動的にEmber.ArrayControllerのインスタンスを供給するのです。このインスタンスはコントローラの裏打ちとなる配列を対応するモデルとして提示します。
 
 You can treat the `ArrayController` as if it was the model itself.
 This has two major benefits:
@@ -155,7 +155,7 @@ This has two major benefits:
   allows a clean separation of concerns between the view, the
   controller and the model.
   
-  コントローラーはさらに、モデルレイヤーに属さない、算出済みプロパティ（computed oroperties）またはビュー固有の状態（view-specific state）を供給することができます。これにより、ビュー、コントローラ、モデルの間にある関連のきれいな分離が可能になります。
+  コントローラーはさらに、モデルレイヤーに属さない、算出プロパティ（computed properties）またはビュー固有の状態（view-specific state）を供給することができます。これにより、ビュー、コントローラ、モデルの間にある関連のきれいな分離が可能になります。
 
 The template can iterate over the elements of the controller:
 
@@ -179,7 +179,7 @@ on the value of that segment provided by the user.
 
 Consider this router definition:
 
-このルーターの定義について考えましょう。
+以下のルーターの定義について考えましょう。
 
 ```javascript
 App.Router.map(function() {
@@ -201,7 +201,7 @@ parameter into a model. The `serialize` hook converts a model object
 back into the URL parameters for this route (for example, when
 generating a link for a model object).
 
-あなたのルートハンドラーの`model`フックは、動的な`:post_id`パラメーターをモデルに変換します。serializeフックはこのルートのために、モデルオブジェクトをURLパラメーターに戻します（例えば、モデルオブジェクトのためにリンクを生成するときなど）。
+あなたのルートハンドラーの`model`フックは、動的な`:post_id`パラメーターをモデルに変換します。`serialize`フックはこのルートのために、モデルオブジェクトをURLパラメーターに戻します（例えば、モデルオブジェクトのためにリンクを生成するときなど）。
 
 ```javascript
 App.PostRoute = Ember.Route.extend({
@@ -226,7 +226,7 @@ handlers.
   then call `find` on that class with the value of the dynamic
   segment.
   
-  もしあなたの動的セグメント(dynamic segment)が `_id` で終わっているなら、デフォルトの`model`フックは最初の部分（翻訳者補足：post_id なら postの部分）をアプリケーションの名前空間上のモデルクラスに変換します（postはApp.Postになります）。すると`model`フックは、そのクラス上の`find`メソッドを、動的セグメント（dynamic segment）の値を使って呼び出します。
+  もしあなたの動的セグメント(dynamic segment)が `_id` で終わっているなら、デフォルトの`model`フックは最初の部分（翻訳者補足：`post_id` なら `post`の部分）をアプリケーションの名前空間上のモデルクラスに変換します（`post`は`App.Post`になります）。すると`model`フックは、そのクラス上の`find`メソッドを、動的セグメント（dynamic segment）の値を使って呼び出します。
 
 * The default `serialize` hook will pull the dynamic
   segment with the `id` property of the model object.
