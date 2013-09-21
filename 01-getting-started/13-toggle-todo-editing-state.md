@@ -3,7 +3,7 @@
 
 TodoMVC allows users to double click each todo to display a text `<input>` element where the todo's title can be updated. Additionally the `<li>` element for each todo obtains the CSS class `editing` for style and positioning.
 
-TodoMVCではユーザーが各Todoをダブルクリックすることで、Todoのタイトルを更新できるテキスト`<input>`要素を表示することができます。加えて、そのとき、各Todoの`<li>`要素はスタイルと位置のためのCSSクラス `editing` を得ます。
+TodoMVCではユーザーが各Todoをダブルクリックするとテキスト`<input>`要素を表示し、そこでTodoのタイトルを更新することができます。加えて、そのとき、各Todoの`<li>`要素はスタイルと位置のためのCSSクラス `editing` を得ます。
 
 We'll update the application to allow users to toggle into this editing state for a todo. In `index.html` update the contents of the `{{each}}` Handlebars helper to:
 
@@ -48,7 +48,7 @@ isEditing: false,
 
 Above we defined an initial `isEditing` value of `false` for controllers of this type and said that when the `editTodo` action is called it should set the `isEditing` property of this controller to `true`.  This will automatically trigger the sections of template that use `isEditing` to update their rendered content.
 
-上のコードでは、コントローラーに初期値が`false`の`isEdithing`プロパティを定義し、`editTodo`アクションがコールされたら、isEditingプロパティを`true`にセットするようにしました。コントローラーは、`isEditing`プロパティを使っているテンプレートのこのセクションを、レンダリング済みの内容を更新するように自動的にトリガします。
+上のコードでは、コントローラーに初期値が`false`の`isEdithing`プロパティを定義し、`editTodo`アクションがコールされたら、isEditingプロパティを`true`にセットするようにしました。コントローラーは、テンプレートのこのセクションを自動的にトリガし、`isEditing`プロパティを使ってレンダリングされる内容を更新します。
 
 Reload your web browser to ensure that no errors occur. You can now double-click a todo to edit it.
 
