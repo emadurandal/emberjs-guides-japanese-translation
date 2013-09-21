@@ -3,7 +3,7 @@
 
 TodoMVC displays a button for removing todos next to each todo when its `<li>` is hovered. Clicking this button will remove the todo and update the display of remaining incomplete todos and remaining completed todos appropriately.
 
-TodoMVCは、Todoの`<li>`要素がマウスホバーされたときに、Todoを削除するためのボタンをTodoの隣に表示します。このボタンをクリックすると、Todoが取り除かれ、未完了のTodoの残数と完了済みのTodoの残数の表示が適切に更新されます。
+TodoMVCは、Todoの`<li>`要素がマウスホバーされたときに、Todoを削除するためのボタンをTodoの隣に表示します。このボタンをクリックすると、Todoが取り除かれ、（消されずに）残った未完了のTodoと（消されずに）残った完了済みのTodoの表示が適切に更新されます。
 
 In `index.html` update the static `<button>` element to include an `{{action}}` Handlebars helper:
 
