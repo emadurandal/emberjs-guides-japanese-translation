@@ -3,7 +3,7 @@
 
 In the previous step we updated TodoMVC to allow a user to toggle the display of a text `<input>` for editing a todo's title. Next, we'll add the behavior that immediately focuses the `<input>` when it appears, accepts user input and, when the user presses the `<enter>` key or moves focus away from the editing `<input>` element, persists these changes, then redisplays the todo with its newly updated text.
 
-前回のステップで、私たちは、ユーザーがTodoのタイトルを編集するために`<input>`要素を表示するように表示を切り替えられるよう、TodoMVCを更新しました。次に、私たちは、`<input>`要素が現れたらすぐにそこにフォーカスし、ユーザーの入力を受け入れ、そしてユーザーが`<enter>`キーを押すか、フォーカスを編集中の`<input>`要素から移動させるかしたときに、変更を保存して、新しく更新されたテキストでTodoを再表示する、という動作を追加します。
+前回のステップで、私たちは、ユーザーが`<input>`要素の表示・非表示をトグルしてTodoのタイトルを編集できるよう、TodoMVCを更新しました。次に、私たちは、`<input>`要素が現れたらすぐにそこにフォーカスし、ユーザーの入力を受け入れ、そしてユーザーが`<enter>`キーを押すか、フォーカスを編集中の`<input>`要素から移動させるかしたときに、変更を保存して、新しく更新されたテキストでTodoを再表示する、という動作を追加します。
 
 To accomplish this, we'll create a new custom component and register it with Handlebars to make it available to our templates.
 
@@ -11,7 +11,7 @@ To accomplish this, we'll create a new custom component and register it with Han
 
 Create a new file `js/views/edit_todo_view.js`. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
 
-新しいファイル`js/views/edit_todo_view.js`を作成してください。あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルに押し込めてもかまいません）、このガイドでは、あなたがこのガイドで指定した名前のファイルを作成したと想定します。
+新しいファイル`js/views/edit_todo_view.js`を作成してください。あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルの中に入れてもかまいません）、このガイドでは、あなたがこのガイドで指定した名前のファイルを作成したと想定します。
 
 In `js/views/edit_todo_view.js` create an extension of `Ember.TextField`:
 
