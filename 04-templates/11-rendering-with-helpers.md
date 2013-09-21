@@ -45,7 +45,7 @@ The partial's `data-template-name` must start with an underscore (e.g. `data-tem
 
 This helper works like the partial helper, except instead of providing a template to be rendered within the current template, you provide a view class.  The view controls what template is rendered.
 
-このヘルパーはpartialヘルパーと似た働きをします。しかし、現在のテンプレートの中でレンダリングされるべきテンプレートを供給するのではなく、あなたがビュークラスを供給します。
+このヘルパーはpartialヘルパーと似た働きをします。しかし、現在のテンプレートの中でレンダリングされるべきテンプレートを供給するのではなく、あなたがビュークラスを供給します。ビューがどのテンプレートがレンダリングされるかを制御します。
 
 ```javascript
 App.AuthorView = Ember.View.extend({
@@ -121,7 +121,7 @@ For more information, see [Inserting Views in Templates](http://emberjs.com/guid
   
 * The optional second parameter is a model, which will be passed to the controller if provided
   
-  オプションの２つ目のパラメーターはモデルです。モデルがもし供給されれば、それはコントローラーに渡されます。
+  オプションの２つ目のパラメーターはモデルです。モデルがもし渡されれば、それはコントローラーに渡されます。
 
 `{{render}}` does several things:
 
@@ -198,7 +198,7 @@ In this example, render will:
 
 `{{render}}` is similar to `{{outlet}}`. Both tell Ember to devote this portion of the page to something.
 
-`{{render}}`は`{{outlet}}`に似ています。どちらもEmberに、ページのその部分を何かに当てさせようとします。
+`{{render}}`は`{{outlet}}`に似ています。どちらもEmberに、ページのその部分を何かに充てさせようとします。
 
 `{{outlet}}`: The router determines the route and sets up the appropriate controllers/views/models.
 `{{render}}`: You specify (directly and indirectly) the appropriate controllers/views/models.
@@ -221,7 +221,7 @@ Note: `{{render}}` cannot be called multiple times for the same route when not s
 
 This helper is currently under heavy development, and will likely change soon.
 
-このヘルパーは現在開発中です。そして近々変更されうるでしょう。
+このヘルパーは現在開発中です。そしておそらく近々変更されるでしょう。
 
 Note: The `{{control}}` helper is currently disabled by default. To enable it set `ENV.EXPERIMENTAL_CONTROL_HELPER = true` before requiring Ember.
 
