@@ -56,7 +56,7 @@ The model data for this route is the collection of todos whose `isCompleted` pro
 
 Normally transitioning into a new route changes the template rendered into the parent `{{outlet}}`, but in this case we'd like to reuse the existing `todos/index` template. We can accomplish this by implementing the `renderTemplate` method and calling `render` ourselves with the specific template and controller options.
 
-通常、新しいルートに移ると、親のアウトレットにレンダリングされるテンプレートが変更されます。しかしこの場合、私たちは既存の`todos/index`テンプレートを再利用したいのです。私たちは、`renderTemplate`メソッドを実装し、特定のテンプレートとコントローラーのオプションを使って自身の`render`メソッドを呼ぶことで、このことを実現することができます。
+通常、新しいルートに移ると、親の`{{outlet}}`にレンダリングされるテンプレートが変更されます。しかしこの場合、私たちは既存の`todos/index`テンプレートを再利用したいのです。`renderTemplate`メソッドを実装し、特定のテンプレートとコントローラーのオプションを使って自身の`render`メソッドを呼ぶことで、私たちはこれを実現することができます。
 
 Reload your web browser to ensure that there are no errors and the behavior described above occurs.
 
