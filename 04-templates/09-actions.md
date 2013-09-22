@@ -71,7 +71,7 @@ a method directly on the controller, it is strongly recommended that you
 put your action handling methods inside an `actions` hash for forward
 compatibility.
 
-アクションを扱うルートとコントローラーは、**`actions` ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをルートが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
+アクションを扱うルートとコントローラーは、`actions` **ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをルートが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
 コントローラーの場合、コントローラー上に直にあるメソッドを呼び出すことが非推奨ながらサポートされていますが、前方互換性のため、アクションハンドリングメソッドを`actions`ハッシュの中に配置することを強く勧めます。
 
 ```js
@@ -223,8 +223,7 @@ the event.
 `bubbles=false`があると、Ember.jsはブラウザーにイベントを伝播させることを止めさせます。
 
 ### Target Bubbling
-### 伝播をうまく利用する
-（訳者コメント：上記タイトル、良い対訳が見つからなかったのでかなり意訳しています）
+### 伝播先を狙う
 
 If the action is not found on the current controller, it will bubble up
 to the current route handler. From there, it will bubble up to parent
