@@ -138,7 +138,7 @@ the model is an Array, Ember.js will automatically supply an instance
 of `Ember.ArrayController`, which will present the backing Array as
 its model.
 
-この例では、私たちは`FavoritesController`を提供していません。このモデルは配列なので、Ember.jsは自動的にEmber.ArrayControllerのインスタンスを供給するのです。このインスタンスはコントローラの裏打ちとなる配列を対応するモデルとして提示します。
+この例では、私たちは`FavoritesController`を提供していません。このモデルは配列なので、Ember.jsは自動的にEmber.ArrayControllerのインスタンスを供給するのです。このインスタンスはコントローラの下支えとなる配列を対応するモデルとして提示します。
 
 You can treat the `ArrayController` as if it was the model itself.
 This has two major benefits:
