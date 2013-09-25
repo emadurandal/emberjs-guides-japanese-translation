@@ -1,5 +1,5 @@
-Japanese Translation for Official Ember.js Guides
-===================================
+# Japanese Translation for Official Ember.js Guides
+# Ember.js公式ガイドの日本語訳
 
 **Credit**  
 These documents are Ember.js guides which have been translated into Japanese with permission of Tom Dale([@tomdale](https://twitter.com/tomdale)).
