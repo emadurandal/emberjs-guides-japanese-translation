@@ -227,7 +227,7 @@ Visiting `/posts` is slightly different. It will first render the
 `posts` template. Then, it will render the `posts/index` template into the
 `posts` template's outlet.
 
-`/posts` の場合は、少し違う動作となります。まず、`posts`テンプレートがレンダリングされます。そして、`postsPテンプレートのOutletに`posts/index`テンプレートがレンダリングされます。
+`/posts` の場合は、少し違う動作となります。まず、`posts`テンプレートがレンダリングされます。そして、`posts`テンプレートのOutletに`posts/index`テンプレートがレンダリングされます。
 
 Finally, visiting `/posts/new` will first render the `posts` template,
 then render the `posts/new` template into its outlet.
