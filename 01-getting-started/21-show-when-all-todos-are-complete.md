@@ -16,7 +16,7 @@ Next we'll update our template to indicate when all todos have been completed. I
 
 This checkbox will be checked when the controller property `allAreDone` is `true` and unchecked when the property `allAreDone` is `false`.
 
-このチェックボックスは、コントローラーの`allAreDone`プロパティが`true`の時はチェックされ、`false`の時はチェックがはずされます。
+このチェックボックスは、Controllerの`allAreDone`プロパティが`true`の時はチェックされ、`false`の時はチェックがはずされます。
 
 In `js/controllers/todos_controller.js` implement the matching `allAreDone` property:
 
@@ -32,7 +32,7 @@ allAreDone: function (key, value) {
 
 This property will be `true` if the controller has any todos and every todo's `isCompleted` property is true. If the `isCompleted` property of any todo changes, this property will be recomputed. If the return value has changed, sections of the template that need to update will be automatically updated for us.
 
-このプロパティは、コントローラーが一つ以上のTodoを持っており、かつ、すべてのTodoの`isCompleted`プロパティがtrueである場合に、`true`になります。各Todoの`isCompleted`プロパティが変更されると、このプロパティが再計算されます。このプロパティの戻り値が変化すると、更新すべきテンプレートのセクションが自動的に更新されます。
+このプロパティは、Controllerが一つ以上のTodoを持っており、かつ、すべてのTodoの`isCompleted`プロパティがtrueである場合に、`true`になります。各Todoの`isCompleted`プロパティが変更されると、このプロパティが再計算されます。このプロパティの戻り値が変化すると、更新すべきテンプレートのセクションが自動的に更新されます。
 
 Reload your web browser to ensure that there are no errors and the behavior described above occurs. 
 

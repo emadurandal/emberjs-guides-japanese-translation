@@ -3,7 +3,7 @@
 
 Ember provides several helpers that allow you to render other views and templates in different ways.
 
-Emberは様々な異なる方法で他のビューやテンプレートをレンダリングすることを可能にするいくつかのヘルパーを提供しています。
+Emberは様々な異なる方法で他のViewやテンプレートをレンダリングすることを可能にするいくつかのヘルパーを提供しています。
 
 ### The `{{partial}}` Helper
 ### `{{partial}}`ヘルパー
@@ -45,7 +45,7 @@ The partial's `data-template-name` must start with an underscore (e.g. `data-tem
 
 This helper works like the partial helper, except instead of providing a template to be rendered within the current template, you provide a view class.  The view controls what template is rendered.
 
-このヘルパーはpartialヘルパーと似た働きをします。しかし、現在のテンプレートの中でレンダリングされるべきテンプレートを供給するのではなく、あなたがビュークラスを供給します。ビューがどのテンプレートがレンダリングされるかを制御します。
+このヘルパーはpartialヘルパーと似た働きをします。しかし、現在のテンプレートの中でレンダリングされるべきテンプレートを供給するのではなく、あなたがViewクラスを供給します。Viewがどのテンプレートがレンダリングされるかを制御します。
 
 ```javascript
 App.AuthorView = Ember.View.extend({
@@ -102,7 +102,7 @@ When using `{{view App.AuthorView}}`:
   
 * It will be rendered here, using the template associated with that view (the default template being "author")
   
-  ビューに関連づけられたテンプレート（デフォルトのテンプレートは"author"になります）を使ってこのヘルパーはレンダリングされます。
+  Viewに関連づけられたテンプレート（デフォルトのテンプレートは"author"になります）を使ってこのヘルパーはレンダリングされます。
 
 For more information, see [Inserting Views in Templates](http://emberjs.com/guides/views/inserting-views-in-templates/)
 
@@ -121,7 +121,7 @@ For more information, see [Inserting Views in Templates](http://emberjs.com/guid
   
 * The optional second parameter is a model, which will be passed to the controller if provided
   
-  オプションの２つ目のパラメーターはモデルです。モデルがもし渡されれば、それはコントローラーに渡されます。
+  オプションの２つ目のパラメーターはモデルです。Modelがもし渡されれば、それはControllerに渡されます。
 
 `{{render}}` does several things:
 
@@ -129,19 +129,19 @@ For more information, see [Inserting Views in Templates](http://emberjs.com/guid
 
 * When no model is provided it gets the singleton instance of the corresponding controller
   
-  モデルが渡されなかったとき、`{{render}}`は対応するコントローラーのシングルトンインスタンスを取得します。
+  Modelが渡されなかったとき、`{{render}}`は対応するControllerのシングルトンインスタンスを取得します。
   
 * When a model is provided it gets a unique instance of the corresponding controller
 
-  モデルが渡されたとき、`{{render}}`は対応するコントローラーのユニークなインスタンスを取得します。
+  Modelが渡されたとき、`{{render}}`は対応するControllerのユニークなインスタンスを取得します。
   
 * Renders the named template using this controller
   
-  このコントローラーを使って、指定されたテンプレートをレンダリングします。
+  このControllerを使って、指定されたテンプレートをレンダリングします。
   
 * Sets the model of the corresponding controller 
   
-  対応するコントローラーのモデルをセットします。
+  対応するControllerのModelをセットします。
 
 Modifying the post / author example slightly:
 
@@ -174,7 +174,7 @@ In this example, render will:
 
 * Get an instance of App.AuthorView if that class exists, otherwise uses a default generated view
   
-  もし存在していれば、App.AuthorViewクラスのインスタンスを取得し、存在していなければ、デフォルト生成されるビューを使います。
+  もし存在していれば、App.AuthorViewクラスのインスタンスを取得し、存在していなければ、デフォルト生成されるViewを使います。
   
 * Use the corresponding template (in this case the default of "author")
   
@@ -186,7 +186,7 @@ In this example, render will:
   
 * Set the AuthorController's model to the 2nd argument passed to render, here the author field on the post
   
-  AuthorControllerのモデルをrenderに渡された２つ目の引数にセットします。ここではpostのauthorフィールドです。
+  AuthorControllerのModelをrenderに渡された２つ目の引数にセットします。ここではpostのauthorフィールドです。
 
 * Render the template in place, with the context created in the previous steps.
   
@@ -194,7 +194,7 @@ In this example, render will:
 
 `{{render}}` does not require the presence of a matching route.  
 
-`{{render}}`はマッチしたルートの存在を要求しません。
+`{{render}}`はマッチしたRouteの存在を要求しません。
 
 `{{render}}` is similar to `{{outlet}}`. Both tell Ember to devote this portion of the page to something.
 
@@ -203,21 +203,21 @@ In this example, render will:
 `{{outlet}}`: The router determines the route and sets up the appropriate controllers/views/models.
 `{{render}}`: You specify (directly and indirectly) the appropriate controllers/views/models.
 
-`{{outlet}}`：ルーターはルートを決定し、適切なコントローラー／ビュー／モデルをセットアップします。
-`{{render}}`：あなたが（直接的または間接的に）適切なコントローラー／ビュー／モデルを指定します。
+`{{outlet}}`：RouterはControllerを決定し、適切なController／View／Modelをセットアップします。
+`{{render}}`：あなたが（直接的または間接的に）適切なController／View／Modelを指定します。
 
 
 
 Note: `{{render}}` cannot be called multiple times for the same route when not specifying a model.  For that you'll need `{{control}}`.
 
-注意：モデルを指定していないとき、同じルートで`{{render}}`を複数回呼ぶことはできません。そうしたいなら、`{{control}}`を使ってください。
+注意：Modelを指定していないとき、同じRouteで`{{render}}`を複数回呼ぶことはできません。そうしたいなら、`{{control}}`を使ってください。
 
 ### The `{{control}}` Helper
 ### `{{control}}`ヘルパー
 
 `{{control}}` works like render, except it uses a new controller instance for every call, instead of reusing the singleton controller.
 
-`{{controll}}`はrenderと似た働きをします。ただし、シングルトンコントローラーを再利用するのでなく、呼ばれるごとに、新しいコントローラーのインスタンスを使います。
+`{{controll}}`はrenderと似た働きをします。ただし、シングルトンControllerを再利用するのでなく、呼ばれるごとに、新しいControllerのインスタンスを使います。
 
 This helper is currently under heavy development, and will likely change soon.
 

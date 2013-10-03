@@ -61,21 +61,20 @@ In addition to plain HTML, templates can contain:
   outlet by the router. You can put outlets into your template using the
   `{{outlet}}` helper.
   
-  アウトレット：他のテンプレートのためのプレースホルダです。ユーザーがあなたのアプリの中を移動すると、異なるテンプレートがルータによってアウトレットに挿入されます。あなたは`{{outlet}}`ヘルパーを使って、テンプレートにアウトレットを配置できます。  
+  Outlet：他のテンプレートのためのプレースホルダです。ユーザーがあなたのアプリの中を移動すると、異なるテンプレートがルータによってアウトレットに挿入されます。あなたは`{{outlet}}`ヘルパーを使って、テンプレートにアウトレットを配置できます。  
 * **Components**, custom HTML elements that you can use to clean up
   repetitive templates or create reusable controls.
   
-  コンポーネント：反復的なテンプレートを整理するため、あるいは、再使用可能なコントロールをつくるために、使用できるカスタムHTML要素です。
+  Component：反復的なテンプレートを整理するため、あるいは、再使用可能なコントロールをつくるために、使用できるカスタムHTML要素です。
 
 #### Router
-#### ルーター
 
 The **router** translates a URL into a series of nested templates, each
 backed by a model. As the templates or models being shown to the user
 change, Ember automatically keeps the URL in the browser's address bar
 up-to-date.
 
-ルーターはURLを一連のネストされたテンプレートに変換します。テンプレートはそれぞれモデルによって支えられています。ユーザーに表示されているテンプレートまたはモデルが変化すると、EmberはブラウザのアドレスバーのURLを自動的に最新に保ちます。
+RouterはURLを一連のネストされたテンプレートに変換します。テンプレートはそれぞれモデルによって支えられています。ユーザーに表示されているテンプレートまたはModelが変化すると、EmberはブラウザのアドレスバーのURLを自動的に最新に保ちます。
 
 This means that, at any point, users are able to share the URL of your
 app. When someone clicks the link, they reliably see the same content as
@@ -84,41 +83,37 @@ the original user.
 これは、いかなる点でも、ユーザーがあなたのアプリケーションのURLを共有することができることを意味します。誰かがリンクをクリックするとき、彼らは最初のユーザーと同じ内容を確実に見ることができるのです。
 
 #### Components
-#### コンポーネント
 
 A **component** is a custom HTML tag whose behavior you implement using
 JavaScript and whose appearance you describe using Handlebars templates.
 They allow you to create reusable controls that can simplify your
 application's templates.
 
-コンポーネントは、あなたがJavaScriptを使ってその動作を実装でき、また、あなたがHandlebarsテンプレートを使ってその外観を表現できる、カスタムのHTMLタグです。コンポーネントを使うことで、あなたは再利用可能なコントロールを作成でき、それによってアプリケーションのテンプレートをシンプルにすることができます。
+Componentは、あなたがJavaScriptを使ってその動作を実装でき、また、あなたがHandlebarsテンプレートを使ってその外観を表現できる、カスタムのHTMLタグです。コンポーネントを使うことで、あなたは再利用可能なコントロールを作成でき、それによってアプリケーションのテンプレートをシンプルにすることができます。
 
 #### Models
-#### モデル
 
 A **model** is an object that stores _persistent state_. Templates are
 responsible for displaying the model to the user by turning it into
 HTML. In many applications, models are loaded via an HTTP JSON API,
 although Ember is agnostic to the backend that you choose.
 
-モデルは永続的な状態を保存するオブジェクトです。テンプレートは、モデルをHTMLに変換することによって、そのモデルをユーザーに表示する役割を果たします。多くのアプリケーションでは、モデルはHTTP JSON APIを通じて読み込まれます。しかし、Emberはあなたが選ぶバックエンドについては関知しません。
+Modelは永続的な状態を保存するオブジェクトです。テンプレートは、モデルをHTMLに変換することによって、そのモデルをユーザーに表示する役割を果たします。多くのアプリケーションでは、モデルはHTTP JSON APIを通じて読み込まれます。しかし、Emberはあなたが選ぶバックエンドについては関知しません。
 
 #### Route
-#### ルート
 
 A **route** is an object that tells the template which model it should
 display.
 
-ルートは、テンプレートにどのモデルを表示すべきかを伝えるオブジェクトです。
+Routeは、テンプレートにどのModelを表示すべきかを伝えるオブジェクトです。
 
 #### Controllers
-#### コントローラー
 
 A **controller** is an object that stores _application state_. A
 template can optionally have a controller in addition to a model, and
 can retrieve properties from both.
 
-コントローラーはアプリケーションの状態を保存するオブジェクトです。テンプレートはモデルに加えてコントローラを任意に持つことができ、両方からプロパティを読み出すことができます。
+Controllerはアプリケーションの状態を保存するオブジェクトです。テンプレートはModelに加えてControllerを任意に持つことができ、両方からプロパティを読み出すことができます。
 
 ---
 

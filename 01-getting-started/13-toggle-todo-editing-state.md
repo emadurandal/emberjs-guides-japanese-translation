@@ -27,7 +27,7 @@ We'll update the application to allow users to toggle into this editing state fo
 The above code applies three new behaviors to our application: it applies the CSS class `editing` when the controller's `isEditing` property is true and removes it when the `isEditing` property is false. We add a new `{{action}}` helper to the `<label>` so double-clicks will call `editTodo` on 
 this todo's controller. Finally, we wrap our todo in a Handlebars `{{if}}` helper so a text `<input>` will display when we are editing and the todos title will display when we are not editing.
 
-上のコードは、三つの新しい動作をアプリケーションに適用します。コントローラーの`isEditing`プロパティがtrueの時は、CSSクラス `editing` を付加し、`isEditing`プロパティがfalseの時はCSSクラス `editing` を取り除きます。また、`<label>`要素に`{{action}}`ヘルパーを加えることで、`<label>`要素をダブルクリックすると、Todoコントローラーの`editTodo`アクションが呼び出されるようにします。最後に、TodoをHandlebarsの`{{if}}`ヘルパーで囲み、編集中にはテキスト`<input>`要素が表示され、編集中でなければTodoのタイトルが表示されるようにします。
+上のコードは、三つの新しい動作をアプリケーションに適用します。Controllerの`isEditing`プロパティがtrueの時は、CSSクラス `editing` を付加し、`isEditing`プロパティがfalseの時はCSSクラス `editing` を取り除きます。また、`<label>`要素に`{{action}}`ヘルパーを加えることで、`<label>`要素をダブルクリックすると、TodoのControllerの`editTodo`アクションが呼び出されるようにします。最後に、TodoをHandlebarsの`{{if}}`ヘルパーで囲み、編集中にはテキスト`<input>`要素が表示され、編集中でなければTodoのタイトルが表示されるようにします。
 
 Inside `js/controllers/todo_controller.js` we'll implement the matching logic for this template behavior:
 
@@ -48,7 +48,7 @@ isEditing: false,
 
 Above we defined an initial `isEditing` value of `false` for controllers of this type and said that when the `editTodo` action is called it should set the `isEditing` property of this controller to `true`.  This will automatically trigger the sections of template that use `isEditing` to update their rendered content.
 
-上のコードでは、コントローラーに初期値が`false`の`isEdithing`プロパティを定義し、`editTodo`アクションがコールされたら、isEditingプロパティを`true`にセットするようにしました。コントローラーは、テンプレートのこのセクションを自動的にトリガし、`isEditing`プロパティを使ってレンダリングされる内容を更新します。
+上のコードでは、Controllerに初期値が`false`の`isEdithing`プロパティを定義し、`editTodo`アクションがコールされたら、isEditingプロパティを`true`にセットするようにしました。Controllerは、テンプレートのこのセクションを自動的にトリガし、`isEditing`プロパティを使ってレンダリングされる内容を更新します。
 
 Reload your web browser to ensure that no errors occur. You can now double-click a todo to edit it.
 

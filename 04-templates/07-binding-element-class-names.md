@@ -14,7 +14,7 @@ HTML要素の`class`属性は他の属性と同じようにバインドできま
 
 If the controller's `priority` property is `"p4"`, this template will emit the following HTML:
 
-もしコントローラーの`priority`プロパティが`”p4”`なら、このテンプレートは次のようなHTMLを出力します。
+もしControllerの`priority`プロパティが`”p4”`なら、このテンプレートは次のようなHTMLを出力します。
 
 ```html
 <div class="p4">

@@ -80,18 +80,18 @@ be full _property paths_ (e.g. `person.address.country`).
 `fullName`ヘルパーに渡されるパスと、その依存キーの両方とも、完全なプロパティパスになります（例えば、`person.address.country`）。
 
 ### Custom View Helpers
-### カスタムビューヘルパー
+### カスタムViewヘルパー
 
 You may also find yourself rendering your view classes in multiple
 places using the `{{view}}` helper. In this case, you can save yourself
 some typing by registering a custom view helper.
 
-あなたは、複数の場所で`{{view}}`ヘルパーを使って、ビュークラスをレンダリングする自分に気がつくかもしれません。こうした場合、カスタムビューヘルパーを登録することで、タイプ量を減らすことができます。
+あなたは、複数の場所で`{{view}}`ヘルパーを使って、Viewクラスをレンダリングする自分に気がつくかもしれません。こうした場合、カスタムViewヘルパーを登録することで、タイプ量を減らすことができます。
 
 For example, let’s say you have a view called `App.CalendarView`.
 You can register a helper like this:
 
-例えば、`App.CalendarView`というビューがあるとしましょう。あなたは次のようにヘルパーを登録することができます。
+例えば、`App.CalendarView`というViewがあるとしましょう。あなたは次のようにヘルパーを登録することができます。
 
 ```javascript
 Ember.Handlebars.helper('calendar', App.CalendarView);

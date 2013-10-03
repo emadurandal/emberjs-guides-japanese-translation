@@ -33,7 +33,7 @@ handlers_. The active handlers can change for one of two reasons:
 1. The user interacted with a view, which generated an event that caused
    the URL to change.
    
-   ユーザーがビューを操作し、ビューがURLを変更させるイベントを生成した。
+   ユーザーがビューを操作し、ViewがURLを変更させるイベントを生成した。
    
 2. The user changed the URL manually (e.g., via the back button), or the
    page was loaded for the first time.
@@ -51,12 +51,12 @@ or more of the following:
 
 2. Update a controller so that it represents a particular model.
    
-   コントローラーを更新する。それにより、コントローラーが特定のモデルを表示する。
+   Controllerを更新する。それにより、Controllerが特定のモデルを表示する。
    
 3. Change the template on screen, or place a new template into an
    existing outlet.
    
-   画面のテンプレートを変更する。あるいは、既存のoutletに新しいテンプレートを配置する。
+   画面のテンプレートを変更する。あるいは、既存のOutletに新しいテンプレートを配置する。
 
 ### Logging Route Changes
 ### Routeの変更のロギング

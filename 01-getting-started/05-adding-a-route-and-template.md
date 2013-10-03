@@ -3,11 +3,11 @@
 
 Next, we will create an Ember.js application, a route ('`/`'), and convert our static mockup into a Handlebars template.
 
-次に、Ember.jsアプリケーションとルート（'`/`'）を作り、そして静的なモックアップをHandlebarsテンプレートに変換します。
+次に、Ember.jsアプリケーションとRoute（'`/`'）を作り、そして静的なモックアップをHandlebarsテンプレートに変換します。
 
 Inside your `js` directory, add a file for the application at `js/application.js` and a file for the router at `js/router.js`. You may place these files anywhere you like (even just putting all code into the same file), but this guide will assume you have separated them into their own files and named them as indicated.
 
-`js`ディレクトリの中で、アプリケーションのためのファイル`js/application.js`、そしてルーターのためのファイル`js/router.js`を追加します。あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルに押し込めてもかまいません）、このガイドでは、上述した指定の名前のファイルに分離することを想定します。
+`js`ディレクトリの中で、アプリケーションのためのファイル`js/application.js`、そしてRouterのためのファイル`js/router.js`を追加します。あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルに入れてもかまいません）、このガイドでは、上述した指定の名前のファイルに分離することを想定します。
 
 Inside `js/application.js` add the following code:
 

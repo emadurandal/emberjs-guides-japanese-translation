@@ -55,13 +55,13 @@ App.PostController = Ember.ObjectController.extend({
 By default, the `{{action}}` helper triggers a method on the template's
 controller, as illustrated above.
 
-標準では、上述したように、`{{action}}`ヘルパーはテンプレートのコントローラーのメソッドを呼び出します。
+標準では、上述したように、`{{action}}`ヘルパーはテンプレートのControllerのメソッドを呼び出します。
 
 If the controller does not implement a method with the same name as the
 action in its actions object, the action will be sent to the router, where
 the currently active leaf route will be given a chance to handle the action.
 
-もしコントローラーが、そのアクションオブジェクトのアクションと同じ名前のメソッドを実装していなければ、アクションはルーターに送られます。そこで、現在のアクティブな末端のルートはそのアクションを扱う機会を与えられます。
+もしControllerが、そのアクションオブジェクトのアクションと同じ名前のメソッドを実装していなければ、アクションはRouterに送られます。そこで、現在のアクティブな末端のRouteはそのアクションを扱う機会を与えられます。
 
 Routes and controllers that handle actions **must place action handlers
 inside an `actions` hash**. Even if a route has a method with the same name
@@ -71,8 +71,8 @@ a method directly on the controller, it is strongly recommended that you
 put your action handling methods inside an `actions` hash for forward
 compatibility.
 
-アクションを扱うルートとコントローラーは、`actions` **ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをルートが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
-コントローラーの場合、コントローラー上に直にあるメソッドを呼び出すことが非推奨ながらサポートされていますが、前方互換性のため、アクションハンドリングメソッドを`actions`ハッシュの中に配置することを強く勧めます。
+アクションを扱うRouteとControllerは、`actions` **ハッシュの中にアクションハンドラーを設置する必要があります** 。たとえアクションと同じ名前のメソッドをRouteが持っていたとしても、それが`actions`ハッシュの中になければ、それは呼び出されません。
+Controllerの場合、Controller上に直にあるメソッドを呼び出すことが非推奨ながらサポートされていますが、前方互換性のため、アクションハンドリングメソッドを`actions`ハッシュの中に配置することを強く勧めます。
 
 ```js
 App.PostRoute = Ember.Route.extend({
@@ -91,20 +91,20 @@ App.PostRoute = Ember.Route.extend({
 As you can see in this example, the action handlers are called such
 that when executed, `this` is the route, not the `actions` hash.
 
-この例をみて分かるとおり、アクションハンドラーがコールされた時、`this`は`actions`ハッシュでなく、ルートを指しています。
+この例をみて分かるとおり、アクションハンドラーがコールされた時、`this`は`actions`ハッシュでなく、Routeを指しています。
 
 If neither the template's controller nor the currently active route
 implements a handler, the action will continue to bubble to any parent
 routes. Ultimately, if an `ApplicationRoute` is defined, it will have an
 opportunity to handle the action.
 
-テンプレートのコントローラーと現在のアクティブなルートのどちらもハンドラーを実装していない場合、アクションは親のルートに伝搬し続けます。最終的に、もし`ApplicationRoute`が定義されていれば、`ApplicationRoute`がそのアクションを扱います。
+テンプレートのControllerと現在のアクティブなRouteのどちらもハンドラーを実装していない場合、アクションは親のRouteに伝搬し続けます。最終的に、もし`ApplicationRoute`が定義されていれば、`ApplicationRoute`がそのアクションを扱います。
 
 When an action is triggered, but no matching action handler is
 implemented on the controller, the current route, or any of the
 current route's ancestors, an error will be thrown.
 
-アクションが呼び出されたとき、コントローラー、現在のルート、または現在のルートのどの祖先も対応するアクションハンドラーを実装していないのであれば、エラーが投げられます。
+アクションが呼び出されたとき、Controller、現在のRoute、または現在のRouteのどの祖先も対応するアクションハンドラーを実装していないのであれば、エラーが投げられます。
 
 ![Action Bubbling](http://emberjs.com/images/template-guide/action-bubbling.png)
 
@@ -128,7 +128,7 @@ For example, if the `post` argument was passed:
 The route's `select` action handler would be called with a single argument
 containing the post model:
 
-ルートの`select`アクションハンドラーはpostモデルを含んだ一つの引数をともなって呼び出されます。
+Routeの`select`アクションハンドラーはpost Modelを含んだ一つの引数をともなって呼び出されます。
 
 ```js
 App.PostController = Ember.ObjectController.extend({
@@ -229,7 +229,7 @@ If the action is not found on the current controller, it will bubble up
 to the current route handler. From there, it will bubble up to parent
 route handlers until it reaches the application route.
 
-現在のコントローラーにアクションが見つからない場合、アクションは現在のルートのハンドラーに伝播されます。そこから、アクションはアプリケーションルートに達するまで、親のルートのハンドラーを伝播します。
+現在のControllerにアクションが見つからない場合、アクションは現在のRouteのハンドラーに伝播されます。そこから、アクションはアプリケーションルートに達するまで、親のRouteのハンドラーを伝播します。
 
 Define actions on the route's `actions` property.
 
@@ -260,13 +260,13 @@ By default, the `{{action}}` helper will send the action to the view's
 target, which is generally the view's controller. (Note: in the case of
 an Ember.Component, the default target is the component itself.)
 
-標準では、`{{action}}`ヘルパーはビューのターゲット（一般にはビューのコントローラー）にアクションを送ります。
-（注意：Ember.Componentの場合は、デフォルトターゲットはコンポーネント自身です。）
+標準では、`{{action}}`ヘルパーはViewのターゲット（一般にはViewのController）にアクションを送ります。
+（注意：Ember.Componentの場合は、デフォルトターゲットはComponent自身です。）
 
 You can specify an alternative target by using the `target` option. This
 is most commonly used to send actions to a view instead of a controller.
 
-`target`オプションを使うことで、代わりのターゲットを指定することができます。これは通常、コントローラーの代わりにビューにアクションを送るときによく使われます。
+`target`オプションを使うことで、代わりのターゲットを指定することができます。これは通常、Controllerの代わりにViewにアクションを送るときによく使われます。
 
 ```handlebars
 <p>

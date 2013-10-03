@@ -7,7 +7,7 @@ In the previous step we updated TodoMVC to allow a user to toggle the display of
 
 To accomplish this, we'll create a new custom component and register it with Handlebars to make it available to our templates.
 
-これを実現するために、新しいカスタムコンポーネントを作成し、それをテンプレートで利用できるよう、Handlebarsに登録します。
+これを実現するために、新しいカスタムComponentを作成し、それをテンプレートで利用できるよう、Handlebarsに登録します。
 
 Create a new file `js/views/edit_todo_view.js`. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
 
@@ -41,7 +41,7 @@ In `index.html` require this new file:
 
 In `index.html` replace the static `<input>` element with our custom `{{edit-todo}}` component, connecting the `value` property, and actions:
 
-`index.html`で、静的な`<input>`要素を私たちのカスタム`{{edit-todo}}`コンポーネントで置き換えます。このコンポーネントは`value`プロパティと次のアクションに接続します。
+`index.html`で、静的な`<input>`要素を私たちのカスタム`{{edit-todo}}` Componentで置き換えます。このコンポーネントは`value`プロパティと次のアクションに接続します。
 
 ```handlebars
 <!--- ... additional lines truncated for brevity ... -->
@@ -58,7 +58,7 @@ Pressing the `<enter>` key  will trigger the `acceptChanges` event on the instan
 
 Additionally, we connect the `value` property of this `<input>` to the `title` property of this instance of `TodoController`. We will not implement a `title` property on the controller so it will retain the default behavior of proxying all requests to its `model`. 
 
-さらに、この`<input>`要素の`value`プロパティを`TodoController`インスタンスの`title`プロパティに接続します。私たちはコントローラー上に`title`プロパティを実装していないので、コントローラーはすべての要求をモデルにプロキシ（中継）するという標準の動作をとります。
+さらに、この`<input>`要素の`value`プロパティを`TodoController`インスタンスの`title`プロパティに接続します。私たちはController上に`title`プロパティを実装していないので、Controllerはすべての要求をモデルにプロキシ（中継）するという標準の動作をとります。
 
 A CSS class `edit` is applied for styling.
 

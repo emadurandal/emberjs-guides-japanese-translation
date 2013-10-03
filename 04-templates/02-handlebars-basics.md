@@ -78,12 +78,12 @@ to Ember.js.
 Each template has an associated _controller_: this is where the template 
 finds the properties that it displays.
 
-それぞれのテンプレートは関連するコントローラーを持っています。このコントローラーとは、テンプレートが表示すべきプロパティーを探し出す場所なのです。
+それぞれのテンプレートは関連するControllerを持っています。このControllerとは、テンプレートが表示すべきプロパティーを探し出す場所なのです。
 
 You can display a property from your controller by wrapping the property
 name in curly braces, like this:
 
-次に示すように、波括弧でプロパティ名を囲むことで、コントローラーからプロパティーを表示することができます。
+次に示すように、波括弧でプロパティ名を囲むことで、Controllerからプロパティーを表示することができます。
 
 ```handlebars
 Hello, <strong>{{firstName}} {{lastName}}</strong>!
@@ -93,7 +93,7 @@ This would look up the `firstName` and `lastName` properties from the
 controller, insert them into the HTML described in the template, then
 put them into the DOM.
 
-テンプレートはコントローラーから`firstName`プロパティと`lastName`プロパティを探し出し、テンプレートの中に書かれたHTMLにそれらを挿入します。そして、それらをDOMに入れこみます。
+テンプレートはControllerから`firstName`プロパティと`lastName`プロパティを探し出し、テンプレートの中に書かれたHTMLにそれらを挿入します。そして、それらをDOMに入れこみます。
 
 By default, your top-most application template is bound to your `ApplicationController`:
 
@@ -109,7 +109,7 @@ App.ApplicationController = Ember.Controller.extend({
 The above template and controller would combine to display the following
 rendered HTML:
 
-上記のテンプレートとコントローラーは、次に示すレンダリングされたHTMLを表示するために結合されます。
+上記のテンプレートとControllerは、次に示すレンダリングされたHTMLを表示するために結合されます。
 
 ```html
 Hello, <strong>Trek Glowacki</strong>!
@@ -124,6 +124,6 @@ by your templates ever change, your HTML will be updated automatically.
 As your application grows in size, it will have many templates, each
 bound to different controllers.
 
-あなたのアプリケーションのサイズが増大するにつれ、アプリケーションは、それぞれ異なるコントローラーにバインドされる、多くのテンプレートを持つようになるでしょう。
+あなたのアプリケーションのサイズが増大するにつれ、アプリケーションは、それぞれ異なるControllerにバインドされる、多くのテンプレートを持つようになるでしょう。
 
 (The original document’s commit SHA1: 656381fe1aaaa8a85686db42c8aa80c248032253)

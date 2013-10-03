@@ -3,7 +3,7 @@
 
 Next we'll update our static HTML `<input>` to an Ember view that can expose more complex behaviors.  Update `index.html` to replace the new todo `<input>` with a `{{input}}` helper:
 
-次に、静的なHTML `<input>`要素をより複雑な動作を表現できるEmberビューに更新します。`index.html`を更新して、（`new-todo`というidの）`<input>`を`{{input}}`ヘルパーに置き換えてください。
+次に、静的なHTML `<input>`要素をより複雑な動作を表現できるEmber viewに更新します。`index.html`を更新して、（`new-todo`というidの）`<input>`を`{{input}}`ヘルパーに置き換えてください。
 
 ```handlebars
 <!--- ... additional lines truncated for brevity ... -->
@@ -15,15 +15,15 @@ Next we'll update our static HTML `<input>` to an Ember view that can expose mor
 
 This will render an `<input>` element at this location with the same `id` and `placeholder` attributes applied. It will also connect the `newTitle` property of this template's controller to the `value` attribute of the `<input>`. When one changes, the other will automatically update to remain synchronized.
 
-このヘルパーは、この場所に同じ`id`と`placeholder`属性を持った`<input>`要素をレンダリングします。また、テンプレートのコントローラーの`newTitle`プロパティを`<input>`要素の`value`属性に接続します。どちらか片方が変更されたら、もう一方が同期を保つために自動的に更新されます。
+このヘルパーは、この場所に同じ`id`と`placeholder`属性を持った`<input>`要素をレンダリングします。また、テンプレートのControllerの`newTitle`プロパティを`<input>`要素の`value`属性に接続します。どちらか片方が変更されたら、もう一方が同期を保つために自動的に更新されます。
 
 Additionally, we connect user interaction (pressing the `<enter>` key) to a method `createTodo` on this template's controller.
 
-さらに、ユーザーの操作（`<enter>`キーを押す）を、テンプレートのコントローラーの`createTodo`メソッドに接続します。
+さらに、ユーザーの操作（`<enter>`キーを押す）を、テンプレートのControllerの`createTodo`メソッドに接続します。
 
 Because we have not needed a custom controller behavior until this point, Ember.js provided a default controller object for this template. To handle our new behavior, we can implement the controller class Ember.js expects to find [according to its naming conventions](/guides/concepts/naming-conventions) and add our custom behavior. This new controller class will automatically be associated with this template for us.
 
-私たちはこの時点までは、カスタムのコントローラーの動作を必要としていなかったので、Ember.jsはこのテンプレートのためにデフォルトのコントローラーオブジェクトを提供していました。私たちのこの新しい動作を扱うために、Ember.jsが期待する命名規則に従ってコントローラークラスを実装し、私たちのカスタムの動作を加えることができます。この新しいコントローラークラスは、自動的にこのテンプレートと関連づけられます。
+私たちはこの時点までは、カスタムのControllerの動作を必要としていなかったので、Ember.jsはこのテンプレートのためにデフォルトのControllerオブジェクトを提供していました。私たちのこの新しい動作を扱うために、Ember.jsが期待する命名規則に従ってControllerクラスを実装し、私たちのカスタムの動作を加えることができます。この新しいControllerクラスは、自動的にこのテンプレートと関連づけられます。
 
 Add a `js/controllers/todos_controller.js` file. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
 
@@ -59,7 +59,7 @@ Todos.TodosController = Ember.ArrayController.extend({
 
 This controller will now respond to user action by using its `newTitle` property as the title of a new todo whose `isCompleted` property is false.  Then it will clear its `newTitle` property which will synchronize to the template and reset the textfield. Finally, it persists any unsaved changes on the todo.
 
-これでこのコントローラーは、`isCompleted`プロパティがfalseである新しいTodoのタイトルとして`newTitle`プロパティを使うことよってユーザーの操作に反応するようになります。そして、コントローラーは`newTitle`プロパティをクリアし、その結果`newTitle`プロパティがテンプレートに同期しテキストフィールドをリセットします。最後に、コントローラーはTodoのまだ保存されていない変更を保存します。
+これでこのControllerは、`isCompleted`プロパティがfalseである新しいTodoのタイトルとして`newTitle`プロパティを使うことよってユーザーの操作に反応するようになります。そして、Controllerは`newTitle`プロパティをクリアし、その結果`newTitle`プロパティがテンプレートに同期しテキストフィールドをリセットします。最後に、ControllerはTodoのまだ保存されていない変更を保存します。
 
 In `index.html` include `js/controllers/todos_controller.js` as a dependency:
 

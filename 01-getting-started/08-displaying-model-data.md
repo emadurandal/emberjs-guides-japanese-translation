@@ -19,7 +19,7 @@ Todos.TodosRoute = Ember.Route.extend({
 
 Because we hadn't implemented this object before, Ember.js provided a `Route` for us with the default behavior of rendering a matching template named `todos` using its [naming conventions for object creation](/guides/concepts/naming-conventions/).
 
-私たちはそれまで、このオブジェクトを実装していなかったので、Ember.jsは『オブジェクト生成のための命名規則』を使って、マッチするテンプレート（今回は、`todos`と名付けられたテンプレート）をレンダリングするというデフォルト動作を持つルートを私たちのために提供していたのです。
+私たちはそれまで、このオブジェクトを実装していなかったので、Ember.jsは『オブジェクト生成のための命名規則』を使って、マッチするテンプレート（今回は、`todos`と名付けられたテンプレート）をレンダリングするというデフォルト動作を持つRouteを私たちのために提供していたのです。
 
 Now that we need custom behavior (returning a specific set of models), we implement the class and add the desired behavior.
 
@@ -44,7 +44,7 @@ Update `index.html` to replace the static `<li>` elements with a Handlebars `{{e
 
 The template loops over the content of its controller. This controller is an instance of `ArrayController` that Ember.js has provided for us as the container for our models. Because we don't need custom behavior for this object yet, we can use the default object provided by the framework.
 
-このテンプレートは（このテンプレートに対応する）コントローラーの内容でループ処理を行います。このコントローラーは、Ember.jsが私たちのモデルのためのコンテナとして提供した`ArrayController`のインスタンスです。私たちはこのオブジェクトについてカスタムの動作をまだ必要としていないので、フレームワークから提供されるデフォルトのオブジェクトを使用することができます。
+このテンプレートは（このテンプレートに対応する）Controllerの内容でループ処理を行います。このControllerは、Ember.jsが私たちのモデルのためのコンテナとして提供した`ArrayController`のインスタンスです。私たちはこのオブジェクトについてカスタムの動作をまだ必要としていないので、フレームワークから提供されるデフォルトのオブジェクトを使用することができます。
 
 Reload your web browser to ensure that all files have been referenced correctly and no errors occur.
 

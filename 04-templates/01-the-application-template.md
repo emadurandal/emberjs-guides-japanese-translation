@@ -11,7 +11,7 @@ here. Additionally, you should have at least one `{{outlet}}`:
 a placeholder that the router will fill in with the appropriate template,
 based on the current URL.
 
-あなたはヘッダーやフッター、そして他の装飾的なコンテンツをここ（Applicationテンプレート）に置いてください。加えて、あなたはそこに少なくとも一つの`{{outlet}}`を置いてください。`{{outlet}}`は、現在のURLに基づいて、ルーターによって適切なテンプレートで埋められるプレースホルダーです。
+あなたはヘッダーやフッター、そして他の装飾的なコンテンツをここ（Applicationテンプレート）に置いてください。加えて、あなたはそこに少なくとも一つの`{{outlet}}`を置いてください。`{{outlet}}`は、現在のURLに基づいて、Routerによって適切なテンプレートで埋められるプレースホルダーです。
 
 Here's an example template:
 
@@ -40,7 +40,7 @@ currently at `/posts` or `/posts/15`, for example.
 For more information about how outlets are filled in by the router, see
 [Routing](/guides/routing).
 
-アウトレットがルーターによって、どのように（コンテンツを）埋め込まれるのかについて、より多くの情報を得るには、Routingのセクションを参照してください。
+OutletがRouterによって、どのように（コンテンツを）埋め込まれるのかについて、より多くの情報を得るには、Routingのセクションを参照してください。
 
 If you are keeping your templates in HTML, create a `<script>` tag
 without a template name. It will automatically be compiled and appended

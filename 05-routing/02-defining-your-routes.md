@@ -44,7 +44,7 @@ Inside your templates, you can use `{{link-to}}` to navigate between
 routes, using the name that you provided to the `route` method (or, in
 the case of `/`, the name `index`).
 
-テンプレートの中で、`{{link-to}}`ヘルパーに`route`メソッドで指定した名前を渡すことで（あるいは、`/`のときは`index`という名前を渡すことで）、ルート間をナビゲートさせることができます。
+テンプレートの中で、`{{link-to}}`ヘルパーに`route`メソッドで指定した名前を渡すことで（あるいは、`/`のときは`index`という名前を渡すことで）、Route間をナビゲートさせることができます。
 
 ```handlebars
 {{#link-to 'index'}}<img class="logo">{{/link-to}}
@@ -93,7 +93,7 @@ automatically generate one for you.)
 Ember.js automatically figures out the names of routes and controllers based on
 the name you pass to `this.route`.
 
-Ember.jsは、`this.route`メソッドに渡した名前に基づいて、自動的にルートとコントローラーの名前を把握します。
+Ember.jsは、`this.route`メソッドに渡した名前に基づいて、自動的にRouteとControllerの名前を把握します。
 
 <table>
   <thead>
@@ -132,7 +132,7 @@ Ember.jsは、`this.route`メソッドに渡した名前に基づいて、自動
 
 You can define groups of routes that work with a resource:
 
-Resourceと連携する、ルートのグループを定義することができます。
+Resourceと連携する、Routeのグループを定義することができます。
 
 ```javascript
 App.Router.map(function() {
@@ -145,7 +145,7 @@ App.Router.map(function() {
 As with `this.route`, you can leave off the path if it's the same as the
 name of the route, so the following router is equivalent:
 
-`this.route`メソッドと同じように、ルートの名前と同じパスは省略することができます。なので次のRouterは先ほどのものと同等です。
+`this.route`メソッドと同じように、Routeの名前と同じパスは省略することができます。なので次のRouterは先ほどのものと同等です。
 
 ```javascript
 App.Router.map(function() {
@@ -217,7 +217,7 @@ name as their route name. If you want to transition to a route (either
 via `transitionTo` or `{{#link-to}}`, make sure to use the full route
 name (`posts.new`, not `new`).
 
-Resourceの下に入れ子にされたRouteは、リソースの名前にプラスしてルート自身の名前を取ります。もし（`transitionTo`または`{{#link-to}}`を通して）Routeに遷移したいなら、フルルート名（`new`ではなく、`posts.new`）を使うようにしてください。
+Resourceの下に入れ子にされたRouteは、Resourceの名前にプラスしてRoute自身の名前を取ります。もし（`transitionTo`または`{{#link-to}}`を通して）Routeに遷移したいなら、フルRoute名（`new`ではなく、`posts.new`）を使うようにしてください。
 
 Visiting `/` renders the `index` template, as you would expect.
 

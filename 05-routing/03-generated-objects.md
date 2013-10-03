@@ -8,14 +8,14 @@ these objects is not found, appropriate objects will be generated in memory for 
 
 [1]: http://emberjs.com/guides/routing/defining-your-routes/
 
-[routing guide][1]（[日本語版](https://github.com/emadurandal/emberjs-guides-japanese-translation/blob/master/05-routing/02-defining-your-routes.md)）で説明した通り、新しいRouteを定義するときはいつでも、Ember.jsは命名規則によって名付けられた、対応するルート、コントローラー、ビュー、テンプレートのクラスを見つけようと試みます。もしこれらのオブジェクトの実装が見つからなければ、あなたのために適切なオブジェクトがメモリ内に生成されます。
+[routing guide][1]（[日本語版](https://github.com/emadurandal/emberjs-guides-japanese-translation/blob/master/05-routing/02-defining-your-routes.md)）で説明した通り、新しいRouteを定義するときはいつでも、Ember.jsは命名規則によって名付けられた、対応するRoute、Controller、View、テンプレートのクラスを見つけようと試みます。もしこれらのオブジェクトの実装が見つからなければ、あなたのために適切なオブジェクトがメモリ内に生成されます。
 
 #### Generated routes
 #### 生成されるRoute
 
 Given you have the following route:
 
-次のようなルートがあったとして、
+次のようなRouteがあったとして、
 
 ```javascript
 App.Router.map(function() {
@@ -37,22 +37,22 @@ all generated routes will be instances of that route.
 あなたは生成される全てのRouteをカスタムRouteに拡張することができます。もし`App.Route`を定義したら、すべての生成されたRouteはそのRouteのインスタンスとなります。
 
 #### Generated Controllers
-#### 生成されるコントローラー
+#### 生成されるController
 
 If you navigate to route `posts`, Ember.js looks for a controller called `App.PostsController`.
 If you did not define it, one will be generated for you.
 
-もしあなたがRoute `posts`に移動したら、Ember.jsは`App.PostsController`と呼ばれるコントローラーを探します。もしあなたが`App.PostsController`を定義しなければ、あなたのために`App.PostsController`が生成されます。
+もしあなたがRoute `posts`に移動したら、Ember.jsは`App.PostsController`と呼ばれるControllerを探します。もしあなたが`App.PostsController`を定義しなければ、あなたのために`App.PostsController`が生成されます。
 
 Ember.js can generate three types of controllers:
 `Ember.ObjectController`, `Ember.ArrayController`, and `Ember.Controller`.
 
-Ember.jsは次の３つのタイプのコントローラーを生成できます。`Ember.ObjectController`、`Ember.ArrayController`、そして`Ember.Controller`です。
+Ember.jsは次の３つのタイプのControllerを生成できます。`Ember.ObjectController`、`Ember.ArrayController`、そして`Ember.Controller`です。
 
 The type of controller Ember.js chooses to generate for you depends on your route's
 `model` hook:
 
-あなたのために生成しようとEmber.jsが選ぶコントローラーのタイプは、あなたのルートの`model`フックに依存します。
+あなたのために生成しようとEmber.jsが選ぶControllerのタイプは、あなたのRouteの`model`フックに依存します。
 
 - If it returns an object (such as a single record), an [ObjectController][2] will be generated.
   
@@ -76,7 +76,7 @@ The type of controller Ember.js chooses to generate for you depends on your rout
 If you want to customize generated controllers, you can define your own `App.Controller`, `App.ObjectController`
 and `App.ArrayController`.  Generated controllers will extend one of these three (depending on the conditions above).
 
-もし生成されるコントローラーをカスタマイズしたい場合は、あなた独自の`App.Controller`、`App.ObjectController`、`App.ArrayController`を定義することができます。自動生成されるコントローラーはこれら３つのうちの一つ（どれになるかは上述の条件に依存します）を拡張します。
+もし生成されるControllerをカスタマイズしたい場合は、あなた独自の`App.Controller`、`App.ObjectController`、`App.ArrayController`を定義することができます。自動生成されるControllerはこれら３つのうちの一つ（どれになるかは上述の条件に依存します）を拡張します。
 
 
 #### Generated Views and Templates
@@ -91,7 +91,7 @@ A generated template is empty.
 If it's a resource template, the template will simply act
 as an `outlet` so that nested routes can be seamlessly inserted.  It is equivalent to:
 
-生成されるテンプレートは空です。もしそれがリソーステンプレートなら、単純に`outlet`として振る舞うので、ネストされたRouteをシームレスに挿入することができます。生成されるリソーステンプレートは次のコードと同等です。
+生成されるテンプレートは空です。もしそれがResourceテンプレートなら、単純に`outlet`として振る舞うので、ネストされたRouteをシームレスに挿入することができます。生成されるResourceテンプレートは次のコードと同等です。
 
 ```handlebars
 {{outlet}}

@@ -3,7 +3,7 @@
 
 Next we will create a model class to describe todo items. 
 
-次に、todo項目を表現するモデルクラスを作成します。
+次に、todo項目を表現するModelクラスを作成します。
 
 Create a file at `js/models/todo.js` and put the following code inside:
 
@@ -22,7 +22,7 @@ This code creates a new class `Todo` and places it within your application's nam
 
 You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created a file and named it as indicated.
 
-あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルに押し込めてもかまいません）、このガイドでは、あなたが上述した指定の名前のファイルを作成することを想定します。
+あなたはこれらのファイルをどこでも好きな場所に配置してよいですが（全てのコードを同一ファイルに入れてもかまいません）、このガイドでは、あなたが上述した指定の名前のファイルを作成することを想定します。
 
 Finally, update your `index.html` to include a reference to this new file:
 

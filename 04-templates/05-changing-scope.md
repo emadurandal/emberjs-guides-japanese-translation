@@ -29,7 +29,7 @@ context, by default, is the template's controller. By using the `{{#with}}`
 helper, you can change the context of all of the Handlebars expressions
 contained inside the block.
 
-`{{#with}}`はあなたが通るブロックのコンテキストをそれ（withで指定したもの）に変えます。標準では、コンテキストはテンプレートのコントローラーです。`{{#with}}`ヘルパーを使うことで、ブロックの中に含まれる全てのHandlebarsの式のコンテキストを変更することができます。
+`{{#with}}`はあなたが通るブロックのコンテキストをそれ（withで指定したもの）に変えます。標準では、コンテキストはテンプレートのControllerです。`{{#with}}`ヘルパーを使うことで、ブロックの中に含まれる全てのHandlebarsの式のコンテキストを変更することができます。
 
 Note: it's possible to store the context within a variable for nested 
 usage using the "as" keyword:

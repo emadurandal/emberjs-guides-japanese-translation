@@ -5,7 +5,7 @@ Ember.js uses naming conventions to wire up your objects without a
 lot  of boilerplate. You will want to  use the conventional names
 for your routes, controllers and templates.
 
-Ember.jsは、沢山の決まりきったコーディングをすることなくあなたのオブジェクトに接続するために、命名規則を使います。あなたは、ルート、コントローラ、テンプレートに、規約に従った名前を使用したくなるでしょう。
+Ember.jsは、沢山の決まりきったコーディングをすることなくあなたのオブジェクトに接続するために、命名規則を使います。あなたは、Route、Controller、テンプレートに、規約に従った名前を使用したくなるでしょう。
 
 You can usually guess the names, but this guide outlines, in one place, all of the naming conventions.
 
@@ -28,7 +28,7 @@ instance of `App.ApplicationController` as the controller for the
 template. This means that the template will get its properties from
 the controller.
 
-Ember.jsは`application`テンプレートをメインテンプレートとしてレンダリングしようとします。もし、`App.ApplicationController`が用意されていたら、Ember.jsは`application`テンプレートのコントローラーとして、`App.ApplicationController`のインスタンスをセットします。これは、テンプレートが、自身のプロパティーをコントローラーから取得することを意味します。
+Ember.jsは`application`テンプレートをメインテンプレートとしてレンダリングしようとします。もし、`App.ApplicationController`が用意されていたら、Ember.jsは`application`テンプレートのControllerとして、`App.ApplicationController`のインスタンスをセットします。これは、テンプレートが、自身のプロパティーをControllerから取得することを意味します。
 
 If your app provides an `App.ApplicationRoute`, Ember.js will invoke
 [the][1] [router's][2] [hooks][3] first, before rendering the
@@ -42,7 +42,7 @@ If your app provides an `App.ApplicationRoute`, Ember.js will invoke
 
 Here's a simple example that uses a route, controller, and template:
 
-ルート、コントローラー、テンプレートを使うシンプルな例を示します。
+Route、Controller、テンプレートを使うシンプルな例を示します。
 
 ```javascript
 App.ApplicationRoute = Ember.Route.extend({
@@ -68,24 +68,24 @@ In Ember.js applications, you will always specify your controllers
 as **classes**, and the framework is responsible for instantiating
 them and providing them to your templates.
 
-Ember.jsアプリケーションでは、あなたは常にコントローラーを **クラス** として指定します。そしてEmber.jsフレームワークはそれらをインスタンス化し、テンプレートにそれらを供給する役割を担います。
+Ember.jsアプリケーションでは、あなたは常にControllerを **クラス** として指定します。そしてEmber.jsフレームワークはそれらをインスタンス化し、テンプレートにそれらを供給する役割を担います。
 
 This makes it super-simple to test your controllers, and ensures that
 your entire application shares a single instance of each controller.
 
-このことはコントローラーをテストすることを非常に簡単にし、あなたのアプリケーション全体が、それぞれのコントローラの単一のインスタンスを共有することを確実にします。
+このことはControllerをテストすることを非常に簡単にし、あなたのアプリケーション全体が、それぞれのControllerの単一のインスタンスを共有することを確実にします。
 
 ## Simple Routes
-## シンプルなルート
+## シンプルなRoute
 
 Each of your routes will have a controller and a template with the 
 same name as the route.
 
-ルートはそれぞれ、ルートと同じ名前のコントローラとテンプレートを持っています。
+Routeはそれぞれ、Routeと同じ名前のControllerとテンプレートを持っています。
 
 Let's start with a simple router:
 
-シンプルなルーターから始めましょう。
+シンプルなRouterから始めましょう。
 
 ```javascript
 App.Router.map(function() {
@@ -106,7 +106,7 @@ Ember.js will render the `favorites` template into the `{{outlet}}`
 in the `application` template. It will set an instance of the
 `App.FavoritesController` as the controller for the template.
 
-Ember.jsは`application`テンプレートの`{{outlet}}`の中に`favorites`テンプレートをレンダリングします。Ember.jsは`favorite`テンプレートのコントローラーとして`App.FavoritesController`のインスタンスをセットします。
+Ember.jsは`application`テンプレートの`{{outlet}}`の中に`favorites`テンプレートをレンダリングします。Ember.jsは`favorite`テンプレートのControllerとして`App.FavoritesController`のインスタンスをセットします。
 
 If your app provides an `App.FavoritesRoute`, the framework will
 invoke it before rendering the template. Yes, this is a bit
@@ -118,7 +118,7 @@ For a route like `App.FavoritesRoute`, you will probably implement
 the `model` hook to specify what model your controller will present
 to the template.
 
-`App.FavoritesRoute`のようなルートにおいて、コントローラがどんなモデルをテンプレートに渡すかを指定するために、あなたはおそらくモデルフックを実装するでしょう。
+`App.FavoritesRoute`のようなRouteにおいて、ControllerがどんなModelをテンプレートに渡すかを指定するために、あなたはおそらくモデルフックを実装するでしょう。
 
 Here's an example:
 
@@ -138,7 +138,7 @@ the model is an Array, Ember.js will automatically supply an instance
 of `Ember.ArrayController`, which will present the backing Array as
 its model.
 
-この例では、私たちは`FavoritesController`を提供していません。このモデルは配列なので、Ember.jsは自動的にEmber.ArrayControllerのインスタンスを供給するのです。このインスタンスはコントローラの下支えとなる配列を対応するモデルとして提示します。
+この例では、私たちは`FavoritesController`を提供していません。このModelは配列なので、Ember.jsは自動的にEmber.ArrayControllerのインスタンスを供給するのです。このインスタンスはControllerの下支えとなる配列を対応するモデルとして提示します。
 
 You can treat the `ArrayController` as if it was the model itself.
 This has two major benefits:
@@ -148,18 +148,18 @@ This has two major benefits:
 * You can replace the controller's model at any time without having
   to directly notify the view of the change.
   
-  あなたは、直接、Viewに変化を通知する必要なく、いつでもコントローラのモデルを置き換えることができます。
+  あなたは、直接、Viewに変化を通知する必要なく、いつでもControllerのモデルを置き換えることができます。
   
 * The controller can provide additional computed properties or
   view-specific state that do not belong in the model layer. This
   allows a clean separation of concerns between the view, the
   controller and the model.
   
-  コントローラーはさらに、モデルレイヤーに属さない、算出プロパティ（computed properties）またはビュー固有の状態（view-specific state）を供給することができます。これにより、ビュー、コントローラ、モデルの間にある関連のきれいな分離が可能になります。
+  Controllerはさらに、Modelレイヤーに属さない、Computed Propertiesまたはビュー固有の状態（view-specific state）を供給することができます。これにより、View、Controller、Modelの間にある関連のきれいな分離が可能になります。
 
 The template can iterate over the elements of the controller:
 
-テンプレートは、以下のようにコントローラの要素について繰り返すことができます。
+テンプレートは、以下のようにControllerの要素について繰り返すことができます。
 
 ```handlebars
 <ul>
@@ -170,16 +170,15 @@ The template can iterate over the elements of the controller:
 ```
 
 ## Dynamic Segments
-## 動的セグメント
 
 If a route uses a dynamic segment, the route's model will be based
 on the value of that segment provided by the user.
 
-もしルートが動的セグメント(dynamic segment)を使うと、ルートのモデルはユーザーから提供されたセグメントの値に基づくようになります。
+もしルートがDynamic Segmentを使うと、ルートのModelはユーザーから提供されたセグメントの値に基づくようになります。
 
 Consider this router definition:
 
-以下のルーターの定義について考えましょう。
+以下のRouterの定義について考えましょう。
 
 ```javascript
 App.Router.map(function() {
@@ -190,7 +189,7 @@ App.Router.map(function() {
 In this case, the route's name is `post`, so Ember.js will look for
 these objects:
 
-この場合は、ルートの名前は`post`です。このとき、Ember.jsは以下のオブジェクトを探します。
+この場合は、Routeの名前は`post`です。このとき、Ember.jsは以下のオブジェクトを探します。
 
 * `App.PostRoute`
 * `App.PostController`
@@ -201,7 +200,7 @@ parameter into a model. The `serialize` hook converts a model object
 back into the URL parameters for this route (for example, when
 generating a link for a model object).
 
-あなたのルートハンドラーの`model`フックは、動的な`:post_id`パラメーターをモデルに変換します。`serialize`フックはこのルートのために、モデルオブジェクトをURLパラメーターに戻します（例えば、モデルオブジェクトのためにリンクを生成するときなど）。
+あなたのRouteハンドラーの`model`フックは、動的な`:post_id`パラメーターをモデルに変換します。`serialize`フックはこのルートのために、ModelオブジェクトをURLパラメーターに戻します（例えば、Modelオブジェクトのためにリンクを生成するときなど）。
 
 ```javascript
 App.PostRoute = Ember.Route.extend({
@@ -218,7 +217,7 @@ App.PostRoute = Ember.Route.extend({
 Because this pattern is so common, it is the default for route
 handlers.
 
-このパターンはとても一般的なので、このパターンはルートハンドラーのデフォルト仕様になっています。
+このパターンはとても一般的なので、このパターンはRouteハンドラーのデフォルト仕様になっています。
 
 * If your dynamic segment ends in `_id`, the default `model`
   hook will convert the first part into a model class on the
@@ -226,28 +225,28 @@ handlers.
   then call `find` on that class with the value of the dynamic
   segment.
   
-  もしあなたの動的セグメント(dynamic segment)が `_id` で終わっているなら、デフォルトの`model`フックは最初の部分（翻訳者補足：`post_id` なら `post`の部分）をアプリケーションの名前空間上のモデルクラスに変換します（`post`は`App.Post`になります）。すると`model`フックは、そのクラス上の`find`メソッドを、動的セグメント（dynamic segment）の値を使って呼び出します。
+  もしあなたの動的セグメント(dynamic segment)が `_id` で終わっているなら、デフォルトの`model`フックは最初の部分（翻訳者補足：`post_id` なら `post`の部分）をアプリケーションの名前空間上のModelクラスに変換します（`post`は`App.Post`になります）。すると`model`フックは、そのクラス上の`find`メソッドを、Dynamic Segmentの値を使って呼び出します。
 
 * The default `serialize` hook will pull the dynamic
   segment with the `id` property of the model object.
   
-  デフォルトの`serialize`フックはモデルオブジェクトの`id`プロパティで動的セグメント（dynamic segment）を取り出します。
+  デフォルトの`serialize`フックはモデルオブジェクトの`id`プロパティでDynamic Segmentを取り出します。
 
 ## Route, Controller and Template Defaults
-## ルート、コントローラー、テンプレートのデフォルト
+## Route、Controller、テンプレートのデフォルト
 
 If you don't specify a route handler for the `post` route
 (`App.PostRoute`), Ember.js  will still render the `post`
 template with the app's instance of `App.PostController`.
 
-もしあなたが`post`ルート（`App.PostRoute`）のためにルートハンドラーを指定しないとしても、Ember.jsはそれでもアプリケーションの`App.PostController`のインスタンスで`post`テンプレートをレンダリングします。
+もしあなたが`post`ルート（`App.PostRoute`）のためにRouteハンドラーを指定しないとしても、Ember.jsはそれでもアプリケーションの`App.PostController`のインスタンスで`post`テンプレートをレンダリングします。
 
 If you don't specify the controller (`App.PostController`),
 Ember will automatically make one for you based on the return value
 of the route's `model` hook. If the model is an Array, you get an
 `ArrayController`. Otherwise, you get an `ObjectController`.
 
-もしあなたがコントローラー（`App.PostController`）を指定しなければ、Emberはルートの`model`フックの戻り値に基づいて、あなたのためにコントローラーを自動的に作成します。もしモデルが配列だったら、あなたは`ArrayController`を得ます。そうでなければ、あなたは`ObjectController`を得ます。
+もしあなたがController（`App.PostController`）を指定しなければ、EmberはRouteの`model`フックの戻り値に基づいて、あなたのためにControllerを自動的に作成します。もしModelが配列だったら、あなたは`ArrayController`を得ます。そうでなければ、あなたは`ObjectController`を得ます。
 
 If you don't specify a `post` template, Ember.js won't render
 anything!
@@ -259,7 +258,7 @@ anything!
 
 You can nest routes under a `resource`.
 
-リソースの下に、ルートを入れ子にすることができます。
+`Resource`の下に、Routeを入れ子にすることができます。
 
 ```javascript
 App.Router.map(function() {
@@ -275,17 +274,17 @@ name. Even though the `post` resource is nested, its route is named
 `App.PostRoute`, its controller is named `App.PostController` and its
 template is `post`.
 
-リソースはルート、コントローラーまたはテンプレートの名前の始まりです。たとえpostリソースがネストされていても、そのルートは`App.PostRoute`という名前になり、コントローラーは`App.PostController`という名前になり、そしてそのテンプレートは`post`になります。
+ResourceはRoute、Controllerまたはテンプレートの名前の始まりです。たとえpost Resourceがネストされていても、そのRouteは`App.PostRoute`という名前になり、Controllerは`App.PostController`という名前になり、そしてそのテンプレートは`post`になります。
 
 When you nest a **route** inside a resource, the route name is added
 to the resource name, after a `.`.
 
-あなたがリソースの中にルートを入れ子にした時、ルート名がリソース名の`.`（ドット）の後に付加されます。
+あなたがResourceの中にRouteを入れ子にした時、Route名がResource名の`.`（ドット）の後に付加されます。
 
 Here are the naming conventions for each of the routes defined in
 this router:
 
-このルーターで定義されたそれぞれのルートの命名規則を次の表に示します。
+このRouterで定義されたそれぞれのRouteの命名規則を次の表に示します。
 
 <table>
   <thead>
@@ -321,19 +320,18 @@ adjectives (`favorites`) or verbs (`edit`). This ensures that
 nesting does not create ridiculously long names, but avoids
 collisions with common adjectives and verbs.
 
-大まかな決まりとしては、リソースに名詞を使い、ルートに形容詞（`favorites`など）又は動詞（`edit`など）を使います。この決まりは、ネスティングがばかばかしいほど長い名前を作らずに、しかしそれでいて共通の形容詞や動詞の衝突を避けることを確実なものにします。
+大まかな決まりとしては、Resourceに名詞を使い、Routeに形容詞（`favorites`など）又は動詞（`edit`など）を使います。この決まりは、ネスティングがばかばかしいほど長い名前を作らずに、しかしそれでいて共通の形容詞や動詞の衝突を避けることを確実なものにします。
 
 ## The Index Route
-## インデックスルート
 
 At every level of nesting (including the top level), Ember.js
 automatically provides a route for the `/` path named `index`.
 
-ネストしている（トップレベルを含む）すべてレベルにおいて、Ember.jsは自動的に`index`と名付けられた `/`（スラッシュ）パスのためのルートを提供します。
+ネストしている（トップレベルを含む）すべてレベルにおいて、Ember.jsは自動的に`index`と名付けられた `/`（スラッシュ）パスのためのRouteを提供します。
 
 For example, if you write a simple router like this:
 
-例えば、もしあなたがこのようなシンプルなルーターを書いたら……
+例えば、もしあなたがこのようなシンプルなRouterを書いたら……
 
 ```javascript
 App.Router.map(function() {
@@ -369,7 +367,7 @@ template.
 
 A nested router like this:
 
-次のような入れ子のルーターは……。
+次のような入れ子のRouterは……。
 
 ```javascript
 App.Router.map(function() {
@@ -396,7 +394,7 @@ App.Router.map(function() {
 If the user navigates to `/posts`, the current route will be
 `posts.index`. Ember.js will look for objects named:
 
-もしユーザーが`/posts`に移動したら、カレントルートは`posts.index`になります。するとEmber.jsは次の名前のオブジェクトを探します。
+もしユーザーが`/posts`に移動したら、カレントRouteは`posts.index`になります。するとEmber.jsは次の名前のオブジェクトを探します。
 
 * `App.PostsIndexRoute`
 * `App.PostsIndexController`

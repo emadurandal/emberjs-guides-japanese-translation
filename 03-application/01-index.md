@@ -33,7 +33,7 @@ Ember.Applicationインスタンスを生成することは、あなたに何を
    Layer](/guides/understanding-ember/the-view-layer)
   for a detailed description.)
   
-  それ（Ember.Applicationを生成すること）はdocumentにイベントリスナーを追加し、イベントをあなたのビューに委譲する役割を果たします。（詳細はThe View Layerを参照してください。）
+  それ（Ember.Applicationを生成すること）はdocumentにイベントリスナーを追加し、イベントをあなたのViewに委譲する役割を果たします。（詳細はThe View Layerを参照してください。）
 3. It automatically renders the [application
    template](/guides/templates/the-application-template).
    
@@ -41,6 +41,6 @@ Ember.Applicationインスタンスを生成することは、あなたに何を
 4. It automatically creates a router and begins routing, choosing which
    template and model to display based on the current URL.
    
-   それ（Ember.Application）は自動的にルーターを生成し、ルーティングを開始します。そして、現在のURLに基づいて、どのテンプレートとモデルを表示するか選択します。
+   それ（Ember.Application）は自動的にRouterを生成し、ルーティングを開始します。そして、現在のURLに基づいて、どのテンプレートとModelを表示するか選択します。
 
 (The original document’s commit SHA1: 5ef1bb0513231201a440d4423c3f2792a320ae06)

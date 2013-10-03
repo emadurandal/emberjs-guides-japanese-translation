@@ -6,7 +6,7 @@
 
 You create a link to a route using the `{{link-to}}` helper.
 
-`{{link-to}}`ヘルパーを使って、ルートへのリンクを作ります。
+`{{link-to}}`ヘルパーを使って、Routeへのリンクを作ります。
 
 ```js
 App.Router.map(function() {
@@ -29,7 +29,7 @@ App.Router.map(function() {
 If the model for the `photos` template is a list of three photos, the
 rendered HTML would look something like this:
 
-もし、`photos`テンプレートのモデルが３つのphotoのリストであれば、レンダリングされるHTMLはこんな感じになるでしょう。
+もし、`photos`テンプレートのModelが３つのphotoのリストであれば、レンダリングされるHTMLはこんな感じになるでしょう。
 
 ```html
 <ul>
@@ -43,7 +43,7 @@ When the rendered link matches the current route, and the same
 object instance is passed into the helper, then the link is given
 `class="active"`.
 
-レンダリングされたリンクが現在のルートにマッチしたときは、同じオブジェクトのインスタンスがヘルパーに渡されます。すると、そのリンクには`class=”active”`が与えられます。
+レンダリングされたリンクが現在のRouteにマッチしたときは、同じオブジェクトのインスタンスがヘルパーに渡されます。すると、そのリンクには`class=”active”`が与えられます。
 
 The `{{link-to}}` helper takes:
 
@@ -57,7 +57,7 @@ The `{{link-to}}` helper takes:
   By default, Ember.js will replace each segment with the
   value of the corresponding object's `id` property.
   
-  各dynamic segmentについて多くても一つのモデル。標準では、Ember.jsは各セグメントを、対応するオブジェクトの`id`プロパティの値で置き換えます。
+  各dynamic segmentについて多くても一つのModel。標準では、Ember.jsは各セグメントを、対応するオブジェクトの`id`プロパティの値で置き換えます。
 * An optional title which will be bound to the `a` title attribute
 
   `a`タグのタイトル属性にバインドされる、オプションのタイトル。
@@ -69,7 +69,7 @@ The `{{link-to}}` helper takes:
 If the route is nested, you can supply a model for each dynamic
 segment.
 
-もしルートがネストされていたら、それぞれのdynamic segmentにモデルを供給できます。
+もしルートがネストされていたら、それぞれのDynamic Segmentにモデルを供給できます。
 
 ```js
 App.Router.map(function() {
@@ -95,7 +95,7 @@ App.Router.map(function() {
 If you specify only one model, it will represent the innermost dynamic segment `:comment_id`.
 The `:photo_id` segment will use the current photo.
 
-もしあなたがただ一つのモデルを指定した場合は、それは最深部のdynamic segmentである`:comment_id`を指します。`:photo_id`セグメントは現在のphotoを使用します。
+もしあなたがただ一つのモデルを指定した場合は、それは最深部のDynamic Segmentである`:comment_id`を指します。`:photo_id`セグメントは現在のphotoを使用します。
 
 Alternatively, you could pass both a photo and a comment to the helper:
 

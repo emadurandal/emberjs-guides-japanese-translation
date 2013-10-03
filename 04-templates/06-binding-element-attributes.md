@@ -4,12 +4,12 @@
 In addition to normal text, you may also want to have your templates
 contain HTML elements whose attributes are bound to the controller.
 
-通常のテキストに加え、コントローラーにバインドされた属性を持ったHTML要素を含むテンプレートを作りたいことがあるでしょう。
+通常のテキストに加え、Controllerにバインドされた属性を持ったHTML要素を含むテンプレートを作りたいことがあるでしょう。
 
 For example, imagine your controller has a property that contains a URL
 to an image:
 
-例えば、コントローラーが画像のURLを含むプロパティを持っていると想像してください。
+例えば、Controllerが画像のURLを含むプロパティを持っていると想像してください。
 
 ```handlebars
 <div id="logo">
