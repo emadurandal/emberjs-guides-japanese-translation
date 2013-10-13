@@ -54,7 +54,6 @@ The default `setupController` hook sets the `model` property of the
 associated controller to the route handler's model.
 
 標準の`setupController`フックは、RouteハンドラーのModelを関連するControllerの`model`プロパティにセットします。
-（訳者注：コードを見てこのように訳したが、原文の英文を見ると逆のように読める（toの前後の語順が逆？）。原文のミス？）
 
 If you want to configure a controller other than the controller
 associated with the route handler, use the `controllerFor` method:
