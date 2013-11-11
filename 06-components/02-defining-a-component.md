@@ -53,7 +53,7 @@ To learn how to change the element Ember uses for your component, see
 [Customizing a Component's
 Element](http://emberjs.com/guides/components/customizing-a-components-element).
 
-それぞれのコンポーネントは、その中は、要素によって支えられています。標準では、EmberはあなたのComponentのテンプレートを包むために`<div>`要素を使います。Emberが使用する要素を変更する方法を学ぶためには、[Customizing a Component’s Element]（Componentの要素をカスタマイズする）(http://emberjs.com/guides/components/customizing-a-components-element)を参照してください。
+それぞれのコンポーネントは、その中は、要素によって支えられています。標準では、EmberはあなたのComponentのテンプレートを包むために`<div>`要素を使います。Emberが使用する要素を変更する方法を学ぶためには、[Customizing a Component’s Element（Componentの要素をカスタマイズする）](http://emberjs.com/guides/components/customizing-a-components-element)を参照してください。
 
 ### Defining a Component Subclass
 ### コンポーネントのサブクラスの定義
