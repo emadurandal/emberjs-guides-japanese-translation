@@ -76,7 +76,7 @@ Ember that this content will be provided when the component is used.
 Next, we'll update the template using the component to use the block
 form:
 
-次に、コンポーネントを使っているテンプレートを、ブロック形式を使うように更新します。
+次に、Componentを使っているテンプレートを、ブロック形式を使うように更新します。
 
 ```handlebars
 {{#blog-post title=title}}
@@ -91,7 +91,7 @@ It's important to note that the template scope inside the component
 block is the same as outside. If a property is available in the template
 outside the component, it is also available inside the component block.
 
-重要なことは、Componentブロックの中のテンプレートスコープは、外側のものと同じであるということです。もし、プロパティがコンポーネントの外のテンプレートで得られるなら、そのプロパティはComponentブロックの中でも得られるのです。
+重要なことは、Componentブロックの中のテンプレートスコープは、外側のものと同じであるということです。もし、プロパティがComponentの外のテンプレートで得られるなら、そのプロパティはComponentブロックの中でも得られるのです。
 
 This JSBin illustrates the concept:
 
