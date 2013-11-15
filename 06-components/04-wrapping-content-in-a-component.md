@@ -1,5 +1,5 @@
 # WRAPPING CONTENT IN A COMPONENT
-# コンポーネントの中でコンテンツを内包する
+# Componentの中でコンテンツを内包する
 
 Sometimes, you may want to define a component that wraps content
 provided by other templates.
