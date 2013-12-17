@@ -1,7 +1,7 @@
 # TOGGLING ALL TODOS BETWEEN COMPLETE AND INCOMPLETE
 # すべてのTodoの完了と未完了を切り替える
 
-TodoMVC allows user to toggle all existing todos into either a complete or incomplete state. It uses the same checkbox that becomes checked when all todos are completed and unchecked when one or more todos remain incomplete.
+TodoMVC allows users to toggle all existing todos into either a complete or incomplete state. It uses the same checkbox that becomes checked when all todos are completed and unchecked when one or more todos remain incomplete.
 
 TodoMVCでは、ユーザーはすべての既存のTodoを、一度に完了または未完了の状態のいずれかに切り替えることができます。そのために、すべてのTodoが完了済みになったときにチェックされ、一つまたはそれ以上のTodoが未完了のときにチェックがはずれる、同じチェックボックスを使います。
 
@@ -13,7 +13,7 @@ To implement this behavior update the `allAreDone` property in `js/controllers/t
 // ... additional lines truncated for brevity ...
 allAreDone: function (key, value) {
   if (value === undefined) {
-    return !!this.get('length') && this.everyProperty('isCompleted', true);
+    return !!this.get('length') && this.everyBy('isCompleted', true);
   } else {
     this.setEach('isCompleted', value);
     this.invoke('save');
@@ -46,4 +46,4 @@ Reload your web browser to ensure that there are no errors and the behavior desc
   * [Ember.Checkbox API documentation](/api/classes/Ember.Checkbox.html)
   * [Computed Properties Guide](/guides/object-model/computed-properties/)
 
-(The original document’s commit SHA1: 077fc1fa005dabeb1a760bf34a2454f852021189)
+(The original document’s commit SHA1: 0bc3f155e5554a9cab062b66fcc830939f0140b5)
