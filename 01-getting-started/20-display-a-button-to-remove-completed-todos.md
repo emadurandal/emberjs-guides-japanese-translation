@@ -27,7 +27,7 @@ In `js/controllers/todos_controller.js` implement the matching properties and a 
 // ... additional lines truncated for brevity ...
 actions: {
   clearCompleted: function () {
-    var completed = this.filterProperty('isCompleted', true);
+    var completed = this.filterBy('isCompleted', true);
     completed.invoke('deleteRecord');
     completed.invoke('save');
   }
@@ -37,10 +37,14 @@ hasCompleted: function () {
 }.property('completed'),
 
 completed: function () {
-  return this.filterProperty('isCompleted', true).get('length');
+  return this.filterBy('isCompleted', true).get('length');
 }.property('@each.isCompleted')
 // ... additional lines truncated for brevity ...
 ```
+
+The `completed` and `clearCompleted` methods both invoke the `filterBy` method, which is part of the [ArrayController](http://emberjs.com/api/classes/Ember.ArrayController.html#method_filterProperty) API and returns an instance of [EmberArray](http://emberjs.com/api/classes/Ember.Array.html) which contains only the items for which the callback returns true.  The `clearCompleted` method also invokes the `invoke` method which is part of the [EmberArray](http://emberjs.com/api/classes/Ember.Array.html#method_invoke) API.  `invoke` will execute a method on each object in the Array if the method exists on that object.
+
+`completed`と`clearCompleted`メソッドはともに`filterBy`メソッドを呼び出します。この`filterBy`メソッドは[ArrayController](http://emberjs.com/api/classes/Ember.ArrayController.html#method_filterProperty) APIの一部で、コールバックがtrueを返す項目だけを含んだEmberArrayのインスタンスを返します。`clearCompleted`メソッドは、[EmberArray](http://emberjs.com/api/classes/Ember.Array.html#method_invoke) APIの一部である`invoke`メソッドも呼び出します。`invoke`は、その配列の各オブジェクトについて、（引数で与えられた）メソッドがオブジェクトに存在している場合に、そのメソッドを呼び出します。
 
 Reload your web browser to ensure that there are no errors and the behavior described above occurs. 
 
@@ -57,4 +61,4 @@ Reload your web browser to ensure that there are no errors and the behavior desc
   * [Handlebars Conditionals Guide](/guides/templates/conditionals)
   * [Enumerables Guide](/guides/enumerables)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 0bc3f155e5554a9cab062b66fcc830939f0140b5)
