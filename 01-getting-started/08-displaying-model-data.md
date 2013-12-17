@@ -5,11 +5,12 @@ Next we'll update our application to display dynamic todos, replacing our hard c
 
 次に、アプリケーションを動的なTodoを表示するように更新し、`todos`テンプレートのハードコードされたセクションを置き換えます。
 
-Inside the file `js/router.js` implement a `TodosRoute` object with a `model` function that returns all the existing todos:
+Inside the file `js/router.js` implement a `TodosRoute` class with a `model` function that returns all the existing todos:
 
-`js/router.js`ファイルの中で、全ての既存のTodoを返すmodel関数を持つ、`TodosRoute`オブジェクトを実装します。
+`js/router.js`ファイルの中で、全ての既存のTodoを返すmodel関数を持つ、`TodosRoute`クラスを実装します。
 
 ```javascript
+// ... additional lines truncated for brevity ...
 Todos.TodosRoute = Ember.Route.extend({
   model: function () {
     return this.store.find('todo');
@@ -17,9 +18,9 @@ Todos.TodosRoute = Ember.Route.extend({
 });
 ```
 
-Because we hadn't implemented this object before, Ember.js provided a `Route` for us with the default behavior of rendering a matching template named `todos` using its [naming conventions for object creation](/guides/concepts/naming-conventions/).
+Because we hadn't implemented this class before, Ember.js provided a `Route` for us with the default behavior of rendering a matching template named `todos` using its [naming conventions for object creation](/guides/concepts/naming-conventions/).
 
-私たちはそれまで、このオブジェクトを実装していなかったので、Ember.jsは『オブジェクト生成のための命名規則』を使って、マッチするテンプレート（今回は、`todos`と名付けられたテンプレート）をレンダリングするというデフォルト動作を持つRouteを私たちのために提供していたのです。
+私たちはそれまで、このクラスを実装していなかったので、Ember.jsは『オブジェクト生成のための命名規則』を使って、マッチするテンプレート（今回は、`todos`と名付けられたテンプレート）をレンダリングするというデフォルト動作を持つRouteを私たちのために提供していたのです。
 
 Now that we need custom behavior (returning a specific set of models), we implement the class and add the desired behavior.
 
@@ -62,4 +63,4 @@ Reload your web browser to ensure that all files have been referenced correctly 
   * [Controllers Guide](/guides/controllers)
   * [Naming Conventions Guide](/guides/concepts/naming-conventions)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 6f9572cfc2e63e04151c4401f9090825990580de)
