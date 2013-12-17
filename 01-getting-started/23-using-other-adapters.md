@@ -17,18 +17,18 @@ Todos.ApplicationAdapter = DS.LSAdapter.extend({
 });
 ```
 
-The local storage adapter, written by Ryan Florence, can be downloaded [from its source](https://github.com/rpflorence/ember-localstorage-adapter). Add it to your project as `js/libs/local_storage_adapter.js`. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
+The local storage adapter, written by Ryan Florence, can be downloaded [from its source](https://github.com/rpflorence/ember-localstorage-adapter). Add it to your project as `js/libs/localstorage_adapter.js`. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
 
-Ryan Florence氏によって書かれたローカルストレージアダプタはここからダウンロードできます。そのコードをあなたのプロジェクトの`js/libs/local_storage_adapter.js`に追加してください。あなたはこのファイルを好きな場所に配置することができます（全てのコードを同じファイルに入れてしまうこともできます）が、このガイドでは、あなたが指定された名前でファイルを作成したと想定します。
+Ryan Florence氏によって書かれたローカルストレージアダプタはここからダウンロードできます。そのコードをあなたのプロジェクトの`js/libs/localstorage_adapter.js`に追加してください。あなたはこのファイルを好きな場所に配置することができます（全てのコードを同じファイルに入れてしまうこともできます）が、このガイドでは、あなたが指定された名前でファイルを作成したと想定します。
 
-In `index.html` include `js/libs/local_storage_adapter.js` as a dependency:
+In `index.html` include `js/libs/localstorage_adapter.js` as a dependency:
 
-`index.html`にて、依存ファイルとして`js/libs/local_storage_adapter.js`をインクルードしてください。
+`index.html`にて、依存ファイルとして`js/libs/localstorage_adapter.js`をインクルードしてください。
 
 ```html
 <!--- ... additional lines truncated for brevity ... -->
 <script src="js/libs/ember-data.js"></script>
-<script src="js/libs/local_storage_adapter.js"></script>
+<script src="js/libs/localstorage_adapter.js"></script>
 <script src="js/application.js"></script>
  <!--- ... additional lines truncated for brevity ... -->
 ```
@@ -47,4 +47,4 @@ Reload your application. Todos you manage will now persist after the application
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/81801d87da42d0c83685ff946c46de68589ce38f)
   * [LocalStorage Adapter on GitHub](https://github.com/rpflorence/ember-localstorage-adapter)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 80ff4890d741ba1bd0e2c1383307965f6f922b04)
