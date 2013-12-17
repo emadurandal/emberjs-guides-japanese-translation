@@ -67,7 +67,6 @@ In `index.html` include `js/controllers/todos_controller.js` as a dependency:
 
 ```html
 <!--- ... additional lines truncated for brevity ... -->
-   <script src="js/models/store.js"></script>
    <script src="js/models/todo.js"></script>
    <script src="js/controllers/todos_controller.js"></script>
  </body>
@@ -89,4 +88,4 @@ Reload your web browser to ensure that all files have been referenced correctly 
   * [Ember Controller Guide](/guides/controllers)
   * [Naming Conventions Guide](/guides/concepts/naming-conventions)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 5e570312016a839c3a1da2e39c19be983fcaa49f)
