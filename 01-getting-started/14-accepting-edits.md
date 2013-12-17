@@ -75,8 +75,13 @@ actions: {
      this.set('isEditing', true);
    },
    acceptChanges: function () {
-     this.set('isEditing', false);
-     this.get('model').save();
+      this.set('isEditing', false);
+
+      if (Ember.isEmpty(this.get('model.title'))) {
+        this.send('removeTodo');
+      } else {
+        this.get('model').save();
+      }	
    }
 }
 // ... additional lines truncated for brevity ...
@@ -97,4 +102,4 @@ This method will set the controller's `isEditing` property to false and commit a
   * [Controller Guide](/guides/controllers)
   * [Ember.TextField API documentation](/api/classes/Ember.TextField.html)
 
-(The original document’s commit SHA1: 26d3a8033b2935a81bc0fbe359dbdde46ed06899)
+(The original document’s commit SHA1: 9df02c078942a8a65e9fef6e37fc555285f8d5ff)
