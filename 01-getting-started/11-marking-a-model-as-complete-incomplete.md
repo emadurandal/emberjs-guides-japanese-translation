@@ -50,9 +50,13 @@ Todos.TodoController = Ember.ObjectController.extend({
 });
 ```
 
-When called from the template to display the current `isCompleted` state of the todo, this property will proxy that question to its underlying `model`. When called with a value because a user has toggled the checkbox in the template, this property will set the `isCompleted` property of its `model` to the passed value (`true` or `false`), persist the model update, and return the passed value so the checkbox will display correctly.
+When called from the template to display the current `isCompleted` state of the todo, this property will proxy that question to its underlying `model`. When called with a value because a user has toggled the checkbox in the template, this property will set the `isCompleted` property of its `model` to the passed value (`true` or `false`), persist the model update, and return the passed value so the checkbox will display correctly. 
 
 Todoの現在の`isCompleted`状態を表示するためにテンプレートから呼び出されたとき、このプロパティはModelへの問い合わせをプロキシ（中継）します。ユーザーがテンプレートのチェックボックスをトグルしたことで（値を伴って）呼び出されたときは、このプロパティはModelの`isCompleted`プロパティを渡された値（`true`か`false`）にセットし、Modelの更新を保存し、チェックボックスが正しく表示できるよう、渡された値を返します。
+
+The `isCompleted` function is marked a [computed property](http://emberjs.com/guides/object-model/computed-properties/) whose value is dependent on the value of `model.isCompleted`.
+
+`isCompleted`関数は`model.isCompleted`の値に依存した値を持つ[Computed Property](http://emberjs.com/guides/object-model/computed-properties/)になっています。
 
 In `index.html` include `js/controllers/todo_controller.js` as a dependency:
 
@@ -78,9 +82,9 @@ In `index.html` include `js/controllers/todo_controller.js` as a dependency:
 ### Additional Resources
 ### 追加リソース
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/8d469c04c237f39a58903a3856409a2592cc18a9)
-  * [Ember.Checkbox API documentation](/api/classes/Ember.Checkbox.html)
-  * [Ember Controller Guide](/guides/controllers)
-  * [Computed Properties Guide](/guides/object-model/computed-properties/)
-  * [Naming Conventions Guide](/guides/concepts/naming-conventions)
+  * [Ember.Checkbox API documentation](http://emberjs.com/api/classes/Ember.Checkbox.html)
+  * [Ember Controller Guide](http://emberjs.com/guides/controllers)
+  * [Computed Properties Guide](http://emberjs.com/guides/object-model/computed-properties/)
+  * [Naming Conventions Guide](http://emberjs.com/guides/concepts/naming-conventions)
 
-(The original document’s commit SHA1: 6bba45e2c8ebee89d85db44a3e969c9046401866)
+(The original document’s commit SHA1: e87b739608d02bef5ee467eb9d8f9921e4b180af)
