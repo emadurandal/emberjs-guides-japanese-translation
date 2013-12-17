@@ -91,4 +91,4 @@ Open `index.html` in your web browser to ensure that all assets are loading corr
   * [TodoMVC stylesheet](http://emberjs.com.s3.amazonaws.com/getting-started/style.css)
   * [TodoMVC background image](http://emberjs.com.s3.amazonaws.com/getting-started/bg.png)
   
-(The original document’s commit SHA1: 63f655a0f8b9ec99192c26d8d0478af5f84d7c72)
+(The original document’s commit SHA1: 59426fa314bd33f017a8443c83c47856b6b0e714)
