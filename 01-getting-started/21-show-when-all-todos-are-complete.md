@@ -25,7 +25,7 @@ In `js/controllers/todos_controller.js` implement the matching `allAreDone` prop
 ```javascript
 // ... additional lines truncated for brevity ...
 allAreDone: function (key, value) {
-  return !!this.get('length') && this.everyProperty('isCompleted', true);
+  return !!this.get('length') && this.everyBy('isCompleted', true);
 }.property('@each.isCompleted')
 // ... additional lines truncated for brevity ...
 ```
@@ -48,4 +48,4 @@ Reload your web browser to ensure that there are no errors and the behavior desc
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/9bf8a430bc4afb06f31be55f63f1d9806e6ab01c)
   * [Ember.Checkbox API documentation](/api/classes/Ember.Checkbox.html)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 97e9f7a0ce15b5605da7807111ce3bcc23e2647a)
