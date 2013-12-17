@@ -47,7 +47,7 @@ Reload your web browser to ensure that all files have been referenced correctly 
 ### 追加リソース
 
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/a1ccdb43df29d316a7729321764c00b8d850fcd1)
-  * [Defining A Store Guide](/guides/models/defining-a-store)
-  * [Defining Models Guide](/guides/models/defining-models)
+  * [Using the Store Guide](http://emberjs.com/guides/models/using-the-store)
+  * [Defining Models Guide](http://emberjs.com/guides/models/defining-models)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 7b5186c2ea7e54f0ab265d7301b7889ecb275048)
