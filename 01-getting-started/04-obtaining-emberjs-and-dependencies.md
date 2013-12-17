@@ -7,7 +7,7 @@ TodoMVCはいくつかのファイルに依存しています。
   * [jQuery](http://code.jquery.com/jquery-1.10.2.min.js)
   * [Handlebars](http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-1.0.0.js)
   * [Ember.js 1.0](http://builds.emberjs.com/tags/v1.0.0/ember.js)
-  * [Ember Data 1.0 alpha](http://emberjs.com.s3.amazonaws.com/getting-started/ember-data.js)
+  * [Ember Data 1.0 beta](http://builds.emberjs.com/tags/v1.0.0-beta.3/ember-data.js)
 
 For this example, all of these resources should be stored in the folder `js/libs` located in the same location as `index.html`. Update your `index.html` to load these files by placing `<script>` tags just before your closing `</body>` tag in the following order:
 
@@ -15,8 +15,8 @@ For this example, all of these resources should be stored in the folder `js/libs
 
 ```html
 <!-- ... additional lines truncated for brevity ... -->
-  <script src="js/libs/jquery.min.js"></script>
-  <script src="js/libs/handlebars.js"></script>
+  <script src="js/libs/jquery-1.10.2.min.js"></script>
+  <script src="js/libs/handlebars-1.0.0.js"></script>
   <script src="js/libs/ember.js"></script>
   <script src="js/libs/ember-data.js"></script>
 </body>
@@ -35,4 +35,4 @@ Reload your web browser to ensure that all files have been referenced correctly 
 ### 追加リソース
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/0880d6e21b83d916a02fd17163f58686a37b5b2c)
   
-(The original document’s commit SHA1: 017b7435486061733eb0cf2b8e6733c517191953)
+(The original document’s commit SHA1: 6cedb9f061971cfe2d3bab5b8502f3b6ea2047eb)
