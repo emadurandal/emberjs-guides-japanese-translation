@@ -18,15 +18,17 @@ Implement these properties as part of this template's controller, the `Todos.Tod
 これらのプロパティを、このテンプレートのコントローラー、`Todos.TodosController`の一部として実装します。
 
 ```javascript
+// Hint: these lines MUST NOT go into the 'actions' object.
+
 // ... additional lines truncated for brevity ...
 remaining: function () {
-  return this.filterProperty('isCompleted', false).get('length');
+  return this.filterBy('isCompleted', false).get('length');
 }.property('@each.isCompleted'),
 
 inflection: function () {
   var remaining = this.get('remaining');
   return remaining === 1 ? 'item' : 'items';
-}.property('remaining')
+}.property('remaining'),
 // ... additional lines truncated for brevity ...
 ```
 
@@ -51,4 +53,4 @@ The `inflection` property will return either a plural or singular version of the
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/b418407ed9666714c82d894d6b70f785674f7a45)
   * [Computed Properties Guide](/guides/object-model/computed-properties/) 
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 5e5ea4d2be986900d00ecba267feda82853d5d5b)
