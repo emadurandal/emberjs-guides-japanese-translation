@@ -26,7 +26,7 @@ Inside `js/router.js` add the following code:
 `js/router.js`ファイルに次のコードを追加します。
 
 ```javascript
-Todos.Router.map(function () {
+Todos.Router.map(function() {
   this.resource('todos', { path: '/' });
 });
 ```
@@ -35,9 +35,9 @@ This will tell Ember.js to detect when the application's URL matches `'/'` and t
 
 このコードはEmber.jsに、アプリケーションのURLが`'/'`にマッチしたことを検出させ、また`todos`テンプレートをレンダリングさせることを指示します。
 
-Next, update your `index.html` to wrap the inner contents of `<body>` in a Handlebars script tag and include `js/application.js` and `js/router.js`:
+Next, update your `index.html` to wrap the inner contents of `<body>` in a Handlebars script tag and include `js/application.js` and `js/router.js` after Ember.js and other javascript dependencies:
 
-次に、`<body>`の中の内容をHandlebarsのスクリプトタグで囲んで、そして`js/application.js`と`js/router.js`をインクルードするように`index.html`を更新します。
+次に、`<body>`の中の内容をHandlebarsのスクリプトタグで囲んで、そして`js/application.js`と`js/router.js`を、Ember.jsと他の依存しているJavaScriptの後にインクルードするように`index.html`を更新します。
 
 ```html
 <!-- ... additional lines truncated for brevity ... -->
@@ -54,13 +54,10 @@ Next, update your `index.html` to wrap the inner contents of `<body>` in a Handl
   
   </script>
 
-  <script src="js/libs/jquery.min.js"></script>
-  <script src="js/libs/handlebars.js"></script>
-  <script src="js/libs/ember.js"></script>
-  <script src="js/libs/ember-data.js"></script>
-  
+  <!-- ... Ember.js and other javascript dependencies ... -->
   <script src="js/application.js"></script>
   <script src="js/router.js"></script>
+</body>
 <!-- ... additional lines truncated for brevity ... -->
 ```
 
@@ -80,4 +77,4 @@ Reload your web browser to ensure that all files have been referenced correctly 
   * [Ember.Application Guide](/guides/application)
   * [Ember.Application API Documentation](/api/classes/Ember.Application.html)
   
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 0ca0cbe598f1f8ebd89b8850b26e39dfbd768e07)

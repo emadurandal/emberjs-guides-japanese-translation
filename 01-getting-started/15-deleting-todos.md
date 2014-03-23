@@ -22,7 +22,8 @@ In `js/controllers/todo_controller.js` implement the `removeTodo` method referen
 ```javascript
 // ... additional lines truncated for brevity ...
 actions: {
-  removeTodo: function () {
+  // ... additional lines truncated for brevity ...
+  removeTodo: function() {
     var todo = this.get('model');
     todo.deleteRecord();
     todo.save();
@@ -39,7 +40,7 @@ Because the todo is no longer part of the collection of all todos, its `<li>` el
 
 このTodoはもはやすべてのTodoのコレクションの一部ではないため、ページ中のこのTodoの`<li>`要素は自動的に取り除かれます。もし削除されたTodoが未完了状態だった場合、Todo残数のカウントが１つ少なくなり、この残数の表示は自動的に再レンダリングされます。もし新しいカウントで’item’の語尾変化（”item”か”items”か）が変わるようであれば、ページのそのエリアが自動的に再レンダリングされます。
 
-Reload your web browser to ensure that there are no errors and the behaviors described above occurs. 
+Reload your web browser to ensure that there are no errors and the behaviors described above occurs.
 
 ウェブブラウザをリロードして、エラーが何もないことと、上述の動作が行われることを確認してください。
 
@@ -53,4 +54,4 @@ Reload your web browser to ensure that there are no errors and the behaviors des
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/14e1f129f76bae8f8ea6a73de1e24d810678a8fe)
   * [action API documention](/api/classes/Ember.Handlebars.helpers.html#method_action)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 0ca0cbe598f1f8ebd89b8850b26e39dfbd768e07)

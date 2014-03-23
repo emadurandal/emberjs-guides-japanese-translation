@@ -20,9 +20,9 @@ In `index.html` update your template to wrap each todo in its own controller by 
 <!--- ... additional lines truncated for brevity ... -->
 ```
 
-When this `{{input}}` is rendered it will ask for the current value of the controller's `isCompleted` property. When a user clicks this input, it will call the controller's `isCompleted` property with an argument of either `true` or `false` depending on the new checked value of the input.
+When this `{{input}}` is rendered it will ask for the current value of the controller's `isCompleted` property. When a user clicks this input, it will set the value of the controller's `isCompleted` property to either `true` or `false` depending on the new checked value of the input.
 
-この`{{input}}`ヘルパーがレンダリングされるとき、`{{input}}`ヘルパーはControllerのisCompletedプロパティの現在の値を問い合わせます。ユーザーがこの入力をクリックしたとき、この入力（`{{input}}`ヘルパー）はチェックされた値に応じて、`true`か`false`のいずれかの引数とともにControllerの`isCompleted`プロパティを呼び出します。
+この`{{input}}`ヘルパーがレンダリングされるとき、`{{input}}`ヘルパーはControllerのisCompletedプロパティの現在の値を問い合わせます。ユーザーがこの入力をクリックしたとき、この入力（`{{input}}`ヘルパー）はチェックされた値に応じて、Controllerの`isCompleted`プロパティの値を`true`か`false`のいずれかにセットします。
 
 Implement the controller for each todo by matching the name used as the `itemController` value to a class in your application `Todos.TodoController`. Create a new file at `js/controllers/todo_controller.js` for this code. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
 
@@ -87,4 +87,4 @@ In `index.html` include `js/controllers/todo_controller.js` as a dependency:
   * [Computed Properties Guide](http://emberjs.com/guides/object-model/computed-properties/)
   * [Naming Conventions Guide](http://emberjs.com/guides/concepts/naming-conventions)
 
-(The original document’s commit SHA1: e87b739608d02bef5ee467eb9d8f9921e4b180af)
+(The original document’s commit SHA1: 7f4d89dfe3927c053ea2cff9fbe9bc90e5145b5f)

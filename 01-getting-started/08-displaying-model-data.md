@@ -12,7 +12,7 @@ Inside the file `js/router.js` implement a `TodosRoute` class with a `model` fun
 ```javascript
 // ... additional lines truncated for brevity ...
 Todos.TodosRoute = Ember.Route.extend({
-  model: function () {
+  model: function() {
     return this.store.find('todo');
   }
 });
@@ -63,4 +63,4 @@ Reload your web browser to ensure that all files have been referenced correctly 
   * [Controllers Guide](/guides/controllers)
   * [Naming Conventions Guide](/guides/concepts/naming-conventions)
 
-(The original document’s commit SHA1: 6f9572cfc2e63e04151c4401f9090825990580de)
+(The original document’s commit SHA1: 0ca0cbe598f1f8ebd89b8850b26e39dfbd768e07)

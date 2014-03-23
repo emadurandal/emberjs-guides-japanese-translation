@@ -41,8 +41,8 @@ TodoMVCは次のような主な特徴を持っています。
   1. It retains a user's todos between application loads by using the browser's `localstorage` mechanism.
   ブラウザのローカルストレージ機構を使うことで、アプリケーションの読み込みを繰り返しても、ユーザーのTodoのデータは引き続き保持されます。
 
-You can interact with a completed version of the application by visiting the [TodoMVC site](http://addyosmani.github.com/todomvc/).
+You can interact with a completed version of the application by visiting the [TodoMVC site](http://todomvc.com/architecture-examples/emberjs/).
 
 TodoMVCウェブサイトを訪れて、このアプリケーションの完成バージョンを操作することができます。
 
-(The original document’s commit SHA1: 45fdf9df8d02001619e6b0a2fa973f19da667102)
+(The original document’s commit SHA1: 5451c52cde72009797b21292f6838f5b10a5a858)

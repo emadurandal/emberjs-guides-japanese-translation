@@ -1,7 +1,7 @@
 # DISPLAYING A BUTTON TO REMOVE ALL COMPLETED TODOS
 # すべての完了済みTodoを削除するボタンを表示する
 
-TodoMVC allows users to delete all completed todos at once by clicking a button. This button is visible only when there are any completed todos, displays the number of completed todos, and removes all todos from the application when clicked.
+TodoMVC allows users to delete all completed todos at once by clicking a button. This button is visible only when there are any completed todos, displays the number of completed todos, and removes all completed todos from the application when clicked.
 
 TodoMVCでは、ユーザーはボタンをクリックすることで、一度にすべての完了済みTodoを削除することができます。このボタンは完了済みのTodoが存在するときにのみ表示され、完了済みTodoの数を表示し、クリックされるとアプリケーションから全ての完了済みTodoを削除します。
 
@@ -26,19 +26,20 @@ In `js/controllers/todos_controller.js` implement the matching properties and a 
 ```javascript
 // ... additional lines truncated for brevity ...
 actions: {
-  clearCompleted: function () {
+  clearCompleted: function() {
     var completed = this.filterBy('isCompleted', true);
     completed.invoke('deleteRecord');
     completed.invoke('save');
-  }
+  },
+  // ... additional lines truncated for brevity ...
 },
-hasCompleted: function () {
+hasCompleted: function() {
   return this.get('completed') > 0;
 }.property('completed'),
 
-completed: function () {
+completed: function() {
   return this.filterBy('isCompleted', true).get('length');
-}.property('@each.isCompleted')
+}.property('@each.isCompleted'),
 // ... additional lines truncated for brevity ...
 ```
 
@@ -46,7 +47,7 @@ The `completed` and `clearCompleted` methods both invoke the `filterBy` method, 
 
 `completed`と`clearCompleted`メソッドはともに`filterBy`メソッドを呼び出します。この`filterBy`メソッドは[ArrayController](http://emberjs.com/api/classes/Ember.ArrayController.html#method_filterProperty) APIの一部で、コールバックがtrueを返す項目だけを含んだEmberArrayのインスタンスを返します。`clearCompleted`メソッドは、[EmberArray](http://emberjs.com/api/classes/Ember.Array.html#method_invoke) APIの一部である`invoke`メソッドも呼び出します。`invoke`は、その配列の各オブジェクトについて、（引数で与えられた）メソッドがオブジェクトに存在している場合に、そのメソッドを呼び出します。
 
-Reload your web browser to ensure that there are no errors and the behavior described above occurs. 
+Reload your web browser to ensure that there are no errors and the behavior described above occurs.
 
 ウェブブラウザーをリロードして、何もエラーが起きないことと、上述の動作が行われることを確認してください。
 
@@ -61,4 +62,4 @@ Reload your web browser to ensure that there are no errors and the behavior desc
   * [Handlebars Conditionals Guide](/guides/templates/conditionals)
   * [Enumerables Guide](/guides/enumerables)
 
-(The original document’s commit SHA1: 0bc3f155e5554a9cab062b66fcc830939f0140b5)
+(The original document’s commit SHA1: 0ca0cbe598f1f8ebd89b8850b26e39dfbd768e07)

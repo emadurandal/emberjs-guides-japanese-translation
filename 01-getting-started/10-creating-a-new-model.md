@@ -36,7 +36,7 @@ Inside `js/controllers/todos_controller.js` implement the controller Ember.js ex
 ```javascript
 Todos.TodosController = Ember.ArrayController.extend({
   actions: {
-    createTodo: function () {
+    createTodo: function() {
       // Get the todo title set by the "New Todo" text field
       var title = this.get('newTitle');
       if (!title.trim()) { return; }
@@ -88,4 +88,4 @@ Reload your web browser to ensure that all files have been referenced correctly 
   * [Ember Controller Guide](/guides/controllers)
   * [Naming Conventions Guide](/guides/concepts/naming-conventions)
 
-(The original document’s commit SHA1: 5e570312016a839c3a1da2e39c19be983fcaa49f)
+(The original document’s commit SHA1: 0ca0cbe598f1f8ebd89b8850b26e39dfbd768e07)

@@ -11,9 +11,9 @@ To implement this behavior update the `allAreDone` property in `js/controllers/t
 
 ```javascript
 // ... additional lines truncated for brevity ...
-allAreDone: function (key, value) {
+allAreDone: function(key, value) {
   if (value === undefined) {
-    return !!this.get('length') && this.everyBy('isCompleted', true);
+    return !!this.get('length') && this.everyProperty('isCompleted', true);
   } else {
     this.setEach('isCompleted', value);
     this.invoke('save');
@@ -31,7 +31,7 @@ The count of remaining todos and completed todos used elsewhere in the template 
 
 必要であれば、テンプレートの中で使われている残りのTodoと完了済みTodoのカウントが、自動的に再レンダリングされます。
 
-Reload your web browser to ensure that there are no errors and the behavior described above occurs. 
+Reload your web browser to ensure that there are no errors and the behavior described above occurs.
 
 ウェブブラウザーをリロードして、何もエラーが起きないことと、上述の動作が行われることを確認してください。
 
@@ -46,4 +46,4 @@ Reload your web browser to ensure that there are no errors and the behavior desc
   * [Ember.Checkbox API documentation](/api/classes/Ember.Checkbox.html)
   * [Computed Properties Guide](/guides/object-model/computed-properties/)
 
-(The original document’s commit SHA1: 0bc3f155e5554a9cab062b66fcc830939f0140b5)
+(The original document’s commit SHA1: 0ca0cbe598f1f8ebd89b8850b26e39dfbd768e07)

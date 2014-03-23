@@ -28,8 +28,8 @@ In `js/router.js` update the router to recognize this new path and implement a m
 `js/router.js`にて、この新しいパスを認識できるようにRouterを更新し、対応するRouteを実装します。
 
 ```javascript
-Todos.Router.map(function () {
-  this.resource('todos', { path: '/' }, function () {
+Todos.Router.map(function() {
+  this.resource('todos', { path: '/' }, function() {
     // additional child routes
     this.route('active');
     this.route('completed');
@@ -40,11 +40,11 @@ Todos.Router.map(function () {
 
 Todos.TodosCompletedRoute = Ember.Route.extend({
   model: function(){
-    return this.store.filter('todo', function (todo) {
+    return this.store.filter('todo', function(todo) {
       return todo.get('isCompleted');
     });
   },
-  renderTemplate: function(controller){
+  renderTemplate: function(controller) {
     this.render('todos/index', {controller: controller});
   }
 });
@@ -75,4 +75,4 @@ Reload your web browser to ensure that there are no errors and the behavior desc
   * [Route#render API documentation](/api/classes/Ember.Route.html#method_render)
   * [Ember Router Guide](/guides/routing)
   
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 0ca0cbe598f1f8ebd89b8850b26e39dfbd768e07)

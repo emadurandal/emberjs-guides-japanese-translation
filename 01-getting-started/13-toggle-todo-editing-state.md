@@ -14,7 +14,7 @@ We'll update the application to allow users to toggle into this editing state fo
 {{#each itemController="todo"}}
   <li {{bind-attr class="isCompleted:completed isEditing:editing"}}>
     {{#if isEditing}}
-      <input class='edit'>
+      <input class="edit">
     {{else}}
       {{input type="checkbox" checked=isCompleted class="toggle"}}
       <label {{action "editTodo" on="doubleClick"}}>{{title}}</label><button class="destroy"></button>
@@ -36,7 +36,7 @@ Inside `js/controllers/todo_controller.js` we'll implement the matching logic fo
 ```javascript
 // ... additional lines truncated for brevity ...
 actions: {
-   editTodo: function () {
+   editTodo: function() {
      this.set('isEditing', true);
    }
  },
@@ -66,4 +66,4 @@ Reload your web browser to ensure that no errors occur. You can now double-click
   * [action API documentation](/api/classes/Ember.Handlebars.helpers.html#method_action)
   * [bind and bindAttr article by Peter Wagenet](http://www.emberist.com/2012/04/06/bind-and-bindattr.html)
 
-(The original document’s commit SHA1: 2a44c2312b8828826e0b10ffdd42b8f3d9e956b2)
+(The original document’s commit SHA1: 7c1fc2d6b2bbff8f26af5691b05917ba8826cc64)

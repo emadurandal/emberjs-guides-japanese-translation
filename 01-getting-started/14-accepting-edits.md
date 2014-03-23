@@ -19,7 +19,7 @@ In `js/views/edit_todo_view.js` create an extension of `Ember.TextField`:
 
 ```javascript
 Todos.EditTodoView = Ember.TextField.extend({
-  didInsertElement: function () {
+  didInsertElement: function() {
     this.$().focus();
   }
 });
@@ -46,7 +46,7 @@ In `index.html` replace the static `<input>` element with our custom `{{edit-tod
 ```handlebars
 <!--- ... additional lines truncated for brevity ... -->
 {{#if isEditing}}
-  {{edit-todo class="edit" value=title focus-out="acceptChanges" 
+  {{edit-todo class="edit" value=title focus-out="acceptChanges"
                            insert-newline="acceptChanges"}}
 {{else}}
 <!--- ... additional lines truncated for brevity ... -->
@@ -56,7 +56,7 @@ Pressing the `<enter>` key  will trigger the `acceptChanges` event on the instan
 
 `<enter>`キーを押すと、`TodoController`のインスタンスにある`acceptChanges`イベントがトリガされます。`<input>`要素からフォーカスが外れると、`focus-out`イベントがトリガされ、このイベントはビューのTodoControllerインスタンスにある`acceptChanges`メソッドを呼び出します。
 
-Additionally, we connect the `value` property of this `<input>` to the `title` property of this instance of `TodoController`. We will not implement a `title` property on the controller so it will retain the default behavior of proxying all requests to its `model`. 
+Additionally, we connect the `value` property of this `<input>` to the `title` property of this instance of `TodoController`. We will not implement a `title` property on the controller so it will retain the default behavior of [proxying all requests](http://emberjs.com/guides/controllers/#toc_representing-models) to its `model`.
 
 さらに、この`<input>`要素の`value`プロパティを`TodoController`インスタンスの`title`プロパティに接続します。私たちはController上に`title`プロパティを実装していないので、Controllerはすべての要求をモデルにプロキシ（中継）するという標準の動作をとります。
 
@@ -71,19 +71,19 @@ In `js/controllers/todo_controller.js`, add the method `acceptChanges` that we c
 ```javascript
 // ... additional lines truncated for brevity ...
 actions: {
-   editTodo: function () {
-     this.set('isEditing', true);
-   },
-   acceptChanges: function () {
-      this.set('isEditing', false);
+  editTodo: function() {
+    this.set('isEditing', true);
+  },
+  acceptChanges: function() {
+    this.set('isEditing', false);
 
-      if (Ember.isEmpty(this.get('model.title'))) {
-        this.send('removeTodo');
-      } else {
-        this.get('model').save();
-      }	
-   }
-}
+    if (Ember.isEmpty(this.get('model.title'))) {
+      this.send('removeTodo');
+    } else {
+      this.get('model').save();
+    }
+  }
+},
 // ... additional lines truncated for brevity ...
 ```
 
@@ -102,4 +102,4 @@ This method will set the controller's `isEditing` property to false and commit a
   * [Controller Guide](/guides/controllers)
   * [Ember.TextField API documentation](/api/classes/Ember.TextField.html)
 
-(The original document’s commit SHA1: 9df02c078942a8a65e9fef6e37fc555285f8d5ff)
+(The original document’s commit SHA1: 81c1d68309cf93b4d3944e38feef7d7254f72626)

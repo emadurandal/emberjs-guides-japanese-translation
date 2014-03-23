@@ -17,7 +17,7 @@ Todos.ApplicationAdapter = DS.LSAdapter.extend({
 });
 ```
 
-The local storage adapter, written by Ryan Florence, can be downloaded [from its source](https://github.com/rpflorence/ember-localstorage-adapter). Add it to your project as `js/libs/localstorage_adapter.js`. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
+The local storage adapter, written by Ryan Florence, can be downloaded [from its source](https://raw.github.com/rpflorence/ember-localstorage-adapter/master/localstorage_adapter.js). Add it to your project as `js/libs/localstorage_adapter.js`. You may place this file anywhere you like (even just putting all code into the same file), but this guide will assume you have created the file and named it as indicated.
 
 Ryan Florence氏によって書かれたローカルストレージアダプタはここからダウンロードできます。そのコードをあなたのプロジェクトの`js/libs/localstorage_adapter.js`に追加してください。あなたはこのファイルを好きな場所に配置することができます（全てのコードを同じファイルに入れてしまうこともできます）が、このガイドでは、あなたが指定された名前でファイルを作成したと想定します。
 
@@ -47,4 +47,4 @@ Reload your application. Todos you manage will now persist after the application
   * [Changes in this step in `diff` format](https://github.com/emberjs/quickstart-code-sample/commit/81801d87da42d0c83685ff946c46de68589ce38f)
   * [LocalStorage Adapter on GitHub](https://github.com/rpflorence/ember-localstorage-adapter)
 
-(The original document’s commit SHA1: 80ff4890d741ba1bd0e2c1383307965f6f922b04)
+(The original document’s commit SHA1: 20cb79fa337481e66f9d5888034d4bd6b695e847)
