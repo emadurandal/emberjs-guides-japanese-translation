@@ -2,14 +2,14 @@
 # 命名規則
 
 Ember.js uses naming conventions to wire up your objects without a
-lot  of boilerplate. You will want to  use the conventional names
+lot of boilerplate. You will want to use these conventional names
 for your routes, controllers and templates.
 
-Ember.jsは、沢山の決まりきったコーディングをすることなくあなたのオブジェクトに接続するために、命名規則を使います。あなたは、Route、Controller、テンプレートに、規約に従った名前を使用したくなるでしょう。
+Ember.jsは、沢山の決まりきったコーディングをすることなくあなたのオブジェクトに接続するために、命名規則を使います。あなたは、Route、Controller、テンプレートに、これらの規約に従った名前を使用したくなるでしょう。
 
-You can usually guess the names, but this guide outlines, in one place, all of the naming conventions.
+You can usually guess the names, but this guide outlines, in one place, all of the naming conventions. In the following examples 'App' is a name that we chose to namespace or represent our Ember application when it was created, but you can choose any name you want for your application. We will show you later how to create an Ember application, but for now we will focus on conventions.
 
-あなたはたいてい、（規約に従った）名前を推測することができるでしょう。しかし、このガイドではここ一箇所で、命名規則の全てを概説します。
+あなたはたいてい、（規約に従った）名前を推測することができるでしょう。しかし、このガイドではここ一箇所で、命名規則の全てを概説します。以降の例では、'App'という名前を、私たちが選んだ名前空間として、あるいはEmberアプリケーションが作成された際の、私たちのアプリケーションのことを指すものとして、使用します。しかし、あなたは自分のアプリケーションのために好きな名前を選ぶことができます。私たちは後ほど、あなたにEmberアプリケーションの作り方をお見せしますが、まず今は、命名規則に集中しましょう。
 
 ## The Application
 ## アプリケーション
@@ -32,13 +32,19 @@ Ember.jsは`application`テンプレートをメインテンプレートとし�
 
 If your app provides an `App.ApplicationRoute`, Ember.js will invoke
 [the][1] [router's][2] [hooks][3] first, before rendering the
-`application` template.
+`application` template. Hooks are implemented as methods and provide 
+you access points within an Ember object's lifecycle to intercept and 
+execute code to modify the default behavior at these points to meet 
+your needs. Ember provides several hooks for you to utilize for various
+purposes (e.g. `model`, `setupController`, etc). In the example below 
+`App.ApplicationRoute`, which is a `Ember.Route` object, implements 
+the `setupController` hook.
 
 [1]: /guides/routing/specifying-a-routes-model
 [2]: /guides/routing/setting-up-a-controller
 [3]: /guides/routing/rendering-a-template
 
-もし、あなたのアプリケーションが`App.ApplicationRoute`を提供するなら、Ember.jsは`application`テンプレートをレンダリングする前に、`App.ApplicationRoute`ルーターのフックを最初に呼び出します。
+もし、あなたのアプリケーションが`App.ApplicationRoute`を提供するなら、Ember.jsは`application`テンプレートをレンダリングする前に、`App.ApplicationRoute`ルーターのフックを最初に呼び出します。フックは関数として実装されており、Emberオブジェクトのライフサイクルの中で、あなたの必要に応じたこれらの時点でのデフォルトの挙動を修正するために、処理を遮断してコードを実行するためのアクセスポイントをあなたに提供します。Emberは様々な目的（例えば、`model`や`setupController`など）のために活用できるよう、いくつかのフックを提供しています。下記の`App.ApplicationRoute`の例ですが、これは`Ember.Route`オブジェクトであり、`setupController`フックを実装しています。
 
 Here's a simple example that uses a route, controller, and template:
 
@@ -412,4 +418,4 @@ replace the `{{outlet}}` in the `posts` template with the
 
 もし、ユーザーが`/posts/favorites`に移動したら、Ember.jsは`posts`テンプレートの`{{outlet}}`を`posts/favorites`テンプレートで置き換えます。
 
-(The original document’s commit SHA1: 19b66ac684b5caef087c7fcd9070edbaafabf1a7)
+(The original document’s commit SHA1: 7e08d8fccf53d36bff211365a60fea2f30a7b603)
