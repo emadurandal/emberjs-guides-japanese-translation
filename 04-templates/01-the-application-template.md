@@ -1,7 +1,7 @@
 # THE APPLICATION TEMPLATE
 # Applicationテンプレート
 
-The application template is the default template that is rendered when
+The `application` template is the default template that is rendered when
 your application starts. 
 
 applicationテンプレートはあなたのアプリケーションが起動した時にレンダリングされるデフォルトのテンプレートです。
@@ -43,10 +43,10 @@ For more information about how outlets are filled in by the router, see
 OutletがRouterによって、どのように（コンテンツを）埋め込まれるのかについて、より多くの情報を得るには、Routingのセクションを参照してください。
 
 If you are keeping your templates in HTML, create a `<script>` tag
-without a template name. It will automatically be compiled and appended
+without a template name. Ember will use the template without a name as the application template and it will automatically be compiled and appended
 to the screen.
 
-もしあなたがテンプレートをHTMLの中に保持しているなら、`<script>`タグをテンプレート名なしで作成してください。そのテンプレートは自動的にコンパイルされ、スクリーンに追加されます。
+もしあなたがテンプレートをHTMLの中に保持しているなら、`<script>`タグをテンプレート名なしで作成してください。Emberはアプリケーションテンプレートとして、名前無しでそのテンプレートを使います。そして、そのテンプレートは自動的にコンパイルされ、スクリーンに追加されます。
 
 ```html
 <script type="text/x-handlebars">
@@ -61,4 +61,4 @@ the template `application`.
 
 もしあなたがテンプレートを読み込むためのビルドツールを使っているなら、テンプレートの名前を`application`にすることを確実にしてください。
 
-(The original document’s commit SHA1: 5ef1bb0513231201a440d4423c3f2792a320ae06)
+(The original document’s commit SHA1: 7b2cf7aa96e8ba88ebd40b1d2899624870d89f09)
