@@ -28,7 +28,7 @@ Now that we need custom behavior (returning a specific set of models), we implem
 
 Update `index.html` to replace the static `<li>` elements with a Handlebars `{{each}}` helper and a dynamic `{{title}}` for each item.
 
-`index.html`を更新して、静的な`<li>`要素を、Handlebarsの`{{each}}`ヘルパーと各項目のための動的な`{{titile}}`で置き換えます。
+`index.html`を更新して、静的な`<li>`要素を、Handlebarsの`{{each}}`ヘルパーと各項目のための動的な`{{title}}`で置き換えます。
 
 ```handlebars
 <!--- ... additional lines truncated for brevity ... -->
