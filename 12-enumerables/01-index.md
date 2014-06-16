@@ -1,3 +1,6 @@
+# Introduction
+# イントロダクション
+
 ## Enumerables
 
 In Ember.js, an Enumerable is any object that contains a number of child
