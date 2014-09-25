@@ -37,7 +37,7 @@ you access points within an Ember object's lifecycle to intercept and
 execute code to modify the default behavior at these points to meet 
 your needs. Ember provides several hooks for you to utilize for various
 purposes (e.g. `model`, `setupController`, etc). In the example below 
-`App.ApplicationRoute`, which is a `Ember.Route` object, implements 
+`App.ApplicationRoute`, which is an `Ember.Route` object, implements 
 the `setupController` hook.
 
 [1]: /guides/routing/specifying-a-routes-model
@@ -84,7 +84,7 @@ your entire application shares a single instance of each controller.
 ## Simple Routes
 ## シンプルなRoute
 
-Each of your routes will have a controller and a template with the 
+Each of your routes will have a controller, and a template with the 
 same name as the route.
 
 Routeはそれぞれ、Routeと同じ名前のControllerとテンプレートを持っています。
@@ -177,10 +177,10 @@ The template can iterate over the elements of the controller:
 
 ## Dynamic Segments
 
-If a route uses a dynamic segment, the route's model will be based
+If a route uses a dynamic segment (a URL that includes a parameter), the route's model will be based
 on the value of that segment provided by the user.
 
-もしルートがDynamic Segmentを使うと、ルートのModelはユーザーから提供されたセグメントの値に基づくようになります。
+もしルートがDynamic Segment（パラメーターを含んだURL）を使うと、ルートのModelはユーザーから提供されたセグメントの値に基づくようになります。
 
 Consider this router definition:
 
@@ -233,10 +233,11 @@ handlers.
   
   もしあなたの動的セグメント(dynamic segment)が `_id` で終わっているなら、デフォルトの`model`フックは最初の部分（翻訳者補足：`post_id` なら `post`の部分）をアプリケーションの名前空間上のModelクラスに変換します（`post`は`App.Post`になります）。すると`model`フックは、そのクラス上の`find`メソッドを、Dynamic Segmentの値を使って呼び出します。
 
-* The default `serialize` hook will pull the dynamic
-  segment with the `id` property of the model object.
+* The default behaviour of the `serialize` hook is to replace
+ the route's dynamic segment with the value of the model 
+ object's `id` property.
   
-  デフォルトの`serialize`フックはモデルオブジェクトの`id`プロパティでDynamic Segmentを取り出します。
+  `serialize`フックのデフォルトの動作では、Modelオブジェクトの`id`プロパティの値でRouteのDynamic Segmentを置き換えます。
 
 ## Route, Controller and Template Defaults
 ## Route、Controller、テンプレートのデフォルト
@@ -418,4 +419,4 @@ replace the `{{outlet}}` in the `posts` template with the
 
 もし、ユーザーが`/posts/favorites`に移動したら、Ember.jsは`posts`テンプレートの`{{outlet}}`を`posts/favorites`テンプレートで置き換えます。
 
-(The original document’s commit SHA1: 7e08d8fccf53d36bff211365a60fea2f30a7b603)
+(The original document’s commit SHA1: 9bf90082a705e113926d1e44c650603f89209599)
