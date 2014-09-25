@@ -8,7 +8,7 @@ Emberリリース管理チームは、EmberとEmber Dataのビルドを入手す
 ###Channels
 ###チャンネル
 
-The latest [Release](/builds#/release), [Beta](/builds#/beta), and [Canary](/builds#/canary) builds of Ember and Ember data can be found [here](/builds). For each channel a development, minified, and production version is available. For more on the different channels read the [Post 1.0 Release Cycle](http://emberjs.com/blog/2013/09/06/new-ember-release-process.html) blog post.
+The latest [Release](http://emberjs.com/builds#/release), [Beta](http://emberjs.com/builds#/beta), and [Canary](/builds#/canary) builds of Ember and Ember data can be found [here](/builds). For each channel a development, minified, and production version is available. For more on the different channels read the [Post 1.0 Release Cycle](http://emberjs.com/blog/2013/09/06/new-ember-release-process.html) blog post.
 
 最新のEmberとEmber Dataの[Release](http://emberjs.com/builds/#/release)、[Beta](http://emberjs.com/builds/#/beta)、そして[Canary](http://emberjs.com/builds/#/canary)ビルドは[ここ](http://emberjs.com/builds)で見つけることができます。それぞれのチャンネルのdevelopment、minified、そしてproductionバージョンが入手可能です。異なるチャンネルのより詳細については、ブログ記事[「Post 1.0 Release Cycle」](http://emberjs.com/blog/2013/09/06/new-ember-release-process.html)をお読みください。
 
@@ -26,7 +26,7 @@ Bower is a package manager for the web. Bower makes it easy to manage dependenci
 
 BowerはWeb開発におけるパッケージマネージャーです。BowerはEmberとEmber Dataを含む、あなたのアプリケーションにおけるライブラリの依存性を管理することを容易にしてくれます。Bowerについてより詳しく学ぶためには、[http://bower.io/](http://bower.io/)を訪れてください。
 
-Adding Ember to your application with Bower is easy simply run `bower install ember --save`. For Ember Data run `bower install ember-data --save`. You can also add `ember` or `ember-data` to your `bower.json` file as follows.
+Adding Ember to your application with Bower is easy; simply run `bower install ember --save`. For Ember Data, run `bower install ember-data --save`. You can also add `ember` or `ember-data` to your `bower.json` file as follows.
 
 Bowerを使ってあなたのアプリケーションにEmberを追加するには、単純に`bower install ember --save`を実行します。Ember Dataを追加するには、`bower install ember-data --save`を実行します。また、次のようにして、`ember`と`ember-data`を`bower.json`ファイルに加えることもできます。
 
@@ -34,8 +34,8 @@ Bowerを使ってあなたのアプリケーションにEmberを追加するに�
 {
 	"name": "your-app",
 	"dependencies": {
-		"ember": "~1.5",
-		"ember-data": "~1.0.0-beta.4"
+		"ember": "~1.6",
+		"ember-data": "~1.0.0-beta.8"
 	}
 }
 
@@ -43,13 +43,13 @@ Bowerを使ってあなたのアプリケーションにEmberを追加するに�
 
 ##RubyGems
 
-If your application uses a Ruby based build system you can use the [ember-source](http://rubygems.org/gems/ember-source) and [ember-data-source](http://rubygems.org/gems/ember-data-source) RubyGems to access ember and ember data sources from Ruby.
+If your application uses a Ruby based build system, you can use the [ember-source](http://rubygems.org/gems/ember-source) and [ember-data-source](http://rubygems.org/gems/ember-data-source) RubyGems to access ember and ember data sources from Ruby.
 
 もしあなたのアプリケーションがRubyベースのシステムを使っているなら、あなたはRubyからEmberとEmber Dataのソースにアクセスするために、[ember-source](http://rubygems.org/gems/ember-source) RubyGemと[ember-data-source](http://rubygems.org/gems/ember-data-source) RubyGemを使うことが出来ます。
 
-If your application is built in rails the [ember-rails](http://rubygems.org/gems/ember-rails) RubyGem makes it easy to integrate Ember into your Ruby on Rails application.
+If your application is built in Rails, the [ember-rails](http://rubygems.org/gems/ember-rails) RubyGem makes it easy to integrate Ember into your Ruby on Rails application.
 
 もしあなたのアプリケーションがRailsで構築されているなら、[ember-rails](http://rubygems.org/gems/ember-rails) RubyGemを使うことで、あなたのRuby on Railsアプリケーションに容易にEmberを統合することができるでしょう。
 
 
-(The original document's commit SHA1: e6ff3101e1824cd4c179a58c8410b26ffbc14a76)
+(The original document's commit SHA1: 5f00e55cd9d20b061e90dfc91a712651e5f47da6)
