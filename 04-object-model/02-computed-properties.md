@@ -45,9 +45,9 @@ Whenever you access the `fullName` property, this function gets called, and it r
 #### Alternate invocation
 #### 代わりの実現方法
 
-At this point, you might be wondering how you are able to call the `.property` function on a function.  This is possible because Ember extends the `function` prototype.  Read more on that [here](http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/). If you'd like to replicate the declaration from above without using these extensions you could do so with the following:
+At this point, you might be wondering how you are able to call the `.property` function on a function.  This is possible because Ember extends the `function` prototype.  More information about extending native prototypes is available in the [disabling prototype extensions guide](http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/). If you'd like to replicate the declaration from above without using these extensions you could do so with the following:
 
-今のところ、あなたは関数に対して`.property`関数を呼ぶことがどうして可能なのか不思議に思うかもしれません。これは、Emberが`function`プロトタイプを拡張しているから可能なのです。より詳細については[ここ](http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/)を参照してください。もし、これらの拡張を使わずに、この宣言を行いたい場合は、次のようにします。
+今のところ、あなたは関数に対して`.property`関数を呼ぶことがどうして可能なのか不思議に思うかもしれません。これは、Emberが`function`プロトタイプを拡張しているから可能なのです。ネイティブPrototypeの拡張についてのより詳しい情報は[Prototype拡張の無効化ガイド](http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/)を参照してください。もし、これらの拡張を使わずに、この宣言を行いたい場合は、次のようにします。
 
 ```javascript
   fullName: Ember.computed('firstName', 'lastName', function() {
@@ -145,4 +145,4 @@ Ember will call the computed property for both setters and getters, so if you wa
 
 Emberはsetterとgetter両方のためにComputed Propertyを呼び出します。なので、もしあなたがsetterとしてComputed Propertyを使いたい場合は、getterとして呼び出されたのかsetterとして呼び出されたのかを判断するために引数の数をチェックする必要があります。もし、setterから値がreturnされた場合、その値はプロパティの値としてキャッシュされることに注意してください。
 
-(The original document’s commit SHA1: 880fcde422f9f76f1d274ae7114bb0055e16a1a7)
+(The original document’s commit SHA1: 5f00e55cd9d20b061e90dfc91a712651e5f47da6)
