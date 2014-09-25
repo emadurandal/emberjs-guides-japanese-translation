@@ -14,7 +14,9 @@ Here's what that computed property might look like:
 ```javascript
 App.TodosController = Ember.Controller.extend({
   todos: [
-    Ember.Object.create({ isDone: false })
+    Ember.Object.create({ isDone: true }),
+    Ember.Object.create({ isDone: false }),
+    Ember.Object.create({ isDone: true })
   ],
 
   remaining: function() {
@@ -56,7 +58,7 @@ automatically:
 
 ```javascript
 var todos = App.todosController.get('todos');
-var todo = todos.objectAt(0);
+var todo = todos.objectAt(1);
 todo.set('isDone', true);
 
 App.todosController.get('remaining');
@@ -74,4 +76,4 @@ Note that `@each` only works one level deep. You cannot use nested forms like
 
 `@each`は１階層の深さしか機能しないことに注意してください。`todos.@each.owner.name` や `todos.@each.owner.@each.name` のように、ネストされた形式は使えません。
 
-(The original document’s commit SHA1: 867638002f7dc651eeac736266241e3d2af33aa9)
+(The original document’s commit SHA1: 715df145042243f9320cfbbabc85089530897a97)
