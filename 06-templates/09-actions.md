@@ -49,6 +49,22 @@ App.PostController = Ember.ObjectController.extend({
 });
 ```
 
+Note that actions may be attached to any element of the DOM, but not all
+respond to the `click` event. For example, if an action is attached to an `a`
+link without an `href` attribute, or to a `div`, some browsers won't execute
+the associated function. If it's really needed to define actions over such
+elements, a CSS workaround exists to make them clickable, `cursor: pointer`.
+For example:
+
+ActionはどんなDOMの要素にもアタッチされる可能性がありますが、すべてが`click`イベントに反応するわけではありません。例えば、もし`href`属性を持たない`a`リンク、または`div`にActionがアタッチされていた場合、いくつかのブラウザーは関連する関数を実行しないかもしれません。もしそのような要素に対してActionを定義する必要が本当にあるなら、`cursor: pointer`という、これらをクリック可能にするためのCSSによる回避策があります。
+例えば：
+
+```css
+[data-ember-action] {
+  cursor: pointer;
+}
+```
+
 ### Action Bubbling
 ### アクションの伝播
 
@@ -93,6 +109,27 @@ that when executed, `this` is the route, not the `actions` hash.
 
 この例をみて分かるとおり、アクションハンドラーがコールされた時、`this`は`actions`ハッシュでなく、Routeを指しています。
 
+To continue bubbling the action, you must return true from the handler:
+
+アクションの伝播を続けるために、ハンドラーからtrueを返す必要があります。
+
+```js
+App.PostRoute = Ember.Route.extend({
+  actions: {
+    expand: function() {
+      this.controller.set('isExpanded', true);
+    },
+
+    contract: function() {
+      // ...
+      if (actionShouldAlsoBeTriggeredOnParentRoute) {
+        return true;
+      }
+    }
+  }
+});
+```
+
 If neither the template's controller nor the currently active route
 implements a handler, the action will continue to bubble to any parent
 routes. Ultimately, if an `ApplicationRoute` is defined, it will have an
@@ -107,6 +144,14 @@ current route's ancestors, an error will be thrown.
 アクションが呼び出されたとき、Controller、現在のRoute、または現在のRouteのどの祖先も対応するアクションハンドラーを実装していないのであれば、エラーが投げられます。
 
 ![Action Bubbling](http://emberjs.com/images/template-guide/action-bubbling.png)
+
+This allows you to create a button that has different behavior based on
+where you are in the application. For example, you might want to have a
+button in a sidebar that does one thing if you are somewhere inside of
+the `/posts` route, and another thing if you are inside of the `/about`
+route.
+
+このことは、あなたがアプリケーションのどこにいるかに基づいて、異なる振る舞いを持つボタンを作れることを意味します。例えばあなたは、サイドバーに、`/posts`ルートの中のどこかに居た場合にあることをして、`/about`ルートの中に居るときに他のことをするボタンを作ることができるのです。
 
 ### Action Parameters
 ### アクションパラメーター
@@ -125,10 +170,10 @@ For example, if the `post` argument was passed:
 <p><button {{action "select" post}}>✓</button> {{post.title}}</p>
 ```
 
-The route's `select` action handler would be called with a single argument
+The controller's `select` action handler would be called with a single argument
 containing the post model:
 
-Routeの`select`アクションハンドラーはpost Modelを含んだ一つの引数をともなって呼び出されます。
+Controllerの`select`アクションハンドラーはpost Modelを含んだ一つの引数をともなって呼び出されます。
 
 ```js
 App.PostController = Ember.ObjectController.extend({
@@ -170,7 +215,7 @@ In general, two-word event names (like `keypress`) become `keyPress`.
 ### Specifying Whitelisted Modifier Keys
 ### ホワイトリスト式の修飾キーの指定
 
-By default the `{{action}}` helper will ignore click event with
+By default the `{{action}}` helper will ignore click events with
 pressed modifier keys. You can supply an `allowedKeys` option
 to specify which keys should not be ignored.
 
@@ -178,7 +223,7 @@ to specify which keys should not be ignored.
 
 ```handlebars
 <script type="text/x-handlebars" data-template-name='a-template'>
-  <div {{action anActionName allowedKeys="alt"}}>
+  <div {{action 'anActionName' allowedKeys="alt"}}>
     click me
   </div>
 </script>
@@ -207,7 +252,7 @@ clicked.
 ```handlebars
 {{#link-to 'post'}}
   Post
-  <button {{action close bubbles=false}}>✗</button>
+  <button {{action 'close' bubbles=false}}>✗</button>
 {{/link-to}}
 ```
 
@@ -221,37 +266,6 @@ With `bubbles=false`, Ember.js will stop the browser from propagating
 the event.
 
 `bubbles=false`があると、Ember.jsはブラウザーにイベントを伝播させることを止めさせます。
-
-### Target Bubbling
-### 伝播先を狙う
-
-If the action is not found on the current controller, it will bubble up
-to the current route handler. From there, it will bubble up to parent
-route handlers until it reaches the application route.
-
-現在のControllerにアクションが見つからない場合、アクションは現在のRouteのハンドラーに伝播されます。そこから、アクションはアプリケーションルートに達するまで、親のRouteのハンドラーを伝播します。
-
-Define actions on the route's `actions` property.
-
-ルートの`actions`プロパティにアクションを定義してみます。
-
-```javascript
-App.PostsIndexRoute = Ember.Route.extend({
-  actions: {
-    myCoolAction: function() {
-      // do your business.
-    }
-  }
-});
-```
-
-This allows you to create a button that has different behavior based on
-where you are in the application. For example, you might want to have a
-button in a sidebar that does one thing if you are somewhere inside of
-the `/posts` route, and another thing if you are inside of the `/about`
-route.
-
-このことは、あなたがアプリケーションのどこにいるかに基づいて、異なる振る舞いを持つボタンを作れることを意味します。例えばあなたは、サイドバーに、`/posts`ルートの中のどこかに居た場合にあることをして、`/about`ルートの中に居るときに他のことをするボタンを作ることができるのです。
 
 ### Specifying a Target
 ### ターゲットを特定する
@@ -270,7 +284,7 @@ is most commonly used to send actions to a view instead of a controller.
 
 ```handlebars
 <p>
-  <button {{action "select" post target="view"}}>✓</button>
+  <button {{action "select" post target=view}}>✓</button>
   {{post.title}}
 </p>
 ```
@@ -289,4 +303,17 @@ App.PostsIndexView = Ember.View.extend({
 });
 ```
 
-(The original document’s commit SHA1: 394c6697fea572dcecbc4779a3d7df47b375c466)
+Note that actions sent to views in this way do not bubble up the 
+currently rendered view hierarchy. If you want to handle the action in
+a parent view, use the following:
+
+この方法でViewに送られたActionは現在レンダリングされたView階層には伝播しません。もし親のViewでActionを扱いたい場合は、次のように使ってください。
+
+```handlebars
+<p>
+  <button {{action "select" post target=view.parentView}}>✓</button>
+  {{post.title}}
+</p>
+```
+
+(The original document’s commit SHA1: c99213b2b80466c169d00f24d045da996b8ee19d)
