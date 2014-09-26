@@ -4,7 +4,7 @@
 ## Input Helpers
 ## 入力ヘルパー
 
-The `{{input}}` and `{{textarea}}` helpers in Ember are the easiest way to
+The `{{input}}` and `{{textarea}}` helpers in Ember.js are the easiest way to
 create common form controls. The `{{input}}` helper wraps the built-in
 [Ember.TextField][1] and [Ember.Checkbox][2] views, while `{{textarea}}` wraps
 [Ember.TextArea][3]. Using these helpers, you can create these views with
@@ -36,14 +36,18 @@ helper:
 
 入力ヘルパーには、以下の標準の`<input>`の属性値を渡すことができます。
 
-* `value`
-* `size`
-* `name`
-* `pattern`
-* `placeholder`
-* `disabled`
-* `maxlength`
-* `tabindex`
+<table>
+  <tr><td>`readonly`</td><td>`required`</td><td>`autofocus`</td></tr>
+  <tr><td>`value`</td><td>`placeholder`</td><td>`disabled`</td></tr>
+  <tr><td>`size`</td><td>`tabindex`</td><td>`maxlength`</td></tr>
+  <tr><td>`name`</td><td>`min`</td><td>`max`</td></tr>
+  <tr><td>`pattern`</td><td>`accept`</td><td>`autocomplete`</td></tr>
+  <tr><td>`autosave`</td><td>`formaction`</td><td>`formenctype`</td></tr>
+  <tr><td>`formmethod`</td><td>`formnovalidate`</td><td>`formtarget`</td></tr>
+  <tr><td>`height`</td><td>`inputmode`</td><td>`multiple`</td></tr>
+  <tr><td>`step`</td><td>`width`</td><td>`form`</td></tr>
+  <tr><td>`selectionDirection`</td><td>`spellcheck`</td><td>&nbsp;</td></tr>
+</table>
 
 If these attributes are set to a quoted string, their values will be set
 directly on the element, as in the previous example. However, when left
@@ -60,6 +64,16 @@ Will bind the `disabled` attribute to the value of `entryNotAllowed` in the
 current context.
 
 上記の宣言は、`disabled`属性を現在のコンテキストの`entryNotAllowed`の値にバインドします。
+
+### Actions
+
+To dispatch an action on specific events, such as `enter` or `key-press`, use the following
+
+`enter`や`key-press`のような、特定のイベントにおけるActionを送出するには、次のように使います。
+
+```js
+{{input value=firstName action="updateFirstName" on="key-press"}}
+```
 
 ### Checkboxes
 ### チェックボックス
@@ -82,6 +96,9 @@ Checkboxes support the following properties:
 * `tabindex`
 * `indeterminate`
 * `name`
+* `autofocus`
+* `form`
+
 
 Which can be bound or set as described in the previous section.
 
@@ -102,12 +119,23 @@ Will bind the value of the text area to `name` on the current context.
 
 `{{textarea}}`ヘルパーは以下のプロパティの値のバインドまたは直接セットに対応しています。
 
+* `value`
+* `name`
 * `rows`
 * `cols`
 * `placeholder`
 * `disabled`
 * `maxlength`
 * `tabindex`
+* `selectionEnd`
+* `selectionStart`
+* `selectionDirection`
+* `wrap`
+* `readonly`
+* `autofocus`
+* `form`
+* `spellcheck`
+* `required`
 
 ### Extending Built-In Controls
 ### ビルトインコントロールの拡張
@@ -119,4 +147,4 @@ extend these views.
 
 これらのビューをさらに拡張する方法について、このガイドの[Built-in Views][4]セクションを参照してください。
 
-(The original document’s commit SHA1: d6f829a29749affad9a0dc397d8efd68f76a3b0b)
+(The original document’s commit SHA1: 1aa41ae0559132149c58e5c515b603c08facd0a7)
