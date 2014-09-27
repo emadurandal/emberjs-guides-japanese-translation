@@ -19,7 +19,7 @@ Given you have the following route:
 
 ```javascript
 App.Router.map(function() {
-  this.route('posts');
+  this.resource('posts');
 });
 ```
 
@@ -97,4 +97,4 @@ as an `outlet` so that nested routes can be seamlessly inserted.  It is equivale
 {{outlet}}
 ```
 
-(The original document’s commit SHA1: 63f655a0f8b9ec99192c26d8d0478af5f84d7c72)
+(The original document’s commit SHA1: 13f24865433d6f5a434800cd3fcda9ff344d3e4d)
