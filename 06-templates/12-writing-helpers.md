@@ -12,7 +12,7 @@ For example, imagine you are frequently wrapping certain values in a `<span>` ta
 ```javascript
 Ember.Handlebars.helper('highlight', function(value, options) {
   var escaped = Handlebars.Utils.escapeExpression(value);
-  return new Handlebars.SafeString('<span class="highlight">' + escaped + '</span>');
+  return new Ember.Handlebars.SafeString('<span class="highlight">' + escaped + '</span>');
 });
 ```
 
@@ -111,7 +111,7 @@ arguments as:
 これは機能的に次と同じです。そして、すべて同じ引数を受け取ります。
 
 ```handlebars
-{{view App.CalendarView}}
+{{view "calendar"}}
 ```
 
-(The original document’s commit SHA1: 94704baba6757c519435e865deeeaee006db2485)
+(The original document’s commit SHA1: 184b5fdf09f7ec9e106928648f2e160066449483)
