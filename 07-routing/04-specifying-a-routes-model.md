@@ -92,9 +92,9 @@ While this example looks like it's synchronous, making it easy to read
 and reason about, it's actually completely asynchronous. That's because
 jQuery's `getJSON()` method returns a promise. Ember will detect the
 fact that you've returned a promise from the `model` hook, and wait
-until that promise resolves to render the `pullRequest` template.
+until that promise resolves to render the `pullRequests` template.
 
-この例は一見、同期的にみえますが（読むことが容易いのがその理由ですが）、実際は完全に非同期です。なぜなら、jQueryの`getJSON()`メソッドはPromiseを返すからです。Emberはあなたが`model`フックからPromiseを返したということを検知して、`pullRequest`テンプレートをレンダリングするためにPromiseが解決されるまで待機します。
+この例は一見、同期的にみえますが（読むことが容易いのがその理由ですが）、実際は完全に非同期です。なぜなら、jQueryの`getJSON()`メソッドはPromiseを返すからです。Emberはあなたが`model`フックからPromiseを返したということを検知して、`pullRequests`テンプレートをレンダリングするためにPromiseが解決されるまで待機します。
 
 (For more information on jQuery's XHR functionality, see
 [jQuery.ajax](http://api.jquery.com/jQuery.ajax/) in the jQuery
@@ -265,6 +265,21 @@ will always execute the model hook.
 
 注意：Dynamic Segmentを持つRouteは、URLを通してRouteにやってきたときのみ、`model`フックを呼び出します。もしRouteがページ遷移（例えば、[link-to][2] Handlebarsヘルパーを使うときなど）によって訪れられたときは、Modelコンテキストはすでに供給されており、`model`フックは実行されません。Dynamic SegmentのないRouteは常にmodelフックを実行します。
 
+### Refreshing your model
+
+If your data represented by your model is being updated frequently, you may
+want to refresh it periodically:
+
+もしあなたのModelで表わされたあなたのデータが頻繁に更新されるなら、あなたはそれを定期的にリフレッシュしたいと思うかもしれません。
+
+<a class="jsbin-embed" href="http://jsbin.com/sefuv/2/embed?js">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+
+The controller can send an action to the Route; in this example above, the
+IndexController exposes an action `getLatest` which sends the route an
+action called `invalidateModel`. Calling the route's `refresh` method will force
+Ember to execute the model hook again.
+
+ControllerはActionをRouteに送ることができます。上記のサンプルでは、IndexControllerが、`invalidateModel`というActionをRouteに送るgetLatest` Actionを公開しています。Routeの`refresh`メソッドを呼ぶことで、EmberにModelフックを再び実行することを強制させます。
 
 ### Ember Data
 
@@ -281,4 +296,4 @@ about using Ember Data to manage your models, see the
 
 Emberのために作られた人気のあるModelライブラリのひとつが、Ember Dataです。Modelを管理するためにEmber Dataを使うことについてより多くを学ぶために、[Models](http://emberjs.com/guides/models)ガイドを参照してください。
 
-(The original document’s commit SHA1: 1e5bb5df41551257444ed37247f9be787c6f6930)
+(The original document’s commit SHA1: 0af62ed62376892cab08ca725054030d32cd8ce0)
