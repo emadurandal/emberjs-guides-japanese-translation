@@ -97,8 +97,8 @@ If you want to render two different templates into outlets of two different rend
 App.PostRoute = App.Route.extend({
   renderTemplate: function() {
     this.render('favoritePost', {   // the template to render（レンダリングすべきテンプレート）
-      into: 'posts',                // the template to render into（挿入先のテンプレート）
-      outlet: 'posts',              // the name of the outlet in that template（そのテンプレートのOutletの名前）
+      into: 'posts',                // the route to render into（レンダリング先のRoute）
+      outlet: 'posts',              // the name of the outlet in the route's template（そのRouteのテンプレートのOutletの名前）
       controller: 'blogPost'        // the controller to use for the template（そのテンプレートで使用するコントローラー）
     });
     this.render('comments', {
@@ -110,4 +110,4 @@ App.PostRoute = App.Route.extend({
 });
 ```
 
-(The original document’s commit SHA1: 38a1f7d7707d39beb84775145081070750fd1aa5)
+(The original document’s commit SHA1: f011f84a20841f47438d61ce46d1d39c654b7917)
