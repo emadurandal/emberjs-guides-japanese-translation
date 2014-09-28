@@ -30,6 +30,10 @@ App.Router.map(function() {
 });
 
 App.PostRoute = Ember.Route.extend({
+  // The code below is the default behavior, so if this is all you
+  // need, you do not need to provide a setupController implementation
+  // at all.
+  // 以下のコードは標準の動作です。なのでもしこの動作があなたが望むすべてなら、setupControllerの実装はまったくする必要ありません。
   setupController: function(controller, model) {
     controller.set('model', model);
   }
@@ -42,6 +46,17 @@ controller as its first argument. In this case, the `PostRoute`'s
 `App.PostController`.
 
 `setupController`フックは、その第一引数として、Routeハンドラーに関連したコントローラーを受け取ります。今回のケースの場合、`PostRoute`の`setupController`はアプリケーションの`App.PostController`のインスタンスを受け取ります。
+
+To specify a controller other than the default, set the route's
+`controllerName` property:
+
+標準以外のControllerを指定するには、Routeの`controllerName`プロパティをセットします。
+
+```js
+App.SpecialPostRoute = Ember.Route.extend({
+  controllerName: 'post'
+});
+```
 
 As a second argument, it receives the route handler's model. For more
 information, see [Specifying a Route's Model][1].
@@ -68,4 +83,4 @@ App.PostRoute = Ember.Route.extend({
 });
 ```
 
-(The original document’s commit SHA1: 63f655a0f8b9ec99192c26d8d0478af5f84d7c72)
+(The original document’s commit SHA1: 8394c83c43ba22d46ae861190a2ae86c49e6384e)
