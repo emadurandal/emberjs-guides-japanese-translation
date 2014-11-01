@@ -55,14 +55,14 @@ usernamesPromise.then(fetchPhotosOfUsers)
 
 In the above example, if any of the methods
 `fetchPhotosOfUsers`, `applyInstagramFilters`, or
-`uploadTrendyPhotoAlbum` reject (either by throwing an exception or
-returning `Ember.RSVP.reject()`), `handleErrors` will be called with
+`uploadTrendyPhotoAlbum` returns a promise that rejects, 
+`handleErrors` will be called with
 the reason for the failure. In this manner, promises approximate an
 asynchronous form of try-catch statements that prevent the rightward
 flow of nested callback after nested callback and facilitate a saner
 approach to managing complex asynchronous logic in your applications.
 
-上述の例では、`fetchPhotosOfUsers`や `applyInstagramFilters`または`uploadTrendyPhotoAlbum`のいずれかのメソッドが（例外を投げるか、または`Ember.RSVP.reject()を返すかのいずれかで）リジェクトしたら、`handleErrors`メソッドが、失敗の理由を（引数として）伴って呼び出されます。このようにして、Promiseはtry-catch命令文の非同期形式を近似します。この非同期形式は、ネストされたコールバックの後のネストされたコールバックの右方向の流れを防ぎ、また、あなたのアプリケーションの複雑な非同期のロジックを管理する健全な方法を手助けします。
+上述の例では、`fetchPhotosOfUsers`や `applyInstagramFilters`または`uploadTrendyPhotoAlbum`のいずれかのメソッドが、リジェクトするPromiseを返したら、`handleErrors`メソッドが、失敗の理由を（引数として）伴って呼び出されます。このようにして、Promiseはtry-catch命令文の非同期形式を近似します。この非同期形式は、ネストされたコールバックの後のネストされたコールバックの右方向の流れを防ぎ、また、あなたのアプリケーションの複雑な非同期のロジックを管理する健全な方法を手助けします。
 
 This guide doesn't intend to fully delve into all the different ways
 promises can be used, but if you'd like a more thorough introduction,
@@ -159,9 +159,6 @@ Routeの`actions`ハッシュの`error`ハンドラーを通して、このエ�
 App.GoodForNothingRoute = Ember.Route.extend({
   model: function() {
     return Ember.RSVP.reject("FAIL");
-
-    // The following would have the same effect:
-    // throw "FAIL";
   },
 
   actions: {
@@ -206,8 +203,8 @@ App.FunkyRoute = Ember.Route.extend({
 });
 ```
 
-### `beforeModel` and `afterModel`
-### `beforeModel` と `afterModel`
+### beforeModel and afterModel
+### beforeModel と afterModel
 
 The `model` hook covers many use cases for pause-on-promise transitions,
 but sometimes you'll need the help of the related hooks `beforeModel`
@@ -316,4 +313,4 @@ model for this route, so `model` wouldn't be called in these cases.
 - [Embercasts: Client-side Authentication Part 2](http://www.embercasts.com/episodes/client-side-authentication-part-2)
 - [RC6 Blog Post describing these new features](/blog/2013/06/23/ember-1-0-rc6.html)
 
-(The original document’s commit SHA1: 1912d5958f3f087fe2ffbcbd983362bb80145cce)
+(The original document’s commit SHA1: 05df32d496dc0fe4925e60d730668a62d6f4b270)
