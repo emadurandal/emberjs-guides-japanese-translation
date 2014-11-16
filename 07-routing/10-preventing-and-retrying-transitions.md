@@ -35,7 +35,7 @@ Here's one way this situation could be handled:
 App.FormRoute = Ember.Route.extend({
   actions: {
     willTransition: function(transition) {
-      if (this.controllerFor('form').get('userHasEnteredData') &&
+      if (this.controller.get('userHasEnteredData') &&
           !confirm("Are you sure you want to abandon progress?")) {
         transition.abort();
       } else {
@@ -47,6 +47,16 @@ App.FormRoute = Ember.Route.extend({
   }
 });
 ```
+
+When the user clicks on a `{{link-to}}` helper, or when the app initiates a 
+transition by using `transitionTo`, the transition will be aborted and the URL
+will remain unchanged. However, if the browser back button is used to 
+navigate away from `FormRoute`, or if the user manually changes the URL, the 
+new URL will be navigated to before the `willTransition` action is 
+called. This will result in the browser displaying the new URL, even if 
+`willTransition` calls `transition.abort()`.
+
+ユーザーが`{{link-to}}`ヘルパーをクリックするとき、またはアプリケーションが`transitionTo`を使って遷移を始めようとするとき、遷移は中止され、URLはそのまま変化しません。しかし、もし`FormRoute`から離れるためにブラウザーのバックボタンが使われる、またはもしユーザーが手動でURLを変更するなら、`willTransition`アクションが呼ばれる前に、その新しいURLに遷移するでしょう。つまり、`willTransition`が`transition.abort()`を呼んだとしても、ブラウザーは新しいURLを表示するという結果になります。
 
 ### Aborting Transitions Within `model`, `beforeModel`, `afterModel`
 ### `model`, `beforeModel`, `afterModel`フックの中で遷移を中止する
@@ -107,4 +117,4 @@ App.LoginController = Ember.Controller.extend({
 });
 ```
 
-(The original document’s commit SHA1: b49ef810880af7a834ce6b83737b06d47115fb93)
+(The original document’s commit SHA1: 6ce51e071f4a0117769c38aa3d1b240db5b105d7)
