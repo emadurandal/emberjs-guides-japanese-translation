@@ -19,10 +19,10 @@ Bubbling](http://emberjs.com/guides/templates/actions/#toc_action-bubbling).
 
 Components are designed to be reusable across different parts of your
 application. In order to achieve this reusability, it's important that
-the actions that your components send be specified when the component is
-used in a template.
+the actions that your components send can be specified when the component
+is used in a template.
 
-Componentはあなたのアプリケーションの異なる部分をまたがって再利用できるように設計されています。この再利用性を実現するために、そのComponentがテンプレートで使われるとき、Componentが送ったActionを特定することが重要です。
+Componentはあなたのアプリケーションの異なる部分をまたがって再利用できるように設計されています。この再利用性を実現するために、そのComponentがテンプレートで使われるとき、Componentが送ったActionを特定できるようにすることが重要です。
 
 In other words, if you were writing a button component, you would not
 want to send a `click` action, because it is ambiguous and likely to
@@ -71,7 +71,7 @@ App.MyButtonComponent = Ember.Component.extend({
   click: function() {
     this.sendAction();
   }
-}
+});
 ```
 
 In the above example, the `my-button` component will send the `showUser`
@@ -89,7 +89,7 @@ controller not only that _an_ item was deleted, but also _which_ item.
 Actionを扱うRouteやControllerに追加のコンテキストを供給したいと思うかもしれません。例えば、ボタンComponentはControllerに、項目がただ削除されたことだけでなく、_どの項目が_ 削除されたかも伝えたいかもしれません。
 
 To send parameters with the primary action, call `sendAction()` with the
-string `"action"` as the first argument and any additional parameters
+string `'action'` as the first argument and any additional parameters
 following it:
 
 プライマリActionとともにパラメーターを送るには、最初の引数として文字列`"action"`と、次のようななんらかの追加のパラメーターをともなって`sendAction()`を呼び出します。
@@ -114,7 +114,7 @@ App.IndexRoute = Ember.Route.extend({
       }]
     };
   },
-  
+
   actions: {
     deleteTodo: function(todo) {
       var todos = this.modelFor('index').todos;
@@ -148,9 +148,9 @@ Componentにおいて、プライマリActionをトリガーするときに、Co
 App.ConfirmButtonComponent = Ember.Component.extend({
   actions: {
     showConfirmation: function() {
-      this.toggleProperty('isShowingConfirmation'); 
+      this.toggleProperty('isShowingConfirmation');
     },
-    
+
     confirm: function() {
       this.toggleProperty('isShowingConfirmation');
       this.sendAction('action', this.get('param'));
@@ -160,6 +160,8 @@ App.ConfirmButtonComponent = Ember.Component.extend({
 ```
 
 ```handlebars
+{{! templates/components/confirm-button.handlebars }}
+
 {{#if isShowingConfirmation}}
   <button {{action "confirm"}}>Click again to confirm</button>
 {{else}}
@@ -173,6 +175,8 @@ helper with our new component:
 ここで、私たちは初期のテンプレートを更新し、`{{action}}`ヘルパーを私たちの新しいComponentで置き換えることができます。
 
 ```handlebars
+{{! index.handlebars }}
+
     {{#each todo in todos}}
       <p>{{todo.title}} {{confirm-button title="Delete" action="deleteTodo" param=todo}}</p>
     {{/each}}
@@ -184,7 +188,7 @@ a parameter by setting the component's `param` attribute.
 
 私たちは、Componentの`action`属性をセットすることによってActionを送信するために、このActionを指定したこと、そして、Componentの`param`属性をセットすることによって、どの引数をパラメーターとして送信すべきかを指定したこと、に注目してください。
 
-<a class="jsbin-embed" href="http://jsbin.com/atIgUSi/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/mucilo/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 ### Sending Multiple Actions
 ### 複数のActionを送る
@@ -217,7 +221,7 @@ calling `this.sendAction('cancel')`.
 
 この場合では、`this.sendAction('submit')`を呼び出すことで`createUser`Actionを、または、`this.sendAction('cancel')`を呼び出すことで`cancelUserCreation`Actionを送信できます。
 
-<a class="jsbin-embed" href="http://jsbin.com/OpebEFO/1/embed?html,js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/qafaq/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 ### Actions That Aren't Specified
 ### 指定されていないAction
@@ -254,9 +258,9 @@ effect if the user clicks it:
 
 In general, you should think of component actions as translating a
 _primitive event_ (like a mouse click or an `<audio>` element's `pause`
-event) into actions that have semantic meaning in your application.
+event) into actions that have meaning within your application.
 
-一般的に、ComponentのActionは、（マウスクリックや`<audio>`要素の`pause`イベントのような） _プリミティブイベント_ を、あなたのアプリケーションにおいて意味付けされたActionへ変換することだと考えるべきです。
+一般的に、ComponentのActionは、（マウスクリックや`<audio>`要素の`pause`イベントのような） _プリミティブイベント_ を、あなたのアプリケーション内部で意味付けされたActionへ変換することだと考えるべきです。
 
 This allows your routes and controllers to implement action handlers
 with names like `deleteTodo` or `songDidPause` instead of vague names
@@ -273,4 +277,4 @@ possible will lead to components that are more flexible and reusable.
 
 ComponentのActionの別の考え方は、あなたのComponentの _公開API_ として考えることです。他の開発者のアプリケーションにおいて、あなたのComponentのどのイベントがActionをトリガーできるのかを考えることは、あなたのComponentを使おうとする他の開発者にとっての主な方法です。一般的には、これらのイベントを可能な限りジェネリック（一般的）に保つことは、Componentをより柔軟でより再利用可能なものにします。
 
-(The original document’s commit SHA1: a1dcc2bdb01635c2b3fbbeeebe5845d219bdb539)
+(The original document’s commit SHA1: 7fa5e25d9f090004615f4b440aaac713638e38dc)
