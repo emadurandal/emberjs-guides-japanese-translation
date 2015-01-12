@@ -101,11 +101,11 @@ create a component for each item and bind it to each model in the loop.
 `{{#each}}`ループの中からでも、プロパティをバインドすることができます。このコードは、それぞれの項目ごとにComponentを作成し、ループの中のそれぞれのモデルに、プロパティをバインドします。
 
 ```handlebars
-{{#each}}
-  {{blog-post title=title}}
+{{#each post in model}}
+  {{blog-post title=post.title}}
 {{/each}}
 ```
-<a class="jsbin-embed" href="http://jsbin.com/ifuxey/2/embed?live">JS Bin</a>
+<a class="jsbin-embed" href="http://jsbin.com/japiv/1/embed?live">JS Bin</a>
 <script src="http://static.jsbin.com/js/embed.js"></script>
 
-(The original document’s commit SHA1: bf0051c7fccbd6728bb037140adc4e5d2244c3a6)
+(The original document’s commit SHA1: ec0c79f78dad7b464efc5cb009ecf045a51f6a44)
