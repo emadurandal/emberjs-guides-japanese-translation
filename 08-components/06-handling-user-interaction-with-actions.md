@@ -47,7 +47,7 @@ App.PostSummaryComponent = Ember.Component.extend({
   }
 });
 ```
-<a class="jsbin-embed" href="http://jsbin.com/EWEQeKO/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/yuzena/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 The `{{action}}` helper can accept arguments, listen for different event
 types, control how action bubbling occurs, and more.
@@ -59,4 +59,4 @@ section](http://emberjs.com/guides/templates/actions) of the Templates chapter.
 
 `{{action}}`ヘルパーの利用に関する詳細については、テンプレートの章の[Actions section](http://emberjs.com/guides/templates/actions)を参照してください。
 
-(The original document’s commit SHA1: c0c2869a8bad6a42396a659a18450881ba836edc)
+(The original document’s commit SHA1: 7fa5e25d9f090004615f4b440aaac713638e38dc)
