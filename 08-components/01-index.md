@@ -25,13 +25,13 @@ spec.
 
 それこそ、まさにあなたがComponentsでできることなのです。実際、このアイデアはW3Cが [Custom Elements](https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/custom/index.html) として現在策定を進めているほど良いアイデアなのです。
 
-Ember's implementation of components hews as closely to the Web
-Components specification as possible. Once Custom Elements are widely
-available in browsers, you should be able to easily migrate your Ember
-components to the W3C standard and have them be usable by other
-frameworks.
+Ember's implementation of components hews as closely to the [Web
+Components specification](http://www.w3.org/TR/components-intro/) as possible.
+Once Custom Elements are widely available in browsers, you should be able to
+easily migrate your Ember components to the W3C standard and have them be
+usable by other frameworks.
 
-Emberのコンポーネントの実装は、できる限り緊密にWeb Components仕様に従うようにしています。いったん、Custom Elementsがブラウザーで広く利用可能になったら、あなたが簡単にEmberコンポーネントからW3C標準に移行できるようにしますし、他のフレームワークからもそれらが利用可能になるようにします。
+Emberのコンポーネントの実装は、できる限り緊密に[Web Components](http://www.w3.org/TR/components-intro/)仕様に従うようにしています。いったん、Custom Elementsがブラウザーで広く利用可能になったら、あなたが簡単にEmberコンポーネントからW3C標準に移行できるようにしますし、他のフレームワークからもそれらが利用可能になるようにします。
 
 This is so important to us that we are working closely with the
 standards bodies to ensure our implementation of components matches the
@@ -46,6 +46,6 @@ components.
 
 コンポーネントの力をお見せするため、ブログの投稿を、あなたがご自分のアプリケーションで何度も何度も使えるような、再利用可能な`blog-post`カスタム要素に変化させる短いサンプルを作りました。Componentsを構築するにあたってのさらなる詳細について、このセクションを引き続きお読みください。
 
-<a class="jsbin-embed" href="http://jsbin.com/ifuxey/2/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/juvic/embed?js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
-(The original document’s commit SHA1: e3ad91db2f2726d1118adac87b2f7e488da03ab6)
+(The original document’s commit SHA1: 7fa5e25d9f090004615f4b440aaac713638e38dc)
