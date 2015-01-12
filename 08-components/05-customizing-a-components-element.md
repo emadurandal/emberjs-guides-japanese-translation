@@ -148,10 +148,10 @@ If the `isEnabled` property is set to `true`, no class name is added:
 <div class="ember-view">
 ```
 
-If the bound value is a string, that value will be added as a class name without
+If the bound property's value is a string, that value will be added as a class name without
 modification:
 
-もしバインドされた値が文字列だったら、その値がクラス名として、改変なしに追加されます。
+もしバインドされたプロパティの値が文字列だったら、その値がクラス名として、改変なしに追加されます。
 
 ```javascript
 App.TodoItemComponent = Ember.Component.extend({
@@ -204,6 +204,12 @@ red background:
 
 これは、赤い背景で完了したTodoを表示するTodoアプリケーションの例です。
 
-<a class="jsbin-embed" href="http://jsbin.com/utonef/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/duzala/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
-(The original document’s commit SHA1: a4d1dc630ff7698601753ee7fd18f1048b275318)
+
+**Note:** The binding functionality in this very simple example could also be implemented without
+the use of `Ember.Component` but by simply [binding element attributes](/guides/templates/binding-element-attributes) or [binding element class names](/guides/templates/binding-element-class-names).
+
+**注意：** このとてもシンプルな例でのバインディング機能は`Ember.Component`を使わなくても実装することができます。単純な[binding element attributes](/guides/templates/binding-element-attributes) または [binding element class names](/guides/templates/binding-element-class-names)を使うことで可能です。
+
+(The original document’s commit SHA1: a574fb5a7b5b4680fb644d36d47f47021a1d2f2b)
