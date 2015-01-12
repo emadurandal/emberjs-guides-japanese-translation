@@ -7,13 +7,11 @@ create a `components/blog-post` template.
 
 コンポーネントを定義するために、`components/`で始まる名前を持つテンプレートを作ります。例えば、新しいコンポーネント`{{blog-post}}`を定義するために、`components/blog-post`テンプレートを作ります。
 
-<aside>
-  **Note:** Components must have a dash in their name. So `blog-post` is an acceptable name,
-  but `post` is not. This prevents clashes with current or future HTML element names, and
-  ensures Ember picks up the components automatically.
+**Note:** Components must have a dash in their name. So `blog-post` is an acceptable name,
+but `post` is not. This prevents clashes with current or future HTML element names, and
+ensures Ember picks up the components automatically.
   
-  **注意：** Componentsは名前に`-`（ダッシュ）を含む必要があります。つまり、`blog-post`は正しい名前ですが、`post`は正しくありません。この規則は、名前が現在又は将来のHTML要素の名前とバッティングすることを避けることになり、また、EmberがComponentを自動的に検出できることを確実にします。
-</aside>
+**注意：** Componentsは名前に`-`（ダッシュ）を含む必要があります。つまり、`blog-post`は正しい名前ですが、`post`は正しくありません。この規則は、名前が現在又は将来のHTML要素の名前とバッティングすることを避けることになり、また、EmberがComponentを自動的に検出できることを確実にします。
 
 If you are including your Handlebars templates inside an HTML file via
 `<script>` tags, it would look like this:
@@ -40,12 +38,12 @@ component of the same name. Given the above template, you can now use the
 
 ```handlebars
 <h1>My Blog</h1>
-{{#each}}
+{{#each post in model}}
   {{blog-post}}
 {{/each}}
 ```
 
-<a class="jsbin-embed" href="http://jsbin.com/ifuxey/1/embed?live,html">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/juvic/embed?js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 Each component, under the hood, is backed by an element. By default
 Ember will use a `<div>` element to contain your component's template.
@@ -104,4 +102,4 @@ the component, followed by `Component`.
   </tr>
 </table>
 
-(The original document’s commit SHA1: 6b72c37ab75c1c743ce8010ecfaa17833ffba41a)
+(The original document’s commit SHA1: a574fb5a7b5b4680fb644d36d47f47021a1d2f2b)
