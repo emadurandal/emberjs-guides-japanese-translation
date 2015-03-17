@@ -8,9 +8,8 @@ So far, we've discussed writing templates for a single view. However, as your ap
 
 ### {{view}}
 
-To add a child view to a parent, use the `{{view}}` helper, which takes a path to a view class.
-
-親Viewに子Viewを追加するには、`{{view}}`ヘルパーを使います。`{{view}}}`ヘルパーはViewクラスを経由します。
+To add a child view to a parent, use the `{{view}}` helper. The `{{view}}` helper takes a string used to look up the view class.
+親Viewに子Viewを追加するには、`{{view}}`ヘルパーを使います。`{{view}}}`ヘルパーはViewクラスを参照するのに使われる文字列を取ります。
 
 ```javascript
 // Define parent view
@@ -33,7 +32,7 @@ App.InfoView = Ember.View.extend({
 ```html
 <script type="text/x-handlebars" data-template-name="user">
   User: {{view.firstName}} {{view.lastName}}
-  {{view App.InfoView}}
+  {{view "info"}}
 </script>
 ```
 
@@ -89,11 +88,9 @@ User: {{view.firstName}} {{view.lastName}}
 {{view view.infoView}}
 ```
 
-When nesting a view class like this, make sure to use a lowercase
-letter, as Ember will interpret a property with a capital letter as a
-global property.
+When using the view helper with a property, prefer starting the property name with a lowercase letter. Using an uppercase letter, such as in `{{view MyClass}}` may trigger a deprecated use-case.
 
-このようにViewクラスを入れ子にするとき、小文字を使うようにしてください。Emberは大文字のプロパティをグローバルプロパティとして解釈します。
+Viewヘルパーをプロパティ付きで使うとき、プロパティ名は小文字ではじまることが好ましいです。`{{view MyClass}}`のように大文字から始めるのは、廃止予定のユースケースをトリガしてしまいます。
 
 ### Setting Child View Templates
 ### 子Viewのテンプレートのセッティング
@@ -120,7 +117,7 @@ App.InfoView = Ember.View.extend({
 
 ```handlebars
 User: {{view.firstName}} {{view.lastName}}
-{{#view App.InfoView}}
+{{#view "info"}}
   <b>Posts:</b> {{view.posts}}
   <br>
   <b>Hobbies:</b> {{view.hobbies}}
@@ -134,4 +131,4 @@ that part of the page.
 このやり方については、Viewをページの部分に割り当てることと考えると分かりやすいでしょう。このやり方により、ちょうどページのその部分のためにイベントハンドリングをカプセル化できます。
 
 
-(The original document’s commit SHA1: 1b78086df60d5866d42c80df09e3a7df7eaf9618)
+(The original document’s commit SHA1: 184b5fdf09f7ec9e106928648f2e160066449483)
