@@ -1,21 +1,16 @@
 # ObjectControllerによる単体モデルの表現
 
-Use `Ember.ObjectController` to represent a single model. To tell an
+Use `Ember.ObjectController` to represent a single model. To tell an 
 `ObjectController` which model to represent, set its `model`
 property in your route's `setupController` method.
 
 単体モデルを表現するのには`Ember.ObjectController`を使います。表現すべきモデルを`ObjectController`に伝えるには、Routeの`setupController`メソッドの中で`Ember.ObjectController`の`model`プロパティをセットします。
 
-When a template asks an `ObjectController` for a property, it will first
-check to see if it has its own property with that name defined. If so, it will
-return its current value.
+When a template asks an `ObjectController` for the value of a property, the controller 
+looks for a property with the same name on itself first before checking 
+the model.
 
-テンプレートが`ObjectController`にプロパティを問い合わせるとき、`ObjectController`は最初に、自分が、定義された名前の自身のプロパティを持っているか確認します。もしそうなら、`ObjectController`の現在のプロパティの値を返します。
-
-However, if the controller does not have a property with that name defined, it
-will return the value of the property on the model.
-
-しかし、もしControllerが定義された名前のプロパティを持っていなかったら、Modelにあるプロパティの値を返します。
+テンプレートが`ObjectController`にプロパティの値を問い合わせるとき、`ObjectController`はModelをチェックする前に、最初に自分自身に同じ名前のプロパティがないか探します。
 
 For example, imagine you are writing a music player. You have defined
 your `SongController` to represent the currently playing song.
@@ -28,10 +23,10 @@ App.SongController = Ember.ObjectController.extend({
 });
 ```
 
-In your router, you set the `model` of the controller to the
+In the Song route, you set the `model` of the controller to the
 currently playing song:
 
-Routerでは、現在再生している曲をコントローラーの`model`にセットしました。
+SongRouteでは、現在再生している曲をコントローラーの`model`にセットしました。
 
 ```javascript
 App.SongRoute = Ember.Route.extend({
@@ -138,4 +133,4 @@ Now, the output of our template is a lot friendlier:
 </p>
 ```
 
-(The original document’s commit SHA1: 63f655a0f8b9ec99192c26d8d0478af5f84d7c72)
+(The original document’s commit SHA1: f588204284005795dbc8f6e6bc44bfcd0c43e8d9)
