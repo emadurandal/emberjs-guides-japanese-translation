@@ -43,8 +43,8 @@ its parent `PostController`, which can be done via `controllers.post`
 <h1>Comments for {{controllers.post.title}}</h1>
 
 <ul>
-  {{#each comments}}
-    <li>{{text}}</li>
+  {{#each comment in comments}}
+    <li>{{comment.text}}</li>
   {{/each}}
 </ul>
 ```
@@ -63,9 +63,23 @@ App.CommentsController = Ember.ArrayController.extend({
 });
 ```
 
-For more information about aliased property, see the API docs for
+If you want to connect multiple controllers together, you can specify an
+array of controller names:
+
+もし複数のControllerに一緒に接続したいのなら、Controllerの名前の配列を指定できます。
+
+```javascript
+App.AnotherController = Ember.Controller.extend({
+  needs: ['post', 'comments']
+});
+```
+
+For more information about dependecy injection and `needs` in Ember.js,
+see the [dependency injection guide](http://emberjs.com/guides/understanding-ember/dependency-injection-and-service-lookup).
+For more information about aliases, see the API docs for
 [aliased properties](http://emberjs.com/api/#method_computed_alias).
 
-別名プロパティ（Aliased Property）についてより詳細な情報を知りたいなら、APIドキュメントの[aliased properties](http://emberjs.com/api/#method_computed_alias)を参照してください。
+依存性の注入とEmber.jsにおける`needs`について、より詳細な情報を知りたいなら、[dependency injection guide](http://emberjs.com/guides/understanding-ember/dependency-injection-and-service-lookup)を参照してください。
+エイリアスについてより詳細な情報を知りたいなら、APIドキュメントの[aliased properties](http://emberjs.com/api/#method_computed_alias)を参照してください。
 
-(The original document’s commit SHA1: f88557529bd1d8496a86b98b8a7b3b65d368f476)
+(The original document’s commit SHA1: ec0c79f78dad7b464efc5cb009ecf045a51f6a44)
