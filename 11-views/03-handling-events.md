@@ -12,7 +12,7 @@ For example, imagine we have a template like this:
 例えば、次のようなテンプレートを持っていると考えましょう。
 
 ```handlebars
-{{#view App.ClickableView}}
+{{#view "clickable"}}
 This is a clickable area!
 {{/view}}
 ```
@@ -86,4 +86,4 @@ documentation section on [Event Names](/api/classes/Ember.View.html#toc_event-na
 
 `Ember.View`の内蔵イベントの完全なリストを確認するため、[Event Names](http://emberjs.com/api/classes/Ember.View.html#toc_event-names)のドキュメンテーションのセクションを参照してください。
 
-(The original document’s commit SHA1: 78cbbf116dddc9284de0ba7d678d4a97006eb396)
+(The original document’s commit SHA1: 184b5fdf09f7ec9e106928648f2e160066449483)
