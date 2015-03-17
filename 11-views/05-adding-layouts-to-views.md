@@ -60,55 +60,5 @@ This will result in view instances containing the following HTML
 </div>
 ```
 
-#### Applying Layouts in Practice
-#### 練習としてレイアウトを適用する
 
-Layouts are extremely useful when you have a view with a common wrapper and behavior, but its main template might change.
-One possible scenario is a Popup View.
-
-あなたが共通のラッパーや振る舞いを持つViewを持っており、しかしそのメインテンプレートが変更されうるとき、レイアウトは極めて有用です。ひとつの可能性のあるシナリオは、ポップアップビューです。
-
-You can define your popup layout template:
-
-あなたはポップアップレイアウトレンプレートを定義できます。
-
-```html
-<script type="text/x-handlebars" data-template-name="popup">
-  <div class="popup">
-    <button class="popup-dismiss">x</button>
-    <div class="popup-content">
-    {{yield}}
-    </div>
-  </div>
-</script>
-```
-
-Then define your popup view:
-
-次に、ポップアップビューを定義します。
-
-```javascript
-App.PopupView = Ember.View.extend({
-  layoutName: 'popup'
-});
-```
-
-Now you can re-use your popup with different templates:
-
-これで、あなたは異なるテンプレートでポップアップを再利用することができます。
-
-```html
-{{#view App.PopupView}}
-  <form>
-    <label for="name">Name:</label>
-    <input id="name" type="text" />
-  </form>
-{{/view}}
-
-{{#view App.PopupView}}
-  <p> Thank you for signing up! </p>
-{{/view}}
-```
-
-
-(The original document’s commit SHA1: 63f655a0f8b9ec99192c26d8d0478af5f84d7c72)
+(The original document’s commit SHA1: d0f174e958ad85efbc3ec687480d2ac74a83ebc7)
