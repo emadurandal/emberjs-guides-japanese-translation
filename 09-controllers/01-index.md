@@ -120,7 +120,6 @@ the view knows anything about those mechanics.
 
 実際のところ、Ember.jsはアプリケーション全体のために一度だけ、テンプレートのControllerを生成します。しかし、Controllerのモデルは、Viewがそうしたメカニズムについて知ることなく、アプリケーションの生存期間を通して変化する可能性があります。
 
-<aside>
 For example, if the user navigates from `/posts/1` to `/posts/2`,
 the `PostController` will change its model from `Post.find(1)` to
 `Post.find(2)`. The template will update its representations of any
@@ -128,7 +127,6 @@ properties on the model, as well as any computed properties on the
 controller that depend on the model.
 
 例えば、ユーザーが`/posts/1`から`/posts/2`に移動した場合、`PostController`はModelを`Post.find(1)`から`Post.find(2)`に切り替えます。テンプレートはそのModelの全てのプロパティーの表示、さらにModelに依存しているControllerの全てのComputed Propertiesを更新します。
-</aside>
 
 This makes it easy to test a template in isolation by rendering it 
 with a controller object that contains the properties the template
@@ -156,11 +154,11 @@ proxies properties from an object.
 便宜上、Ember.jsはモデルからプロパティを _プロキシする_ コントローラーを提供します。そのおかげで、あなたはテンプレートで`{{model.name}}`とせずに、`{{name}}`と書くことができるのです。
 
 If your controller is an `ArrayController`, you can iterate directly
-over the controller using `{{#each controller}}`. This keeps the
+over the controller using `{{#each item in controller}}`. This keeps the
 template from having to know about how the controller is implemented
 and makes isolation testing and refactoring easier.
 
-もしあなたのControllerが`ArrayController`なら、`{{#each controller}}`を使うことで、直接Controllerをイテレート（繰り返し取り出すことが）できます。このことは、Controllerがどのように実装されるかについて、テンプレートが知らなくてもいいようにし、そして隔離テストとリファクタリングをより容易にします。
+もしあなたのControllerが`ArrayController`なら、`{{#each item in controller}}`を使うことで、直接Controllerをイテレート（繰り返し取り出すことが）できます。このことは、Controllerがどのように実装されるかについて、テンプレートが知らなくてもいいようにし、そして隔離テストとリファクタリングをより容易にします。
 
 ### Storing Application Properties
 ### アプリケーションのプロパティの保存
@@ -172,11 +170,11 @@ of this application run, you should store it on a controller.
 あなたのアプリケーションの全てのプロパティが、サーバーに保存する必要があるというわけではありません。アプリケーションの生存時間の間だけ、情報を保存する必要があるときはいつでも、あなたはそれらの情報をControllerに保存すべきです。
 
 For example, imagine your application has a search field that
-is always present. You could store a `query` property on your
-`ApplicationController`, and bind the `search` field in the `
-application` template to that property.
+is always present. You could store a `search` property on your
+`ApplicationController`, and bind the search field in the `
+application` template to that property, like this:
 
-例えば、あなたのアプリケーションが、常に表示されている検索フィールドを持っていると想像してください。あなたは`query`プロパティを`ApplicationController`に保存し、`application`テンプレートにある`search`フィールドをそのプロパティにバインドすることができます。
+例えば、あなたのアプリケーションが、常に表示されている検索フィールドを持っていると想像してください。あなたは`search`プロパティを`ApplicationController`に保存し、`application`テンプレートにある検索フィールドをそのプロパティにバインドすることができます。このような感じで：
 
 ```handlebars
 <!-- application.handlebars -->
@@ -209,4 +207,4 @@ passing the query as a parameter.
 
 `application`テンプレートはそのプロパティを保存し、`ApplicationController`にActionを送ります。この場合、ユーザーがエンターキーを押したとき、アプリケーションは`search`Routeに遷移し、パラメーターとしてqueryを渡します。
 
-(The original document’s commit SHA1: d9dd7c341815a7182e4016e6ea015da03c0bdb2a)
+(The original document’s commit SHA1: a574fb5a7b5b4680fb644d36d47f47021a1d2f2b)
