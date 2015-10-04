@@ -1,6 +1,10 @@
 # Ember.js公式ガイドの日本語訳
 (Japanese Translation for Official Ember.js Guides)
 
+**Note**  
+These translations are out of date. Sorry to say, I have no plan to update these documents.
+この翻訳はすでに最新のEmber.jsに追従できていません。申し訳ありませんが、翻訳を更新する予定ももうありません。
+
 **Credit**  
 These documents are Ember.js guides which have been translated into Japanese with permission of Tom Dale([@tomdale](https://twitter.com/tomdale)).
 Original documents are written on emberjs.com.
@@ -12,10 +16,3 @@ Original markdown documents are available on [emberjs/website](https://github.co
 原文はemberjs.comにかかれた[Ember.js Guides ](http://emberjs.com/guides/)にあります。
 
 また、原文のMarkdown版は[emberjs/website](https://github.com/emberjs/website/)の`source/guides`ディレクトリから入手可能です。
-
-**Note**  
-Only a part of all documents has been yet shown, but they will be added soon.
-I beg for your patience.
-
-まだ一部しか公開されていませんが、近いうちに全ての文書が追加されるでしょう。
-もうしばらくお待ちください。
